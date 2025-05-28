@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -113,9 +112,8 @@ const Home = () => {
                 </Card>
               ))}
               <Button 
-                variant="outline" 
                 onClick={() => navigate("/journal")}
-                className="w-full border-sacred-golden-tan text-sacred-sage-green hover:bg-sacred-cream"
+                className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium"
               >
                 View All Prayers
               </Button>
