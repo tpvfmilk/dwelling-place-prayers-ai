@@ -11,7 +11,7 @@ const Welcome = () => {
       <div className="w-full max-w-md mx-auto space-y-8 animate-fade-in">
         {/* Logo and Welcome */}
         <div className="text-center space-y-4">
-          <div className="w-20 h-20 mx-auto bg-prayer-gradient rounded-full flex items-center justify-center shadow-lg">
+          <div className="w-20 h-20 mx-auto bg-[#d2b48c] rounded-full flex items-center justify-center shadow-lg">
             <span className="text-2xl font-bold text-white">DP</span>
           </div>
           <h1 className="text-3xl font-bold text-sacred-sage-green">
@@ -45,7 +45,7 @@ const Welcome = () => {
         <div className="space-y-4">
           <Button 
             onClick={() => navigate("/prayer-style")}
-            className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-6 text-lg shadow-lg"
+            className="w-full bg-[#d2b48c] hover:bg-[#c19660] text-white font-medium py-6 text-lg shadow-lg"
           >
             Begin Your Journey
           </Button>

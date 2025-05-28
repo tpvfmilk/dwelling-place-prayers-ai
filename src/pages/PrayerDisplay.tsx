@@ -77,7 +77,7 @@ In Jesus' name, Amen.`,
               </div>
               <Button 
                 size="sm"
-                className="bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium"
+                className="bg-[#d2b48c] hover:bg-[#c19660] text-white font-medium"
               >
                 Play Prayer Audio
               </Button>
@@ -123,7 +123,7 @@ In Jesus' name, Amen.`,
           <Button 
             onClick={handleSavePrayer}
             disabled={isSaved}
-            className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-4"
+            className="w-full bg-[#d2b48c] hover:bg-[#c19660] text-white font-medium py-4"
           >
             <Book className="w-5 h-5 mr-2" />
             {isSaved ? "Saved to Journal" : "Save to Prayer Journal"}
@@ -131,7 +131,7 @@ In Jesus' name, Amen.`,
           
           <Button 
             onClick={() => navigate("/prayer-input")}
-            className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium"
+            className="w-full bg-[#d2b48c] hover:bg-[#c19660] text-white font-medium"
           >
             <ArrowUp className="w-5 h-5 mr-2" />
             Create Another Prayer

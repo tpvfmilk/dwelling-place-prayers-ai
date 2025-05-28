@@ -83,7 +83,7 @@ const PrivacyTrust = () => {
         <div className="space-y-3 pt-4">
           <Button 
             onClick={() => navigate("/home")}
-            className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-6"
+            className="w-full bg-[#d2b48c] hover:bg-[#c19660] text-white font-medium py-6"
           >
             Enter Dwelling Place
           </Button>

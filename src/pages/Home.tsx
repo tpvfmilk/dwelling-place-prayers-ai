@@ -56,7 +56,7 @@ const Home = () => {
 
       <div className="p-4 space-y-6 max-w-7xl mx-auto">
         {/* Daily Blessing */}
-        <Card className="bg-prayer-gradient border-sacred-golden-tan shadow-lg">
+        <Card className="bg-[#d2b48c] border-sacred-golden-tan shadow-lg">
           <CardContent className="p-6 text-center">
             <h2 className="text-lg font-semibold text-white mb-2">
               Today's Blessing
@@ -91,7 +91,7 @@ const Home = () => {
             </div>
             <Button 
               onClick={() => navigate("/prayer-input")}
-              className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-4 text-lg"
+              className="w-full bg-[#d2b48c] hover:bg-[#c19660] text-white font-medium py-4 text-lg"
             >
               Share your heart with God
             </Button>
@@ -138,10 +138,7 @@ const Home = () => {
                         <Button 
                           variant="ghost" 
                           size="sm" 
-                          className="text-white border-none" 
-                          style={{ backgroundColor: '#d2b48c' }}
-                          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c19a6b'}
-                          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#d2b48c'}
+                          className="text-white border-none bg-[#d2b48c] hover:bg-[#c19660]"
                           onClick={(e) => {
                             e.stopPropagation();
                             navigate("/prayer-display", { state: { prayerId: prayer.id } });
@@ -155,12 +152,14 @@ const Home = () => {
                   </Card>
                 ))}
               </div>
-              <Button 
-                onClick={() => navigate("/journal")}
-                className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium"
-              >
-                View All Prayers
-              </Button>
+              <div className="flex justify-center">
+                <Button 
+                  onClick={() => navigate("/journal")}
+                  className="w-3/4 mx-auto bg-[#d2b48c] hover:bg-[#c19660] text-white font-medium"
+                >
+                  View All Prayers
+                </Button>
+              </div>
             </div>
           ) : (
             <div className="grid grid-cols-1">

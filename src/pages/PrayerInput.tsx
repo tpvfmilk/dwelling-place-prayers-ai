@@ -118,7 +118,7 @@ const PrayerInput = () => {
           <Button 
             onClick={handleCreatePrayer}
             disabled={!heartShare.trim()}
-            className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-4 text-lg disabled:opacity-50"
+            className="w-full bg-[#d2b48c] hover:bg-[#c19660] text-white font-medium py-4 text-lg disabled:opacity-50"
           >
             <ArrowUp className="w-5 h-5 mr-2" />
             Create My Prayer
