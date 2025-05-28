@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -74,7 +75,7 @@ const PrayerJournal = () => {
         </div>
         
         {/* Sub-header row */}
-        <div className="bg-white/60 border-t border-sacred-golden-tan/10 px-4 py-2">
+        <div className="bg-transparent border-t border-sacred-golden-tan/10 px-4 py-2">
           <div className="text-center max-w-7xl mx-auto">
             <h2 className="text-xl font-semibold text-sacred-sage-green mb-1">
               Your Prayer Journal
