@@ -1,0 +1,120 @@
+
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { ArrowUp, Book, MessageSquare, Settings } from "lucide-react";
+
+const PrayerInput = () => {
+  const navigate = useNavigate();
+  const [heartShare, setHeartShare] = useState("");
+  const [selectedStyle, setSelectedStyle] = useState(localStorage.getItem("prayerStyle") || "conversational");
+
+  const prayerStyles = [
+    { id: "scripture", name: "Scripture-based", icon: Book },
+    { id: "conversational", name: "Conversational", icon: MessageSquare },
+    { id: "traditional", name: "Traditional", icon: Settings }
+  ];
+
+  const handleCreatePrayer = () => {
+    if (heartShare.trim()) {
+      // In real app, would call API to generate prayer
+      navigate("/prayer-display", { 
+        state: { 
+          heartShare, 
+          prayerStyle: selectedStyle 
+        } 
+      });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-sacred-gradient">
+      {/* Header */}
+      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-gold/20 p-4">
+        <div className="max-w-md mx-auto">
+          <h1 className="text-xl font-semibold text-sacred-blue text-center">
+            What's on your heart today?
+          </h1>
+          <p className="text-sm text-sacred-stone text-center mt-1">
+            Share freely - God already knows
+          </p>
+        </div>
+      </div>
+
+      <div className="p-4 space-y-6 max-w-md mx-auto pb-24">
+        {/* Main Input */}
+        <Card className="bg-white/90 backdrop-blur-sm border-sacred-gold/20 shadow-lg">
+          <CardContent className="p-6 space-y-4">
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-sacred-blue">
+                Share with God
+              </label>
+              <Textarea
+                value={heartShare}
+                onChange={(e) => setHeartShare(e.target.value)}
+                placeholder="I'm feeling grateful for... I'm worried about... I need strength for... I want to thank God for..."
+                className="min-h-[120px] border-sacred-gold/30 focus:border-sacred-gold resize-none text-base"
+              />
+            </div>
+            <div className="text-xs text-sacred-stone">
+              Express your heart freely - there's no wrong way to pray
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Prayer Style Customization */}
+        <Card className="bg-white/90 backdrop-blur-sm border-sacred-gold/20">
+          <CardContent className="p-4 space-y-3">
+            <h3 className="text-sm font-medium text-sacred-blue">Prayer Style</h3>
+            <div className="grid grid-cols-3 gap-2">
+              {prayerStyles.map((style) => {
+                const Icon = style.icon;
+                return (
+                  <button
+                    key={style.id}
+                    onClick={() => setSelectedStyle(style.id)}
+                    className={`p-3 rounded-lg border text-center transition-all ${
+                      selectedStyle === style.id
+                        ? "border-sacred-gold bg-sacred-gold-light text-sacred-blue"
+                        : "border-gray-200 bg-white hover:border-sacred-gold/50"
+                    }`}
+                  >
+                    <Icon className="w-4 h-4 mx-auto mb-1" />
+                    <span className="text-xs">{style.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Encouraging Scripture */}
+        <Card className="bg-sacred-blue-light/30 border-sacred-blue/20">
+          <CardContent className="p-4 text-center">
+            <p className="scripture-text text-sm">
+              "Cast all your anxiety on him because he cares for you." - 1 Peter 5:7
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Fixed Bottom Action */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-gold/20 p-4">
+        <div className="max-w-md mx-auto">
+          <Button 
+            onClick={handleCreatePrayer}
+            disabled={!heartShare.trim()}
+            className="w-full bg-prayer-gradient hover:opacity-90 text-white font-medium py-4 text-lg disabled:opacity-50"
+          >
+            <ArrowUp className="w-5 h-5 mr-2" />
+            Create My Prayer
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PrayerInput;
