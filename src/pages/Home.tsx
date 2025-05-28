@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Book, Home as HomeIcon, MessageSquare, Settings, Circle } from "lucide-react";
+import { Book, Home as HomeIcon, MessageSquare, Settings, Circle, Play } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -14,13 +14,19 @@ const Home = () => {
       id: 1,
       title: "Morning Gratitude",
       preview: "Thank you, Lord, for this new day and the breath in my lungs...",
-      time: "This morning"
+      time: "This morning",
+      date: "2024-01-15",
+      reflection: "Felt a deep sense of peace this morning",
+      style: "conversational"
     },
     {
       id: 2,
       title: "Peace in Uncertainty",
       preview: "Father, I come to you with a heart full of questions...",
-      time: "Yesterday"
+      time: "Yesterday",
+      date: "2024-01-14",
+      reflection: "God reminded me of His faithfulness",
+      style: "scripture"
     }
   ];
 
@@ -48,7 +54,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="p-4 space-y-6 max-w-2xl mx-auto">
+      <div className="p-4 space-y-6 max-w-7xl mx-auto">
         {/* Daily Blessing */}
         <Card className="bg-prayer-gradient border-sacred-golden-tan shadow-lg">
           <CardContent className="p-6 text-center">
@@ -96,24 +102,59 @@ const Home = () => {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-sacred-sage-green">Recent Prayers</h3>
           {recentPrayers.length > 0 ? (
-            <div className="space-y-3">
-              {recentPrayers.map((prayer) => (
-                <Card 
-                  key={prayer.id} 
-                  className="bg-white/80 hover:bg-white/90 cursor-pointer transition-all border-sacred-sage-border/20"
-                  onClick={() => navigate("/prayer-display", { state: { prayerId: prayer.id } })}
-                >
-                  <CardContent className="p-4">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-medium text-sacred-sage-green">{prayer.title}</h4>
-                      <span className="text-xs text-sacred-sage-green">{prayer.time}</span>
-                    </div>
-                    <p className="text-sm sacred-text line-clamp-2">
-                      {prayer.preview}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {recentPrayers.map((prayer) => (
+                  <Card 
+                    key={prayer.id} 
+                    className="bg-white/90 hover:bg-white/95 cursor-pointer transition-all border-sacred-golden-tan/20 hover:border-sacred-golden-tan h-full flex flex-col"
+                    onClick={() => navigate("/prayer-display", { state: { prayerId: prayer.id } })}
+                  >
+                    <CardContent className="p-4 flex flex-col justify-between h-full">
+                      <div className="space-y-3 flex-1">
+                        <div className="flex justify-between items-start">
+                          <h4 className="font-semibold text-sacred-sage-green">{prayer.title}</h4>
+                          <span className="text-xs text-sacred-sage-green">
+                            {new Date(prayer.date).toLocaleDateString()}
+                          </span>
+                        </div>
+                        
+                        <p className="text-sm sacred-text line-clamp-2">
+                          {prayer.preview}
+                        </p>
+                        
+                        {prayer.reflection && (
+                          <div className="bg-sacred-golden-tan/30 p-3 rounded-lg">
+                            <p className="text-xs text-sacred-sage-green font-medium mb-1">Your Reflection:</p>
+                            <p className="text-sm sacred-text italic">"{prayer.reflection}"</p>
+                          </div>
+                        )}
+                      </div>
+                      
+                      <div className="flex justify-between items-center mt-4 pt-3 border-t border-sacred-golden-tan/20">
+                        <span className="text-xs font-medium text-gray-500">
+                          {prayer.style.charAt(0).toUpperCase() + prayer.style.slice(1)} style
+                        </span>
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="text-white border-none" 
+                          style={{ backgroundColor: '#d2b48c' }}
+                          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c19a6b'}
+                          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#d2b48c'}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            navigate("/prayer-display", { state: { prayerId: prayer.id } });
+                          }}
+                        >
+                          <Play className="w-4 h-4 mr-1" />
+                          Play
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
               <Button 
                 onClick={() => navigate("/journal")}
                 className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium"
@@ -122,14 +163,16 @@ const Home = () => {
               </Button>
             </div>
           ) : (
-            <Card className="bg-white/80 border-sacred-sage-border/20">
-              <CardContent className="p-6 text-center">
-                <Book className="w-12 h-12 mx-auto text-sacred-sage-green/50 mb-3" />
-                <p className="sacred-text">
-                  Your prayer journey begins here. Share what's on your heart to create your first prayer.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1">
+              <Card className="bg-white/80 border-sacred-sage-border/20">
+                <CardContent className="p-6 text-center">
+                  <Book className="w-12 h-12 mx-auto text-sacred-sage-green/50 mb-3" />
+                  <p className="sacred-text">
+                    Your prayer journey begins here. Share what's on your heart to create your first prayer.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           )}
         </div>
       </div>
