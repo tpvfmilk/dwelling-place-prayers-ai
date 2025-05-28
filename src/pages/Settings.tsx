@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -66,7 +67,10 @@ const Settings = () => {
             <Button 
               variant="outline" 
               size="sm" 
-              className="w-full bg-sacred-custom-brown hover:bg-sacred-custom-brown/90 text-white border-none"
+              className="w-full text-white border-none"
+              style={{ backgroundColor: '#d2b48c' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c19a6b'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#d2b48c'}
             >
               Edit Profile
             </Button>
@@ -120,7 +124,10 @@ const Settings = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="bg-sacred-custom-brown hover:bg-sacred-custom-brown/90 text-white border-none"
+                className="text-white border-none"
+                style={{ backgroundColor: '#d2b48c' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c19a6b'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#d2b48c'}
               >
                 Set Time
               </Button>
@@ -133,7 +140,10 @@ const Settings = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="bg-sacred-custom-brown hover:bg-sacred-custom-brown/90 text-white border-none"
+                className="text-white border-none"
+                style={{ backgroundColor: '#d2b48c' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c19a6b'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#d2b48c'}
               >
                 Set Time
               </Button>
