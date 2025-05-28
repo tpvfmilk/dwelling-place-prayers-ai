@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -35,6 +34,22 @@ const PrayerJournal = () => {
     reflection: "",
     style: "traditional"
   }];
+
+  // Calculate prayer statistics
+  const prayerCount = savedPrayers.length;
+  const calculateJourneyDuration = () => {
+    if (savedPrayers.length === 0) return 0;
+    
+    const dates = savedPrayers.map(prayer => new Date(prayer.date));
+    const earliestDate = new Date(Math.min(...dates.map(date => date.getTime())));
+    const today = new Date();
+    const diffTime = today.getTime() - earliestDate.getTime();
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    return diffDays;
+  };
+
+  const journeyDuration = calculateJourneyDuration();
 
   const filteredPrayers = savedPrayers.filter(prayer => {
     const matchesSearch = prayer.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -88,15 +103,21 @@ const PrayerJournal = () => {
       </div>
 
       <div className="p-4 space-y-6 max-w-7xl mx-auto pb-24">
-        {/* Encouragement */}
+        {/* Prayer Statistics */}
         <Card className="bg-sacred-sage-light/30 border-sacred-sage-green/20">
-          <CardContent className="p-4 text-center">
-            <h2 className="font-semibold text-sacred-sage-green mb-2">
-              Your Spiritual Journey
-            </h2>
-            <p className="text-sm sacred-text">
-              Each prayer is a step closer to God. Look back and see how He has been faithful.
-            </p>
+          <CardContent className="p-4">
+            <div className="flex justify-between items-center">
+              <div className="text-left">
+                <p className="text-lg font-semibold text-sacred-sage-green">
+                  Prayers Logged: {prayerCount}
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-lg font-semibold text-sacred-sage-green">
+                  Journey Duration: {journeyDuration} days
+                </p>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
