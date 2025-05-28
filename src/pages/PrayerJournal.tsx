@@ -10,6 +10,7 @@ const PrayerJournal = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStyle, setFilterStyle] = useState("all");
+  const userName = "Friend"; // In real app, would come from user data
 
   // Mock saved prayers
   const savedPrayers = [
@@ -79,16 +80,24 @@ const PrayerJournal = () => {
       {/* Header */}
       <div className="p-0 my-0">
         {/* Main header row */}
-        <div className="flex items-center max-w-7xl mx-auto px-4 py-3 bg-white/80 backdrop-blur-sm border-b border-sacred-golden-tan/20">
-          <div className="flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
-              alt="Dwelling Place Logo" 
-              className="w-8 h-8"
-            />
-            <h1 className="text-xl font-semibold text-sacred-sage-green">
-              Dwelling Place
-            </h1>
+        <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-sage-border/20 p-4">
+          <div className="flex items-center justify-between max-w-7xl mx-auto">
+            <div className="flex items-center gap-3">
+              <img 
+                src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
+                alt="Dwelling Place Logo" 
+                className="w-8 h-8"
+              />
+              <h1 className="text-xl font-semibold text-sacred-sage-green">
+                Dwelling Place
+              </h1>
+            </div>
+            <div className="text-center">
+              <h2 className="text-lg font-semibold text-sacred-sage-green">
+                Welcome home, {userName}
+              </h2>
+              <p className="text-sm text-sacred-sage-green">Grace and peace to you</p>
+            </div>
           </div>
         </div>
         
