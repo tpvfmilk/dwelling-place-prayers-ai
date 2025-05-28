@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowUp, Book, MessageSquare, Settings, Home, Circles } from "lucide-react";
+import { ArrowUp, Book, MessageSquare, Settings, Home, Circle } from "lucide-react";
 
 const PrayerInput = () => {
   const navigate = useNavigate();
@@ -149,7 +148,7 @@ const PrayerInput = () => {
                   onClick={() => navigate("/circles")}
                   className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
                 >
-                  <Circles className="w-5 h-5" />
+                  <Circle className="w-5 h-5" />
                   <span className="text-xs">Circles</span>
                 </Button>
               </div>

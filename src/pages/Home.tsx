@@ -1,8 +1,7 @@
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Book, Home as HomeIcon, MessageSquare, Settings, Circles } from "lucide-react";
+import { Book, Home as HomeIcon, MessageSquare, Settings, Circle } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -159,7 +158,7 @@ const Home = () => {
                 onClick={() => navigate("/circles")}
                 className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
               >
-                <Circles className="w-5 h-5" />
+                <Circle className="w-5 h-5" />
                 <span className="text-xs">Circles</span>
               </Button>
             </div>
