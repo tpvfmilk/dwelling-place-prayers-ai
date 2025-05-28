@@ -1,10 +1,11 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Home, Book, Settings, MessageSquare, Circle } from "lucide-react";
+import { Home, Book, Settings, MessageSquare, Circle, Play } from "lucide-react";
 
 const PrayerJournal = () => {
   const navigate = useNavigate();
@@ -121,38 +122,53 @@ const PrayerJournal = () => {
             filteredPrayers.map(prayer => (
               <Card 
                 key={prayer.id} 
-                className="bg-white/90 hover:bg-white/95 cursor-pointer transition-all border-sacred-golden-tan/20 hover:border-sacred-golden-tan w-full" 
+                className="bg-white/90 hover:bg-white/95 cursor-pointer transition-all border-sacred-golden-tan/20 hover:border-sacred-golden-tan h-full flex flex-col" 
                 onClick={() => navigate("/prayer-display", {
                   state: {
                     prayerId: prayer.id
                   }
                 })}
               >
-                <CardContent className="p-4 space-y-3">
-                  <div className="flex justify-between items-start">
-                    <h3 className="font-semibold text-sacred-sage-green">{prayer.title}</h3>
-                    <span className="text-xs text-sacred-sage-green">
-                      {new Date(prayer.date).toLocaleDateString()}
-                    </span>
+                <CardContent className="p-4 flex flex-col justify-between h-full">
+                  <div className="space-y-3 flex-1">
+                    <div className="flex justify-between items-start">
+                      <h3 className="font-semibold text-sacred-sage-green">{prayer.title}</h3>
+                      <span className="text-xs text-sacred-sage-green">
+                        {new Date(prayer.date).toLocaleDateString()}
+                      </span>
+                    </div>
+                    
+                    <p className="text-sm sacred-text line-clamp-2">
+                      {prayer.preview}
+                    </p>
+                    
+                    {prayer.reflection && (
+                      <div className="bg-sacred-golden-tan/30 p-3 rounded-lg">
+                        <p className="text-xs text-sacred-sage-green font-medium mb-1">Your Reflection:</p>
+                        <p className="text-sm sacred-text italic">"{prayer.reflection}"</p>
+                      </div>
+                    )}
                   </div>
                   
-                  <p className="text-sm sacred-text line-clamp-2">
-                    {prayer.preview}
-                  </p>
-                  
-                  {prayer.reflection && (
-                    <div className="bg-sacred-golden-tan/30 p-3 rounded-lg">
-                      <p className="text-xs text-sacred-sage-green font-medium mb-1">Your Reflection:</p>
-                      <p className="text-sm sacred-text italic">"{prayer.reflection}"</p>
-                    </div>
-                  )}
-                  
-                  <div className="flex justify-between items-center">
-                    <span className={`text-xs font-medium ${getStyleColor(prayer.style)}`}>
+                  <div className="flex justify-between items-center mt-4 pt-3 border-t border-sacred-golden-tan/20">
+                    <span className="text-xs font-medium text-gray-500">
                       {prayer.style.charAt(0).toUpperCase() + prayer.style.slice(1)} style
                     </span>
-                    <Button variant="ghost" size="sm" className="text-sacred-sage-green hover:text-sacred-sage-green/80">
-                      View Prayer
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      className="bg-sacred-golden-tan hover:bg-sacred-golden-tan-dark text-white hover:text-white"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate("/prayer-display", {
+                          state: {
+                            prayerId: prayer.id
+                          }
+                        });
+                      }}
+                    >
+                      <Play className="w-4 h-4 mr-1" />
+                      Play
                     </Button>
                   </div>
                 </CardContent>
