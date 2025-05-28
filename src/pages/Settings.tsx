@@ -25,24 +25,24 @@ const Settings = () => {
   return (
     <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-gold/20 p-4">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-sage-border/20 p-4">
         <div className="max-w-md mx-auto flex items-center">
           <Button
             variant="ghost"
             onClick={() => navigate("/home")}
-            className="text-sacred-stone hover:text-sacred-blue mr-3"
+            className="text-sacred-sage-light hover:text-sacred-sage-green mr-3"
           >
             <ArrowUp className="w-5 h-5 rotate-180" />
           </Button>
-          <h1 className="text-xl font-semibold text-sacred-blue">Settings</h1>
+          <h1 className="text-xl font-semibold text-sacred-sage-green">Settings</h1>
         </div>
       </div>
 
       <div className="p-4 space-y-6 max-w-md mx-auto">
         {/* Profile Section */}
-        <Card className="bg-white/90 backdrop-blur-sm border-sacred-gold/20">
+        <Card className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20">
           <CardHeader>
-            <CardTitle className="flex items-center gap-3 text-sacred-blue">
+            <CardTitle className="flex items-center gap-3 text-sacred-sage-green">
               <User className="w-5 h-5" />
               Profile
             </CardTitle>
@@ -50,22 +50,22 @@ const Settings = () => {
           <CardContent className="space-y-3">
             <div className="flex items-center justify-between">
               <span className="sacred-text">Name</span>
-              <span className="text-sacred-blue font-medium">Friend</span>
+              <span className="text-sacred-sage-green font-medium">Friend</span>
             </div>
-            <Button variant="outline" size="sm" className="w-full border-sacred-gold text-sacred-blue">
+            <Button variant="outline" size="sm" className="w-full border-sacred-golden-tan text-sacred-sage-green hover:bg-sacred-cream">
               Edit Profile
             </Button>
           </CardContent>
         </Card>
 
         {/* Prayer Preferences */}
-        <Card className="bg-white/90 backdrop-blur-sm border-sacred-gold/20">
+        <Card className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20">
           <CardHeader>
-            <CardTitle className="text-sacred-blue">Prayer Preferences</CardTitle>
+            <CardTitle className="text-sacred-sage-green">Prayer Preferences</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <label className="text-sm font-medium text-sacred-blue mb-3 block">
+              <label className="text-sm font-medium text-sacred-sage-green mb-3 block">
                 Default Prayer Style
               </label>
               <div className="space-y-2">
@@ -77,8 +77,8 @@ const Settings = () => {
                       onClick={() => handleStyleChange(style.id)}
                       className={`w-full p-3 rounded-lg border text-left transition-all flex items-center gap-3 ${
                         selectedPrayerStyle === style.id
-                          ? "border-sacred-gold bg-sacred-gold-light text-sacred-blue"
-                          : "border-gray-200 bg-white hover:border-sacred-gold/50"
+                          ? "border-sacred-golden-tan bg-sacred-cream text-sacred-sage-green"
+                          : "border-sacred-sage-border bg-white hover:border-sacred-golden-tan/50"
                       }`}
                     >
                       <Icon className="w-4 h-4" />
@@ -92,26 +92,26 @@ const Settings = () => {
         </Card>
 
         {/* Notifications */}
-        <Card className="bg-white/90 backdrop-blur-sm border-sacred-gold/20">
+        <Card className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20">
           <CardHeader>
-            <CardTitle className="text-sacred-blue">Daily Reminders</CardTitle>
+            <CardTitle className="text-sacred-sage-green">Daily Reminders</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex items-center justify-between">
               <div>
-                <span className="font-medium text-sacred-blue">Morning Blessing</span>
+                <span className="font-medium text-sacred-sage-green">Morning Blessing</span>
                 <p className="text-sm sacred-text">Start your day with encouragement</p>
               </div>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="border-sacred-golden-tan text-sacred-sage-green">
                 Set Time
               </Button>
             </div>
             <div className="flex items-center justify-between">
               <div>
-                <span className="font-medium text-sacred-blue">Evening Reflection</span>
+                <span className="font-medium text-sacred-sage-green">Evening Reflection</span>
                 <p className="text-sm sacred-text">End your day in gratitude</p>
               </div>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="border-sacred-golden-tan text-sacred-sage-green">
                 Set Time
               </Button>
             </div>
@@ -119,25 +119,25 @@ const Settings = () => {
         </Card>
 
         {/* Support */}
-        <Card className="bg-white/90 backdrop-blur-sm border-sacred-gold/20">
+        <Card className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20">
           <CardHeader>
-            <CardTitle className="text-sacred-blue">Support & Resources</CardTitle>
+            <CardTitle className="text-sacred-sage-green">Support & Resources</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <Button variant="ghost" className="w-full justify-start text-sacred-stone hover:text-sacred-blue">
+            <Button variant="ghost" className="w-full justify-start text-sacred-sage-light hover:text-sacred-sage-green">
               Crisis Resources
             </Button>
-            <Button variant="ghost" className="w-full justify-start text-sacred-stone hover:text-sacred-blue">
+            <Button variant="ghost" className="w-full justify-start text-sacred-sage-light hover:text-sacred-sage-green">
               Contact Support
             </Button>
-            <Button variant="ghost" className="w-full justify-start text-sacred-stone hover:text-sacred-blue">
+            <Button variant="ghost" className="w-full justify-start text-sacred-sage-light hover:text-sacred-sage-green">
               Privacy Policy
             </Button>
           </CardContent>
         </Card>
 
         {/* Scripture for Encouragement */}
-        <Card className="bg-sacred-blue-light/30 border-sacred-blue/20">
+        <Card className="bg-sacred-cream/30 border-sacred-sage-border/20">
           <CardContent className="p-4 text-center">
             <p className="scripture-text text-sm">
               "For I know the plans I have for you," declares the Lord, "plans to prosper you 

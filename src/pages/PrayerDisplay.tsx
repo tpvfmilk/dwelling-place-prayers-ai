@@ -39,42 +39,42 @@ In Jesus' name, Amen.`,
   return (
     <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-gold/20 p-4">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-sage-border/20 p-4">
         <div className="max-w-md mx-auto flex items-center justify-between">
           <Button
             variant="ghost"
             onClick={() => navigate("/home")}
-            className="text-sacred-stone hover:text-sacred-blue"
+            className="text-sacred-sage-light hover:text-sacred-sage-green"
           >
             <Home className="w-5 h-5" />
           </Button>
-          <h1 className="text-lg font-semibold text-sacred-blue">Your Prayer</h1>
+          <h1 className="text-lg font-semibold text-sacred-sage-green">Your Prayer</h1>
           <div className="w-10" />
         </div>
       </div>
 
       <div className="p-4 space-y-6 max-w-md mx-auto pb-24">
         {/* Generated Prayer */}
-        <Card className="bg-white/95 backdrop-blur-sm border-sacred-gold/20 shadow-xl">
+        <Card className="bg-white/95 backdrop-blur-sm border-sacred-sage-border/20 shadow-xl">
           <CardContent className="p-6 space-y-4">
-            <h2 className="text-xl font-semibold text-sacred-blue text-center">
+            <h2 className="text-xl font-semibold text-sacred-sage-green text-center">
               {generatedPrayer.title}
             </h2>
             
-            <div className="prayer-text text-sacred-stone whitespace-pre-line leading-relaxed">
+            <div className="prayer-text text-sacred-warm-gray whitespace-pre-line leading-relaxed">
               {generatedPrayer.content}
             </div>
 
             {/* Audio Player Placeholder */}
-            <div className="bg-sacred-blue-light/50 rounded-lg p-4 text-center">
+            <div className="bg-sacred-cream/50 rounded-lg p-4 text-center border border-sacred-sage-border/30">
               <div className="flex items-center justify-center gap-3 mb-2">
-                <div className="w-3 h-3 bg-sacred-blue rounded-full animate-gentle-pulse"></div>
-                <span className="text-sm text-sacred-blue font-medium">Audio Prayer Ready</span>
+                <div className="w-3 h-3 bg-sacred-sage-green rounded-full animate-gentle-pulse"></div>
+                <span className="text-sm text-sacred-sage-green font-medium">Audio Prayer Ready</span>
               </div>
               <Button 
                 variant="outline" 
                 size="sm"
-                className="border-sacred-blue text-sacred-blue hover:bg-sacred-blue hover:text-white"
+                className="border-sacred-golden-tan text-sacred-sage-green hover:bg-sacred-golden-tan hover:text-white"
               >
                 Play Prayer Audio
               </Button>
@@ -83,12 +83,12 @@ In Jesus' name, Amen.`,
         </Card>
 
         {/* Scripture Reference */}
-        <Card className="bg-sacred-blue-light/30 border-sacred-blue/20">
+        <Card className="bg-sacred-cream/30 border-sacred-sage-border/20">
           <CardContent className="p-4">
             <div className="flex items-start gap-3">
-              <BookOpen className="w-5 h-5 text-sacred-blue mt-1 flex-shrink-0" />
+              <BookOpen className="w-5 h-5 text-sacred-sage-green mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-sacred-blue mb-2">
+                <h3 className="font-semibold text-sacred-sage-green mb-2">
                   {generatedPrayer.scripture}
                 </h3>
                 <p className="scripture-text text-sm">
@@ -100,16 +100,16 @@ In Jesus' name, Amen.`,
         </Card>
 
         {/* Personal Reflection */}
-        <Card className="bg-white/90 backdrop-blur-sm border-sacred-gold/20">
+        <Card className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20">
           <CardContent className="p-4 space-y-3">
-            <h3 className="text-sm font-medium text-sacred-blue">Add Your Reflection</h3>
+            <h3 className="text-sm font-medium text-sacred-sage-green">Add Your Reflection</h3>
             <Textarea
               value={reflection}
               onChange={(e) => setReflection(e.target.value)}
               placeholder="How does this prayer speak to your heart? What is God showing you?"
-              className="min-h-[80px] border-sacred-gold/30 focus:border-sacred-gold resize-none"
+              className="min-h-[80px] border-sacred-sage-border/30 focus:border-sacred-golden-tan resize-none"
             />
-            <p className="text-xs text-sacred-stone">
+            <p className="text-xs text-sacred-sage-light">
               Optional - capture how God is speaking to you through this prayer
             </p>
           </CardContent>
@@ -120,7 +120,7 @@ In Jesus' name, Amen.`,
           <Button 
             onClick={handleSavePrayer}
             disabled={isSaved}
-            className="w-full bg-prayer-gradient hover:opacity-90 text-white font-medium py-4"
+            className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-4"
           >
             <Book className="w-5 h-5 mr-2" />
             {isSaved ? "Saved to Journal" : "Save to Prayer Journal"}
@@ -129,7 +129,7 @@ In Jesus' name, Amen.`,
           <Button 
             variant="outline"
             onClick={() => navigate("/prayer-input")}
-            className="w-full border-sacred-gold text-sacred-blue hover:bg-sacred-gold-light"
+            className="w-full border-sacred-golden-tan text-sacred-sage-green hover:bg-sacred-cream"
           >
             <ArrowUp className="w-5 h-5 mr-2" />
             Create Another Prayer

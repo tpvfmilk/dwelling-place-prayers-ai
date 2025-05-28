@@ -35,7 +35,7 @@ const PrivacyTrust = () => {
       <div className="w-full max-w-md mx-auto pt-8 pb-4 space-y-6">
         {/* Header */}
         <div className="text-center space-y-3">
-          <h1 className="text-2xl font-bold text-sacred-blue">
+          <h1 className="text-2xl font-bold text-sacred-sage-green">
             Privacy & Trust
           </h1>
           <p className="sacred-text">
@@ -48,14 +48,14 @@ const PrivacyTrust = () => {
           {privacyPoints.map((point, index) => {
             const Icon = point.icon;
             return (
-              <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-gold/20">
+              <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20">
                 <CardContent className="p-4">
                   <div className="flex items-start gap-3">
-                    <div className="bg-sacred-blue-light p-2 rounded-full">
-                      <Icon className="w-4 h-4 text-sacred-blue" />
+                    <div className="bg-sacred-cream p-2 rounded-full border border-sacred-sage-border/30">
+                      <Icon className="w-4 h-4 text-sacred-sage-green" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-sacred-blue mb-1">
+                      <h3 className="font-semibold text-sacred-sage-green mb-1">
                         {point.title}
                       </h3>
                       <p className="text-sm sacred-text">
@@ -70,7 +70,7 @@ const PrivacyTrust = () => {
         </div>
 
         {/* Scripture */}
-        <Card className="bg-sacred-blue-light/30 border-sacred-blue/20">
+        <Card className="bg-sacred-cream/30 border-sacred-sage-border/20">
           <CardContent className="p-4 text-center">
             <p className="scripture-text">
               "The Lord your God is with you, the Mighty Warrior who saves. 
@@ -83,12 +83,12 @@ const PrivacyTrust = () => {
         <div className="space-y-3 pt-4">
           <Button 
             onClick={() => navigate("/home")}
-            className="w-full bg-prayer-gradient hover:opacity-90 text-white font-medium py-6"
+            className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-6"
           >
             Enter Dwelling Place
           </Button>
           <div className="text-center">
-            <button className="text-xs text-sacred-stone hover:text-sacred-blue transition-colors underline">
+            <button className="text-xs text-sacred-sage-light hover:text-sacred-sage-green transition-colors underline">
               Read full privacy policy
             </button>
           </div>

@@ -46,7 +46,7 @@ const PrayerStyleSelection = () => {
       <div className="w-full max-w-md mx-auto pt-8 pb-4 space-y-6">
         {/* Header */}
         <div className="text-center space-y-3">
-          <h1 className="text-2xl font-bold text-sacred-blue">
+          <h1 className="text-2xl font-bold text-sacred-sage-green">
             Choose Your Prayer Style
           </h1>
           <p className="sacred-text">
@@ -63,14 +63,14 @@ const PrayerStyleSelection = () => {
                 key={style.id}
                 className={`cursor-pointer transition-all duration-200 ${
                   selectedStyle === style.id 
-                    ? "border-sacred-gold bg-sacred-gold-light/50 shadow-lg" 
-                    : "border-gray-200 hover:border-sacred-gold/50 bg-white/80"
+                    ? "border-sacred-golden-tan bg-sacred-cream shadow-lg" 
+                    : "border-sacred-sage-border hover:border-sacred-golden-tan/50 bg-white/80"
                 }`}
                 onClick={() => setSelectedStyle(style.id)}
               >
                 <CardHeader className="pb-3">
-                  <CardTitle className="flex items-center gap-3 text-lg">
-                    <Icon className="w-5 h-5 text-sacred-blue" />
+                  <CardTitle className="flex items-center gap-3 text-lg text-sacred-sage-green">
+                    <Icon className="w-5 h-5" />
                     {style.name}
                   </CardTitle>
                 </CardHeader>
@@ -78,7 +78,7 @@ const PrayerStyleSelection = () => {
                   <p className="text-sm sacred-text mb-2">
                     {style.description}
                   </p>
-                  <p className="text-xs text-sacred-blue italic">
+                  <p className="text-xs text-sacred-terracotta italic">
                     {style.example}
                   </p>
                 </CardContent>
@@ -92,7 +92,7 @@ const PrayerStyleSelection = () => {
           <Button 
             onClick={handleContinue}
             disabled={!selectedStyle}
-            className="w-full bg-prayer-gradient hover:opacity-90 text-white font-medium py-6 disabled:opacity-50"
+            className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-6 disabled:opacity-50"
           >
             Continue
           </Button>
@@ -102,7 +102,7 @@ const PrayerStyleSelection = () => {
         <div className="text-center">
           <button 
             onClick={() => navigate("/privacy")}
-            className="text-sm text-sacred-stone hover:text-sacred-blue transition-colors"
+            className="text-sm text-sacred-sage-light hover:text-sacred-sage-green transition-colors"
           >
             I'll choose later
           </button>

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,16 +63,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// New earthy, sacred color palette
 				sacred: {
-					gold: '#D4AF37',
-					'gold-light': '#F4E4BC',
-					'gold-dark': '#B8860B',
-					blue: '#4A6FA5',
-					'blue-light': '#E8F2FF',
-					'blue-dark': '#2C5282',
-					cream: '#FDF8F0',
-					stone: '#8B7355',
-					'stone-light': '#F5F1EB'
+					cream: '#F8F6F3',
+					'sage-green': '#4A5D23',
+					'sage-light': '#7A8B5C',
+					'sage-border': '#A8B88A',
+					'golden-tan': '#D4A574',
+					'golden-tan-dark': '#C19660',
+					terracotta: '#B87333',
+					'warm-gray': '#4A4644',
+					'warm-red': '#C85A54'
 				}
 			},
 			borderRadius: {
@@ -122,9 +124,9 @@ export default {
 				'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'sacred-gradient': 'linear-gradient(135deg, #FDF8F0 0%, #E8F2FF 50%, #F4E4BC 100%)',
-				'prayer-gradient': 'linear-gradient(180deg, #4A6FA5 0%, #2C5282 100%)',
-				'gold-gradient': 'linear-gradient(135deg, #F4E4BC 0%, #D4AF37 100%)'
+				'sacred-gradient': 'linear-gradient(135deg, #F8F6F3 0%, #FFFFFF 50%, #F0EBE5 100%)',
+				'prayer-gradient': 'linear-gradient(180deg, #D4A574 0%, #C19660 100%)',
+				'sage-gradient': 'linear-gradient(135deg, #7A8B5C 0%, #4A5D23 100%)'
 			}
 		}
 	},

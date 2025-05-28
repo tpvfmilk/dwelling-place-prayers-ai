@@ -27,19 +27,19 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-gold/20 p-4">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-sage-border/20 p-4">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <div>
-            <h1 className="text-lg font-semibold text-sacred-blue">
+            <h1 className="text-lg font-semibold text-sacred-sage-green">
               Welcome home, {userName}
             </h1>
-            <p className="text-sm text-sacred-stone">Grace and peace to you</p>
+            <p className="text-sm text-sacred-sage-light">Grace and peace to you</p>
           </div>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => navigate("/settings")}
-            className="text-sacred-stone hover:text-sacred-blue"
+            className="text-sacred-sage-light hover:text-sacred-sage-green"
           >
             <Settings className="w-5 h-5" />
           </Button>
@@ -48,7 +48,7 @@ const Home = () => {
 
       <div className="p-4 space-y-6 max-w-md mx-auto">
         {/* Daily Blessing */}
-        <Card className="bg-gold-gradient border-sacred-gold shadow-lg">
+        <Card className="bg-prayer-gradient border-sacred-golden-tan shadow-lg">
           <CardContent className="p-6 text-center">
             <h2 className="text-lg font-semibold text-white mb-2">
               Today's Blessing
@@ -68,13 +68,13 @@ const Home = () => {
         </Card>
 
         {/* Main Prayer Action */}
-        <Card className="bg-white/90 backdrop-blur-sm border-sacred-blue/20 shadow-xl">
+        <Card className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 shadow-xl">
           <CardContent className="p-6 text-center space-y-4">
-            <div className="w-16 h-16 mx-auto bg-sacred-blue-light rounded-full flex items-center justify-center">
-              <MessageSquare className="w-8 h-8 text-sacred-blue" />
+            <div className="w-16 h-16 mx-auto bg-sacred-cream rounded-full flex items-center justify-center border border-sacred-sage-border/30">
+              <MessageSquare className="w-8 h-8 text-sacred-sage-green" />
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-sacred-blue mb-2">
+              <h2 className="text-xl font-semibold text-sacred-sage-green mb-2">
                 What's on your heart today?
               </h2>
               <p className="sacred-text text-sm">
@@ -83,7 +83,7 @@ const Home = () => {
             </div>
             <Button 
               onClick={() => navigate("/prayer-input")}
-              className="w-full bg-prayer-gradient hover:opacity-90 text-white font-medium py-4 text-lg"
+              className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white font-medium py-4 text-lg"
             >
               Share your heart with God
             </Button>
@@ -92,19 +92,19 @@ const Home = () => {
 
         {/* Recent Prayers */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-sacred-blue">Recent Prayers</h3>
+          <h3 className="text-lg font-semibold text-sacred-sage-green">Recent Prayers</h3>
           {recentPrayers.length > 0 ? (
             <div className="space-y-3">
               {recentPrayers.map((prayer) => (
                 <Card 
                   key={prayer.id} 
-                  className="bg-white/80 hover:bg-white/90 cursor-pointer transition-all"
+                  className="bg-white/80 hover:bg-white/90 cursor-pointer transition-all border-sacred-sage-border/20"
                   onClick={() => navigate("/prayer-display", { state: { prayerId: prayer.id } })}
                 >
                   <CardContent className="p-4">
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-medium text-sacred-blue">{prayer.title}</h4>
-                      <span className="text-xs text-sacred-stone">{prayer.time}</span>
+                      <h4 className="font-medium text-sacred-sage-green">{prayer.title}</h4>
+                      <span className="text-xs text-sacred-sage-light">{prayer.time}</span>
                     </div>
                     <p className="text-sm sacred-text line-clamp-2">
                       {prayer.preview}
@@ -115,15 +115,15 @@ const Home = () => {
               <Button 
                 variant="outline" 
                 onClick={() => navigate("/journal")}
-                className="w-full border-sacred-gold text-sacred-blue hover:bg-sacred-gold-light"
+                className="w-full border-sacred-golden-tan text-sacred-sage-green hover:bg-sacred-cream"
               >
                 View All Prayers
               </Button>
             </div>
           ) : (
-            <Card className="bg-white/80">
+            <Card className="bg-white/80 border-sacred-sage-border/20">
               <CardContent className="p-6 text-center">
-                <Book className="w-12 h-12 mx-auto text-sacred-stone/50 mb-3" />
+                <Book className="w-12 h-12 mx-auto text-sacred-sage-light/50 mb-3" />
                 <p className="sacred-text">
                   Your prayer journey begins here. Share what's on your heart to create your first prayer.
                 </p>
@@ -134,11 +134,11 @@ const Home = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-gold/20 p-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-sage-border/20 p-4">
         <div className="flex justify-center space-x-8 max-w-md mx-auto">
           <Button 
             variant="ghost" 
-            className="flex flex-col items-center gap-1 text-sacred-blue"
+            className="flex flex-col items-center gap-1 text-sacred-sage-green"
           >
             <HomeIcon className="w-5 h-5" />
             <span className="text-xs">Home</span>
@@ -146,7 +146,7 @@ const Home = () => {
           <Button 
             variant="ghost" 
             onClick={() => navigate("/journal")}
-            className="flex flex-col items-center gap-1 text-sacred-stone hover:text-sacred-blue"
+            className="flex flex-col items-center gap-1 text-sacred-sage-light hover:text-sacred-sage-green"
           >
             <Book className="w-5 h-5" />
             <span className="text-xs">Journal</span>
