@@ -48,7 +48,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="p-4 space-y-6 max-w-md mx-auto">
+      <div className="p-4 space-y-6 max-w-2xl mx-auto">
         {/* Daily Blessing */}
         <Card className="bg-prayer-gradient border-sacred-golden-tan shadow-lg">
           <CardContent className="p-6 text-center">
