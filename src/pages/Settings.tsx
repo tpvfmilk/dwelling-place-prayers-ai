@@ -187,7 +187,7 @@ const Settings = () => {
             <Button 
               variant="ghost" 
               onClick={() => navigate("/home")} 
-              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:bg-sacred-cream/50 hover:text-sacred-sage-green/80"
             >
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
@@ -196,7 +196,7 @@ const Settings = () => {
               <Button 
                 variant="ghost" 
                 onClick={() => navigate("/journal")}
-                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:bg-sacred-cream/50 hover:text-sacred-sage-green/80"
               >
                 <Book className="w-5 h-5" />
                 <span className="text-xs">Journal</span>
@@ -204,7 +204,7 @@ const Settings = () => {
               <Button 
                 variant="ghost" 
                 onClick={() => navigate("/circles")}
-                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:bg-sacred-cream/50 hover:text-sacred-sage-green/80"
               >
                 <Circle className="w-5 h-5" />
                 <span className="text-xs">Circles</span>
@@ -212,7 +212,7 @@ const Settings = () => {
             </div>
             <Button
               variant="ghost"
-              className="flex flex-col items-center gap-1 text-sacred-sage-green"
+              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:bg-sacred-cream/50 hover:text-sacred-sage-green/80"
             >
               <SettingsIcon className="w-5 h-5" />
               <span className="text-xs">Settings</span>
