@@ -59,7 +59,7 @@
   }
 
   .sacred-text {
-    @apply text-warm-gray leading-relaxed;
+    @apply text-sacred-warm-gray leading-relaxed;
   }
 
   .prayer-text {
