@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -60,7 +61,7 @@ const Settings = () => {
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex items-center justify-between">
-              <span className="sacred-text">Name</span>
+              <span className="text-sacred-sage-green">Name</span>
               <span className="text-sacred-sage-green font-medium">Friend</span>
             </div>
             <Button 
@@ -93,7 +94,7 @@ const Settings = () => {
                       className={`w-full p-3 rounded-lg border text-left transition-all flex items-center gap-3 ${
                         selectedPrayerStyle === style.id
                           ? "border-sacred-golden-tan bg-sacred-cream text-sacred-sage-green"
-                          : "border-sacred-sage-border bg-white hover:border-sacred-golden-tan/50"
+                          : "border-sacred-sage-border bg-white hover:border-sacred-golden-tan/50 text-sacred-sage-green"
                       }`}
                     >
                       <Icon className="w-4 h-4" />
@@ -115,7 +116,7 @@ const Settings = () => {
             <div className="flex items-center justify-between">
               <div>
                 <span className="font-medium text-sacred-sage-green">Morning Blessing</span>
-                <p className="text-sm sacred-text">Start your day with encouragement</p>
+                <p className="text-sm text-sacred-sage-green">Start your day with encouragement</p>
               </div>
               <Button 
                 variant="outline" 
@@ -128,7 +129,7 @@ const Settings = () => {
             <div className="flex items-center justify-between">
               <div>
                 <span className="font-medium text-sacred-sage-green">Evening Reflection</span>
-                <p className="text-sm sacred-text">End your day in gratitude</p>
+                <p className="text-sm text-sacred-sage-green">End your day in gratitude</p>
               </div>
               <Button 
                 variant="outline" 
