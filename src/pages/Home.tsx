@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Book, Home as HomeIcon, MessageSquare, Settings, Circle, Play } from "lucide-react";
+
 const Home = () => {
   const navigate = useNavigate();
   const userName = "Friend"; // In real app, would come from user data
@@ -43,23 +44,19 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="p-4 space-y-6 max-w-7xl mx-auto">
-        {/* Daily Blessing */}
-        <Card className="bg-[#d2b48c] border-sacred-golden-tan shadow-lg">
-          <CardContent className="p-6 text-center">
-            <h2 className="text-lg font-semibold text-white mb-2">
-              Today's Blessing
-            </h2>
-            <p className="text-white/90 text-sm mb-4">
-              "May the Lord bless you and keep you; may the Lord make his face shine on you 
-              and be gracious to you."
-            </p>
-            <Button variant="secondary" size="sm" className="bg-white/20 hover:bg-white/30 text-white border-white/30">
-              Listen to Audio
-            </Button>
-          </CardContent>
-        </Card>
+      {/* Today's Blessing Sub-header */}
+      <div className="px-4 py-[56px]">
+        <div className="text-center max-w-7xl mx-auto">
+          <h2 className="text-sacred-sage-green mb-1 text-4xl font-semibold">
+            Today's Blessing
+          </h2>
+          <p className="text-sacred-sage-green text-xl">
+            "May the Lord bless you and keep you; may the Lord make his face shine on you and be gracious to you."
+          </p>
+        </div>
+      </div>
 
+      <div className="p-4 space-y-6 max-w-7xl mx-auto">
         {/* Main Prayer Action */}
         <Card className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 shadow-xl">
           <CardContent className="p-6 text-center space-y-4 my-[39px] py-[48px]">
@@ -173,4 +170,5 @@ const Home = () => {
       </div>
     </div>;
 };
+
 export default Home;
