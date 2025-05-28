@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Book, Home as HomeIcon, MessageSquare, Settings, Circle, Play } from "lucide-react";
+import { Book, Home as HomeIcon, MessageSquare, Settings, Circle, Play, Speaker } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -50,9 +50,13 @@ const Home = () => {
           <h2 className="text-sacred-sage-green mb-1 text-4xl font-semibold">
             Today's Blessing
           </h2>
-          <p className="text-sacred-sage-green text-xl">
+          <p className="text-sacred-sage-green text-xl mb-4">
             "May the Lord bless you and keep you; may the Lord make his face shine on you and be gracious to you."
           </p>
+          <Button className="bg-[#d2b48c] hover:bg-[#c19660] text-white">
+            <Speaker className="w-4 h-4 mr-2" />
+            Listen to Audio
+          </Button>
         </div>
       </div>
 
