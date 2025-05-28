@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -90,7 +89,7 @@ const PrayerInput = () => {
                     className={`p-3 rounded-lg border text-center transition-all ${
                       selectedStyle === style.id
                         ? "border-sacred-golden-tan bg-sacred-cream text-sacred-sage-green"
-                        : "border-sacred-sage-border bg-white hover:border-sacred-golden-tan/50"
+                        : "border-sacred-sage-border bg-white hover:bg-sacred-cream hover:border-sacred-golden-tan/50"
                     }`}
                   >
                     <Icon className="w-4 h-4 mx-auto mb-1" />

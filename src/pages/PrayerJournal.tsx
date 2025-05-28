@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -157,7 +156,10 @@ const PrayerJournal = () => {
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="bg-sacred-golden-tan hover:bg-sacred-golden-tan-dark text-white hover:text-white"
+                      className="text-white border-none"
+                      style={{ backgroundColor: '#d2b48c' }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#c19a6b'}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#d2b48c'}
                       onClick={(e) => {
                         e.stopPropagation();
                         navigate("/prayer-display", {
@@ -214,6 +216,7 @@ const PrayerJournal = () => {
             <div className="flex items-center gap-8">
               <Button 
                 variant="ghost" 
+                onClick={() => navigate("/journal")}
                 className="flex flex-col items-center gap-1 text-sacred-sage-green"
               >
                 <Book className="w-5 h-5" />

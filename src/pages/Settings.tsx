@@ -97,7 +97,7 @@ const Settings = () => {
                       className={`w-full p-3 rounded-lg border text-left transition-all flex items-center gap-3 ${
                         selectedPrayerStyle === style.id
                           ? "border-sacred-golden-tan bg-sacred-cream text-sacred-sage-green"
-                          : "border-sacred-sage-border bg-white hover:border-sacred-golden-tan/50 text-sacred-sage-green"
+                          : "border-sacred-sage-border bg-white hover:bg-sacred-cream hover:border-sacred-golden-tan/50 text-sacred-sage-green"
                       }`}
                     >
                       <Icon className="w-4 h-4" />
@@ -192,22 +192,24 @@ const Settings = () => {
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </Button>
-            <Button 
-              variant="ghost" 
-              onClick={() => navigate("/journal")}
-              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
-            >
-              <Book className="w-5 h-5" />
-              <span className="text-xs">Journal</span>
-            </Button>
-            <Button 
-              variant="ghost" 
-              onClick={() => navigate("/circles")}
-              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
-            >
-              <Circle className="w-5 h-5" />
-              <span className="text-xs">Circles</span>
-            </Button>
+            <div className="flex items-center gap-8">
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate("/journal")}
+                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+              >
+                <Book className="w-5 h-5" />
+                <span className="text-xs">Journal</span>
+              </Button>
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate("/circles")}
+                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+              >
+                <Circle className="w-5 h-5" />
+                <span className="text-xs">Circles</span>
+              </Button>
+            </div>
             <Button
               variant="ghost"
               className="flex flex-col items-center gap-1 text-sacred-sage-green"
