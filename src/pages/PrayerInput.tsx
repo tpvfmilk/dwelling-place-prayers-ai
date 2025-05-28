@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -47,7 +48,7 @@ const PrayerInput = () => {
             <h2 className="text-xl font-semibold text-sacred-sage-green">
               What's on your heart today?
             </h2>
-            <p className="text-sm text-sacred-sage-light">
+            <p className="text-sm text-sacred-sage-green">
               Share freely - God already knows
             </p>
           </div>
@@ -69,7 +70,7 @@ const PrayerInput = () => {
                 className="min-h-[120px] border-sacred-sage-border/30 focus:border-sacred-golden-tan resize-none text-base bg-white"
               />
             </div>
-            <div className="text-xs text-sacred-sage-light">
+            <div className="text-xs text-sacred-sage-green">
               Express your heart freely - there's no wrong way to pray
             </div>
           </CardContent>
