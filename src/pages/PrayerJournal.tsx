@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Home, Book, Settings, MessageSquare, Circle } from "lucide-react";
 
 const PrayerJournal = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
+  const [filterStyle, setFilterStyle] = useState("all");
 
   // Mock saved prayers
   const savedPrayers = [{
@@ -33,10 +35,12 @@ const PrayerJournal = () => {
     style: "traditional"
   }];
 
-  const filteredPrayers = savedPrayers.filter(prayer => 
-    prayer.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    prayer.preview.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredPrayers = savedPrayers.filter(prayer => {
+    const matchesSearch = prayer.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      prayer.preview.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesFilter = filterStyle === "all" || prayer.style === filterStyle;
+    return matchesSearch && matchesFilter;
+  });
 
   const getStyleColor = (style: string) => {
     switch (style) {
@@ -90,14 +94,25 @@ const PrayerJournal = () => {
           </CardContent>
         </Card>
 
-        {/* Search */}
-        <div className="space-y-3">
+        {/* Search and Filter */}
+        <div className="flex items-center gap-4">
           <Input 
             value={searchTerm} 
             onChange={e => setSearchTerm(e.target.value)} 
             placeholder="Search your prayers..." 
-            className="border-sacred-golden-tan/30 focus:border-sacred-golden-tan bg-white max-w-md mx-auto block" 
+            className="border-sacred-golden-tan/30 focus:border-sacred-golden-tan bg-white flex-1 placeholder:text-gray-400" 
           />
+          <Select value={filterStyle} onValueChange={setFilterStyle}>
+            <SelectTrigger className="w-48 border-sacred-golden-tan/30 focus:border-sacred-golden-tan bg-white">
+              <SelectValue placeholder="Filter by style" />
+            </SelectTrigger>
+            <SelectContent className="bg-white border-sacred-golden-tan/30">
+              <SelectItem value="all">All Styles</SelectItem>
+              <SelectItem value="conversational">Conversational</SelectItem>
+              <SelectItem value="scripture">Scripture-based</SelectItem>
+              <SelectItem value="traditional">Traditional</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         {/* Prayers Grid */}
@@ -149,10 +164,10 @@ const PrayerJournal = () => {
                 <CardContent className="p-8 text-center">
                   <Book className="w-16 h-16 mx-auto text-sacred-sage-green/50 mb-4" />
                   <h3 className="font-semibold text-sacred-sage-green mb-2">
-                    {searchTerm ? "No prayers found" : "Start your prayer journey"}
+                    {searchTerm || filterStyle !== "all" ? "No prayers found" : "Start your prayer journey"}
                   </h3>
                   <p className="sacred-text text-sm mb-4">
-                    {searchTerm ? "Try a different search term or create a new prayer" : "Your saved prayers will appear here as you create them"}
+                    {searchTerm || filterStyle !== "all" ? "Try a different search term or filter" : "Your saved prayers will appear here as you create them"}
                   </p>
                   <Button 
                     onClick={() => navigate("/prayer-input")} 
