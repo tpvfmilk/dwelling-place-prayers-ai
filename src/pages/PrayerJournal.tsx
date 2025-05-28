@@ -46,7 +46,7 @@ const PrayerJournal = () => {
   };
   return <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-golden-tan/20 p-4 my-0 py-[84px]">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-golden-tan/20 p-4 my-0 py-[16px]">
         <div className="max-w-md mx-auto">
           <h1 className="text-xl font-semibold text-sacred-sage-green text-center mb-1">
             Your Prayer Journal
