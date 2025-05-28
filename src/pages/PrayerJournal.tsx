@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -59,8 +58,9 @@ const PrayerJournal = () => {
   return (
     <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-golden-tan/20 p-4 my-0 py-[16px]">
-        <div className="flex items-center justify-between max-w-7xl mx-auto px-4">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-golden-tan/20 p-0 my-0">
+        {/* Main header row */}
+        <div className="flex items-center max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center gap-3">
             <img 
               src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
@@ -71,7 +71,11 @@ const PrayerJournal = () => {
               Dwelling Place
             </h1>
           </div>
-          <div className="text-center">
+        </div>
+        
+        {/* Sub-header row */}
+        <div className="bg-white/60 border-t border-sacred-golden-tan/10 px-4 py-2">
+          <div className="text-center max-w-7xl mx-auto">
             <h2 className="text-xl font-semibold text-sacred-sage-green mb-1">
               Your Prayer Journal
             </h2>
