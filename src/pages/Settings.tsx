@@ -52,7 +52,11 @@ const Settings = () => {
               <span className="sacred-text">Name</span>
               <span className="text-sacred-sage-green font-medium">Friend</span>
             </div>
-            <Button variant="outline" size="sm" className="w-full border-sacred-golden-tan text-sacred-sage-green hover:bg-sacred-cream">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white border-none"
+            >
               Edit Profile
             </Button>
           </CardContent>
@@ -102,7 +106,11 @@ const Settings = () => {
                 <span className="font-medium text-sacred-sage-green">Morning Blessing</span>
                 <p className="text-sm sacred-text">Start your day with encouragement</p>
               </div>
-              <Button variant="outline" size="sm" className="border-sacred-golden-tan text-sacred-sage-green">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white border-none"
+              >
                 Set Time
               </Button>
             </div>
@@ -111,7 +119,11 @@ const Settings = () => {
                 <span className="font-medium text-sacred-sage-green">Evening Reflection</span>
                 <p className="text-sm sacred-text">End your day in gratitude</p>
               </div>
-              <Button variant="outline" size="sm" className="border-sacred-golden-tan text-sacred-sage-green">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white border-none"
+              >
                 Set Time
               </Button>
             </div>
