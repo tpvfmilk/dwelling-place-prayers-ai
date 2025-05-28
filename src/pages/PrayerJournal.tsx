@@ -59,9 +59,9 @@ const PrayerJournal = () => {
   return (
     <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
-      <div className="border-b border-sacred-golden-tan/20 p-0 my-0">
+      <div className="p-0 my-0">
         {/* Main header row */}
-        <div className="flex items-center max-w-7xl mx-auto px-4 py-3 bg-white/80 backdrop-blur-sm">
+        <div className="flex items-center max-w-7xl mx-auto px-4 py-3 bg-white/80 backdrop-blur-sm border-b border-sacred-golden-tan/20">
           <div className="flex items-center gap-3">
             <img 
               src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
@@ -75,7 +75,7 @@ const PrayerJournal = () => {
         </div>
         
         {/* Sub-header row */}
-        <div className="bg-transparent px-4 py-2">
+        <div className="px-4 py-2">
           <div className="text-center max-w-7xl mx-auto">
             <h2 className="text-xl font-semibold text-sacred-sage-green mb-1">
               Your Prayer Journal
