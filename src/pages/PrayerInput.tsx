@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowUp, Book, MessageSquare, Settings } from "lucide-react";
+import { ArrowUp, Book, MessageSquare, Settings, Home } from "lucide-react";
 
 const PrayerInput = () => {
   const navigate = useNavigate();
@@ -102,7 +102,7 @@ const PrayerInput = () => {
 
       {/* Fixed Bottom Action */}
       <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-sage-border/20 p-4">
-        <div className="max-w-md mx-auto">
+        <div className="max-w-md mx-auto space-y-3">
           <Button 
             onClick={handleCreatePrayer}
             disabled={!heartShare.trim()}
@@ -111,6 +111,36 @@ const PrayerInput = () => {
             <ArrowUp className="w-5 h-5 mr-2" />
             Create My Prayer
           </Button>
+          
+          {/* Bottom Navigation */}
+          <div className="flex justify-between items-center">
+            <Button
+              variant="ghost"
+              onClick={() => navigate("/settings")}
+              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+            >
+              <Settings className="w-5 h-5" />
+              <span className="text-xs">Settings</span>
+            </Button>
+            <div className="flex space-x-8">
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate("/home")} 
+                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+              >
+                <Home className="w-5 h-5" />
+                <span className="text-xs">Home</span>
+              </Button>
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate("/journal")}
+                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+              >
+                <Book className="w-5 h-5" />
+                <span className="text-xs">Journal</span>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { BookOpen, ArrowUp, Home, Book } from "lucide-react";
+import { BookOpen, ArrowUp, Home, Book, Settings } from "lucide-react";
 
 const PrayerDisplay = () => {
   const location = useLocation();
@@ -40,16 +39,8 @@ In Jesus' name, Amen.`,
     <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-sage-border/20 p-4">
-        <div className="max-w-md mx-auto flex items-center justify-between">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/home")}
-            className="text-sacred-sage-light hover:text-sacred-sage-green"
-          >
-            <Home className="w-5 h-5" />
-          </Button>
-          <h1 className="text-lg font-semibold text-sacred-sage-green">Your Prayer</h1>
-          <div className="w-10" />
+        <div className="max-w-md mx-auto">
+          <h1 className="text-lg font-semibold text-sacred-sage-green text-center">Your Prayer</h1>
         </div>
       </div>
 
@@ -132,6 +123,38 @@ In Jesus' name, Amen.`,
             <ArrowUp className="w-5 h-5 mr-2" />
             Create Another Prayer
           </Button>
+        </div>
+      </div>
+
+      {/* Bottom Navigation */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-sage-border/20 p-4">
+        <div className="flex justify-between items-center max-w-md mx-auto">
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/settings")}
+            className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+          >
+            <Settings className="w-5 h-5" />
+            <span className="text-xs">Settings</span>
+          </Button>
+          <div className="flex space-x-8">
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate("/home")} 
+              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+            >
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate("/journal")}
+              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+            >
+              <Book className="w-5 h-5" />
+              <span className="text-xs">Journal</span>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
