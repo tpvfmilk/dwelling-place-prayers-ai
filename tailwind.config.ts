@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// New earthy, sacred color palette
+				// New earthy, sacred color palette with lighter pastel brown
 				sacred: {
 					cream: '#F8F6F3',
 					'sage-green': '#4A5D23',
@@ -71,7 +70,7 @@ export default {
 					'sage-border': '#A8B88A',
 					'golden-tan': '#D4A574',
 					'golden-tan-dark': '#C19660',
-					terracotta: '#B87333',
+					terracotta: '#D4B5A0',
 					'warm-gray': '#4A4644',
 					'warm-red': '#C85A54'
 				}
