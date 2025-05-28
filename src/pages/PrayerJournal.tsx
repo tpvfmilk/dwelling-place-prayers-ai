@@ -79,12 +79,10 @@ const PrayerJournal = () => {
         {/* Sub-header row */}
         <div className="px-4 py-[56px]">
           <div className="text-center max-w-7xl mx-auto">
-            <h2 className="text-xl font-semibold text-sacred-sage-green mb-1">
+            <h2 className="text-sacred-sage-green mb-1 text-4xl font-semibold">
               Your Prayer Journal
             </h2>
-            <p className="text-sm text-sacred-sage-green">
-              "Store up these words of mine in your hearts" - Deuteronomy 11:18
-            </p>
+            <p className="text-sacred-sage-green text-xl">&quot;Write them on the tablet of your heart&quot;  - Proverbs 3:3</p>
           </div>
         </div>
       </div>
