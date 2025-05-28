@@ -55,12 +55,12 @@ const PrayerJournal = () => {
   return (
     <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-gold/20 p-4">
+      <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-golden-tan/20 p-4">
         <div className="max-w-md mx-auto">
-          <h1 className="text-xl font-semibold text-sacred-blue text-center mb-1">
+          <h1 className="text-xl font-semibold text-sacred-sage-green text-center mb-1">
             Your Prayer Journal
           </h1>
-          <p className="text-sm text-sacred-stone text-center">
+          <p className="text-sm text-sacred-warm-gray text-center">
             "Store up these words of mine in your hearts" - Deuteronomy 11:18
           </p>
         </div>
@@ -68,9 +68,9 @@ const PrayerJournal = () => {
 
       <div className="p-4 space-y-6 max-w-md mx-auto pb-24">
         {/* Encouragement */}
-        <Card className="bg-sacred-blue-light/30 border-sacred-blue/20">
+        <Card className="bg-sacred-sage-light/30 border-sacred-sage-green/20">
           <CardContent className="p-4 text-center">
-            <h2 className="font-semibold text-sacred-blue mb-2">
+            <h2 className="font-semibold text-sacred-sage-green mb-2">
               Your Spiritual Journey
             </h2>
             <p className="text-sm sacred-text">
@@ -85,7 +85,7 @@ const PrayerJournal = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search your prayers..."
-            className="border-sacred-gold/30 focus:border-sacred-gold"
+            className="border-sacred-golden-tan/30 focus:border-sacred-golden-tan bg-white"
           />
         </div>
 
@@ -95,13 +95,13 @@ const PrayerJournal = () => {
             filteredPrayers.map((prayer) => (
               <Card 
                 key={prayer.id}
-                className="bg-white/90 hover:bg-white/95 cursor-pointer transition-all border-sacred-gold/20 hover:border-sacred-gold"
+                className="bg-white/90 hover:bg-white/95 cursor-pointer transition-all border-sacred-golden-tan/20 hover:border-sacred-golden-tan"
                 onClick={() => navigate("/prayer-display", { state: { prayerId: prayer.id } })}
               >
                 <CardContent className="p-4 space-y-3">
                   <div className="flex justify-between items-start">
-                    <h3 className="font-semibold text-sacred-blue">{prayer.title}</h3>
-                    <span className="text-xs text-sacred-stone">
+                    <h3 className="font-semibold text-sacred-sage-green">{prayer.title}</h3>
+                    <span className="text-xs text-sacred-warm-gray">
                       {new Date(prayer.date).toLocaleDateString()}
                     </span>
                   </div>
@@ -111,8 +111,8 @@ const PrayerJournal = () => {
                   </p>
                   
                   {prayer.reflection && (
-                    <div className="bg-sacred-gold-light/30 p-3 rounded-lg">
-                      <p className="text-xs text-sacred-blue font-medium mb-1">Your Reflection:</p>
+                    <div className="bg-sacred-golden-tan/30 p-3 rounded-lg">
+                      <p className="text-xs text-sacred-sage-green font-medium mb-1">Your Reflection:</p>
                       <p className="text-sm sacred-text italic">"{prayer.reflection}"</p>
                     </div>
                   )}
@@ -121,7 +121,7 @@ const PrayerJournal = () => {
                     <span className={`text-xs font-medium ${getStyleColor(prayer.style)}`}>
                       {prayer.style.charAt(0).toUpperCase() + prayer.style.slice(1)} style
                     </span>
-                    <Button variant="ghost" size="sm" className="text-sacred-stone hover:text-sacred-blue">
+                    <Button variant="ghost" size="sm" className="text-sacred-warm-gray hover:text-sacred-sage-green">
                       View Prayer
                     </Button>
                   </div>
@@ -131,8 +131,8 @@ const PrayerJournal = () => {
           ) : (
             <Card className="bg-white/90">
               <CardContent className="p-8 text-center">
-                <Book className="w-16 h-16 mx-auto text-sacred-stone/50 mb-4" />
-                <h3 className="font-semibold text-sacred-blue mb-2">
+                <Book className="w-16 h-16 mx-auto text-sacred-warm-gray/50 mb-4" />
+                <h3 className="font-semibold text-sacred-sage-green mb-2">
                   {searchTerm ? "No prayers found" : "Start your prayer journey"}
                 </h3>
                 <p className="sacred-text text-sm mb-4">
@@ -155,19 +155,19 @@ const PrayerJournal = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-gold/20 p-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-golden-tan/20 p-4">
         <div className="flex justify-center space-x-8 max-w-md mx-auto">
           <Button 
             variant="ghost" 
             onClick={() => navigate("/home")}
-            className="flex flex-col items-center gap-1 text-sacred-stone hover:text-sacred-blue"
+            className="flex flex-col items-center gap-1 text-sacred-warm-gray hover:text-sacred-sage-green"
           >
             <Home className="w-5 h-5" />
             <span className="text-xs">Home</span>
           </Button>
           <Button 
             variant="ghost" 
-            className="flex flex-col items-center gap-1 text-sacred-blue"
+            className="flex flex-col items-center gap-1 text-sacred-sage-green"
           >
             <Book className="w-5 h-5" />
             <span className="text-xs">Journal</span>
