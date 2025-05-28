@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -72,7 +73,8 @@ export default {
 					'golden-tan-dark': '#C19660',
 					terracotta: '#D4B5A0',
 					'warm-gray': '#4A4644',
-					'warm-red': '#C85A54'
+					'warm-red': '#C85A54',
+					'custom-brown': '#d2b48c'
 				}
 			},
 			borderRadius: {
@@ -124,7 +126,7 @@ export default {
 			},
 			backgroundImage: {
 				'sacred-gradient': 'linear-gradient(135deg, #F8F6F3 0%, #FFFFFF 50%, #F0EBE5 100%)',
-				'prayer-gradient': 'linear-gradient(180deg, #D4A574 0%, #C19660 100%)',
+				'prayer-gradient': 'linear-gradient(180deg, #d2b48c 0%, #c19660 100%)',
 				'sage-gradient': 'linear-gradient(135deg, #7A8B5C 0%, #4A5D23 100%)'
 			}
 		}

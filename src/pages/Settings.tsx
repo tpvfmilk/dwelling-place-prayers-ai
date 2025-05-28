@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -67,7 +66,7 @@ const Settings = () => {
             <Button 
               variant="outline" 
               size="sm" 
-              className="w-full bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white border-none"
+              className="w-full bg-sacred-custom-brown hover:bg-sacred-custom-brown/90 text-white border-none"
             >
               Edit Profile
             </Button>
@@ -121,7 +120,7 @@ const Settings = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white border-none"
+                className="bg-sacred-custom-brown hover:bg-sacred-custom-brown/90 text-white border-none"
               >
                 Set Time
               </Button>
@@ -134,7 +133,7 @@ const Settings = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="bg-prayer-gradient hover:bg-sacred-golden-tan-dark text-white border-none"
+                className="bg-sacred-custom-brown hover:bg-sacred-custom-brown/90 text-white border-none"
               >
                 Set Time
               </Button>
