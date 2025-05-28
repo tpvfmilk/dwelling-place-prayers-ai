@@ -88,7 +88,7 @@ const PrivacyTrust = () => {
             Enter Dwelling Place
           </Button>
           <div className="text-center">
-            <button className="text-xs text-sacred-sage-light hover:text-sacred-sage-green transition-colors underline">
+            <button className="text-xs text-sacred-sage-green hover:text-sacred-sage-green/80 transition-colors underline">
               Read full privacy policy
             </button>
           </div>

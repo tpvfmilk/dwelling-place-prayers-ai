@@ -60,7 +60,7 @@ const PrayerJournal = () => {
           <h1 className="text-xl font-semibold text-sacred-sage-green text-center mb-1">
             Your Prayer Journal
           </h1>
-          <p className="text-sm text-sacred-warm-gray text-center">
+          <p className="text-sm text-sacred-sage-green text-center">
             "Store up these words of mine in your hearts" - Deuteronomy 11:18
           </p>
         </div>
@@ -101,7 +101,7 @@ const PrayerJournal = () => {
                 <CardContent className="p-4 space-y-3">
                   <div className="flex justify-between items-start">
                     <h3 className="font-semibold text-sacred-sage-green">{prayer.title}</h3>
-                    <span className="text-xs text-sacred-warm-gray">
+                    <span className="text-xs text-sacred-sage-green">
                       {new Date(prayer.date).toLocaleDateString()}
                     </span>
                   </div>
@@ -121,7 +121,7 @@ const PrayerJournal = () => {
                     <span className={`text-xs font-medium ${getStyleColor(prayer.style)}`}>
                       {prayer.style.charAt(0).toUpperCase() + prayer.style.slice(1)} style
                     </span>
-                    <Button variant="ghost" size="sm" className="text-sacred-warm-gray hover:text-sacred-sage-green">
+                    <Button variant="ghost" size="sm" className="text-sacred-sage-green hover:text-sacred-sage-green/80">
                       View Prayer
                     </Button>
                   </div>
@@ -131,7 +131,7 @@ const PrayerJournal = () => {
           ) : (
             <Card className="bg-white/90">
               <CardContent className="p-8 text-center">
-                <Book className="w-16 h-16 mx-auto text-sacred-warm-gray/50 mb-4" />
+                <Book className="w-16 h-16 mx-auto text-sacred-sage-green/50 mb-4" />
                 <h3 className="font-semibold text-sacred-sage-green mb-2">
                   {searchTerm ? "No prayers found" : "Start your prayer journey"}
                 </h3>
@@ -160,7 +160,7 @@ const PrayerJournal = () => {
           <Button 
             variant="ghost" 
             onClick={() => navigate("/home")}
-            className="flex flex-col items-center gap-1 text-sacred-warm-gray hover:text-sacred-sage-green"
+            className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
           >
             <Home className="w-5 h-5" />
             <span className="text-xs">Home</span>

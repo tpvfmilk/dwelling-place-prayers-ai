@@ -30,7 +30,7 @@ const Settings = () => {
           <Button
             variant="ghost"
             onClick={() => navigate("/home")}
-            className="text-sacred-sage-light hover:text-sacred-sage-green mr-3"
+            className="text-sacred-sage-green hover:text-sacred-sage-green/80 mr-3"
           >
             <ArrowUp className="w-5 h-5 rotate-180" />
           </Button>
@@ -124,13 +124,13 @@ const Settings = () => {
             <CardTitle className="text-sacred-sage-green">Support & Resources</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <Button variant="ghost" className="w-full justify-start text-sacred-sage-light hover:text-sacred-sage-green">
+            <Button variant="ghost" className="w-full justify-start text-sacred-sage-green hover:text-sacred-sage-green/80">
               Crisis Resources
             </Button>
-            <Button variant="ghost" className="w-full justify-start text-sacred-sage-light hover:text-sacred-sage-green">
+            <Button variant="ghost" className="w-full justify-start text-sacred-sage-green hover:text-sacred-sage-green/80">
               Contact Support
             </Button>
-            <Button variant="ghost" className="w-full justify-start text-sacred-sage-light hover:text-sacred-sage-green">
+            <Button variant="ghost" className="w-full justify-start text-sacred-sage-green hover:text-sacred-sage-green/80">
               Privacy Policy
             </Button>
           </CardContent>

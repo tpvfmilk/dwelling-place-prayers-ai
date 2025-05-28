@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,13 +33,13 @@ const Home = () => {
             <h1 className="text-lg font-semibold text-sacred-sage-green">
               Welcome home, {userName}
             </h1>
-            <p className="text-sm text-sacred-sage-light">Grace and peace to you</p>
+            <p className="text-sm text-sacred-sage-green">Grace and peace to you</p>
           </div>
           <Button
             variant="ghost"
             size="icon"
             onClick={() => navigate("/settings")}
-            className="text-sacred-sage-light hover:text-sacred-sage-green"
+            className="text-sacred-sage-green hover:text-sacred-sage-green/80"
           >
             <Settings className="w-5 h-5" />
           </Button>
@@ -103,7 +104,7 @@ const Home = () => {
                   <CardContent className="p-4">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-medium text-sacred-sage-green">{prayer.title}</h4>
-                      <span className="text-xs text-sacred-sage-light">{prayer.time}</span>
+                      <span className="text-xs text-sacred-sage-green">{prayer.time}</span>
                     </div>
                     <p className="text-sm sacred-text line-clamp-2">
                       {prayer.preview}
@@ -121,7 +122,7 @@ const Home = () => {
           ) : (
             <Card className="bg-white/80 border-sacred-sage-border/20">
               <CardContent className="p-6 text-center">
-                <Book className="w-12 h-12 mx-auto text-sacred-sage-light/50 mb-3" />
+                <Book className="w-12 h-12 mx-auto text-sacred-sage-green/50 mb-3" />
                 <p className="sacred-text">
                   Your prayer journey begins here. Share what's on your heart to create your first prayer.
                 </p>
@@ -144,7 +145,7 @@ const Home = () => {
           <Button 
             variant="ghost" 
             onClick={() => navigate("/journal")}
-            className="flex flex-col items-center gap-1 text-sacred-sage-light hover:text-sacred-sage-green"
+            className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
           >
             <Book className="w-5 h-5" />
             <span className="text-xs">Journal</span>

@@ -49,7 +49,7 @@ const Welcome = () => {
           >
             Begin Your Journey
           </Button>
-          <p className="text-center text-sm text-sacred-sage-light">
+          <p className="text-center text-sm text-sacred-sage-green">
             Join thousands finding peace in prayer
           </p>
         </div>

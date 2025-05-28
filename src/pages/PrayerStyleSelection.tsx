@@ -102,7 +102,7 @@ const PrayerStyleSelection = () => {
         <div className="text-center">
           <button 
             onClick={() => navigate("/privacy")}
-            className="text-sm text-sacred-sage-light hover:text-sacred-sage-green transition-colors"
+            className="text-sm text-sacred-sage-green hover:text-sacred-sage-green/80 transition-colors"
           >
             I'll choose later
           </button>
