@@ -1,9 +1,10 @@
+
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { BookOpen, ArrowUp, Home, Book, Settings } from "lucide-react";
+import { BookOpen, ArrowUp, Home, Book, Settings, Circles } from "lucide-react";
 
 const PrayerDisplay = () => {
   const location = useLocation();
@@ -39,8 +40,20 @@ In Jesus' name, Amen.`,
     <div className="min-h-screen bg-sacred-gradient">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-sage-border/20 p-4">
-        <div className="max-w-md mx-auto">
-          <h1 className="text-lg font-semibold text-sacred-sage-green text-center">Your Prayer</h1>
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          <div className="flex items-center gap-3">
+            <img 
+              src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
+              alt="Dwelling Place Logo" 
+              className="w-8 h-8"
+            />
+            <h1 className="text-xl font-semibold text-sacred-sage-green">
+              Dwelling Place
+            </h1>
+          </div>
+          <div className="text-center">
+            <h2 className="text-lg font-semibold text-sacred-sage-green">Your Prayer</h2>
+          </div>
         </div>
       </div>
 
@@ -128,16 +141,8 @@ In Jesus' name, Amen.`,
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-sage-border/20 p-4">
-        <div className="flex justify-between items-center max-w-md mx-auto">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/settings")}
-            className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
-          >
-            <Settings className="w-5 h-5" />
-            <span className="text-xs">Settings</span>
-          </Button>
-          <div className="flex space-x-8">
+        <div className="flex justify-center items-center max-w-7xl mx-auto">
+          <div className="flex justify-between items-center w-full max-w-md">
             <Button 
               variant="ghost" 
               onClick={() => navigate("/home")} 
@@ -146,13 +151,31 @@ In Jesus' name, Amen.`,
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </Button>
-            <Button 
-              variant="ghost" 
-              onClick={() => navigate("/journal")}
+            <div className="flex items-center gap-8">
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate("/journal")}
+                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+              >
+                <Book className="w-5 h-5" />
+                <span className="text-xs">Journal</span>
+              </Button>
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate("/circles")}
+                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
+              >
+                <Circles className="w-5 h-5" />
+                <span className="text-xs">Circles</span>
+              </Button>
+            </div>
+            <Button
+              variant="ghost"
+              onClick={() => navigate("/settings")}
               className="flex flex-col items-center gap-1 text-sacred-sage-green hover:text-sacred-sage-green/80"
             >
-              <Book className="w-5 h-5" />
-              <span className="text-xs">Journal</span>
+              <Settings className="w-5 h-5" />
+              <span className="text-xs">Settings</span>
             </Button>
           </div>
         </div>
