@@ -71,4 +71,9 @@
     @apply italic text-sacred-terracotta font-medium;
     font-family: 'Crimson Text', serif;
   }
+
+  /* Force all form inputs to have white background */
+  input, textarea, select {
+    @apply bg-white;
+  }
 }

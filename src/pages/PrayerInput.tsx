@@ -55,7 +55,7 @@ const PrayerInput = () => {
                 value={heartShare}
                 onChange={(e) => setHeartShare(e.target.value)}
                 placeholder="I'm feeling grateful for... I'm worried about... I need strength for... I want to thank God for..."
-                className="min-h-[120px] border-sacred-sage-border/30 focus:border-sacred-golden-tan resize-none text-base"
+                className="min-h-[120px] border-sacred-sage-border/30 focus:border-sacred-golden-tan resize-none text-base bg-white"
               />
             </div>
             <div className="text-xs text-sacred-sage-light">
