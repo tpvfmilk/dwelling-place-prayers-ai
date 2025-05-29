@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -23,13 +24,22 @@ const Landing = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const manifestoItems = [
-    "NO distractions from prayer",
-    "NO judgment or guilt", 
+  const noItems = [
+    "NO social features",
+    "NO vanity metrics", 
     "NO invasive tracking",
     "NO social pressure",
-    "NO commercialization",
-    "NO barriers to God"
+    "NO advertisements",
+    "NO performance anxiety"
+  ];
+
+  const yesItems = [
+    "YES to sacred silence",
+    "YES to private prayer",
+    "YES to your own pace",
+    "YES to authentic faith",
+    "YES to uninterrupted communion",
+    "YES to dwelling in peace"
   ];
 
   const privacyPoints = [
@@ -137,22 +147,64 @@ const Landing = () => {
 
         {/* Manifesto Section */}
         <section className="py-16 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-light mb-8 text-sacred-sage-green tracking-tight">
-              What was always meant to be sacred<br />is now yours again.
+          <div className="max-w-5xl mx-auto">
+            <div className="max-w-4xl mx-auto mb-16">
+              <p className="text-lg md:text-xl text-sacred-warm-gray leading-relaxed mb-8">
+                In a time when every app demands our attention, when notifications steal our peace, when every spiritual moment is measured and shared, we have little space to call our own.
+              </p>
+              
+              <p className="text-lg md:text-xl text-sacred-warm-gray leading-relaxed mb-8">
+                Our souls have been taken captive—
+              </p>
+              
+              <p className="text-lg md:text-xl text-sacred-warm-gray leading-relaxed mb-12">
+                by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices.
+              </p>
+            </div>
+
+            <h2 className="text-3xl md:text-5xl font-light mb-12 text-sacred-sage-green tracking-tight">
+              What should have never been lost is now yours again. We promise:
             </h2>
-            <p className="text-xl text-sacred-warm-gray mb-12 font-medium">
-              We promise:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              {manifestoItems.map((item, index) => (
-                <div key={index} className="text-left">
-                  <span className="text-2xl md:text-3xl font-bold text-sacred-warm-red">NO</span>
-                  <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
-                    {item.replace('NO ', '')}
-                  </span>
-                </div>
-              ))}
+            
+            {/* NO and YES Lists Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
+              {/* NO List */}
+              <div>
+                {noItems.map((item, index) => (
+                  <div key={index} className="text-left mb-4">
+                    <span className="text-2xl md:text-3xl font-bold text-sacred-warm-red">NO</span>
+                    <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
+                      {item.replace('NO ', '')}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              
+              {/* YES List */}
+              <div>
+                {yesItems.map((item, index) => (
+                  <div key={index} className="text-left mb-4">
+                    <span className="text-2xl md:text-3xl font-bold text-sacred-sage-green">YES</span>
+                    <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
+                      {item.replace('YES ', '')}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-8">
+              <h3 className="text-2xl md:text-3xl font-light text-sacred-sage-green">
+                This is your sanctuary.
+              </h3>
+              
+              <p className="text-lg md:text-xl text-sacred-warm-gray leading-relaxed">
+                A place where your prayers are yours alone, where your spiritual journey isn't content for others, where God meets you without an audience. Where technology serves the timeless instead of replacing it.
+              </p>
+              
+              <p className="text-xl md:text-2xl font-medium text-sacred-sage-green">
+                Come as you are. Pray as you need. Dwell in peace.
+              </p>
             </div>
           </div>
         </section>
