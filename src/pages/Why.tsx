@@ -157,14 +157,16 @@ const Why = () => {
         </section>
       </main>
 
-      <style jsx>{`
-        .why-header.scrolled {
-          background: rgba(255, 255, 255, 0.9) !important;
-          backdrop-filter: blur(15px) !important;
-          border: 1px solid rgba(0, 0, 0, 0.05) !important;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
-        }
-      `}</style>
+      <style>
+        {`
+          .why-header.scrolled {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(15px) !important;
+            border: 1px solid rgba(0, 0, 0, 0.05) !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+          }
+        `}
+      </style>
     </div>
   );
 };
