@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -72,18 +73,18 @@ const Landing = () => {
       <main 
         className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
         style={{
-          backgroundImage: 'url("/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png")',
+          backgroundImage: 'url("/lovable-uploads/b88a0498-1e26-437d-aad0-ce0383cf16e9.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
           backgroundColor: '#F8F6F3'
         }}
       >
-        {/* Gradient Overlay for the main content - much lighter */}
+        {/* Enhanced Gradient Overlay with bottom fade-out */}
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0.05) 0%, rgba(248, 246, 243, 0.1) 20%, rgba(248, 246, 243, 0.3) 50%, rgba(248, 246, 243, 0.6) 80%, rgba(248, 246, 243, 0.8) 100%)',
+            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0.1) 0%, rgba(248, 246, 243, 0.2) 30%, rgba(248, 246, 243, 0.4) 60%, rgba(248, 246, 243, 0.8) 85%, rgba(248, 246, 243, 0.95) 100%)',
             zIndex: 1
           }}
         />
