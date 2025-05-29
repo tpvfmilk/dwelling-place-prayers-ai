@@ -129,7 +129,7 @@ const Landing = () => {
           </div>
         </section>
 
-        {/* Manifesto Section */}
+        {/* Manifesto Section - Part 1 */}
         <section className="py-16 text-center relative" style={{
         zIndex: 2
       }}>
@@ -167,8 +167,13 @@ What should have never been lost is now yours again. We promise:</p>
                   </div>)}
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="w-full mx-auto space-y-8 py-[135px] bg-stone-300">
+        {/* Full-width Gray Section */}
+        <section className="relative -mx-8 px-8" style={{ zIndex: 2 }}>
+          <div className="bg-stone-300 py-[135px]">
+            <div className="max-w-4xl mx-auto space-y-8">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
               </h3>
