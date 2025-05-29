@@ -166,7 +166,7 @@ What should have never been lost is now yours again. We promise:</p>
               </div>
             </div>
 
-            <div className="max-w-4xl mx-auto space-y-8 py-[135px]">
+            <div className="max-w-6xl mx-auto space-y-8 py-[135px]">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
               </h3>
