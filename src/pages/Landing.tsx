@@ -44,30 +44,22 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
-      {/* Custom Background with Image and Gradient Fade */}
+      {/* Background Image */}
       <div 
-        className="fixed top-0 left-0 w-full h-full -z-10"
+        className="fixed inset-0 -z-10 w-full h-full"
         style={{
-          backgroundImage: `url('/lovable-uploads/05f55c35-9e58-4e6e-a563-17c3d1c5d5a3.png')`,
+          backgroundImage: 'url("/lovable-uploads/05f55c35-9e58-4e6e-a563-17c3d1c5d5a3.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
+          backgroundRepeat: 'no-repeat'
         }}
       />
       
-      {/* Gradient Fade Overlay */}
+      {/* Gradient Overlay */}
       <div 
-        className="fixed top-0 left-0 w-full h-full -z-10"
+        className="fixed inset-0 -z-10 w-full h-full"
         style={{
-          background: `linear-gradient(
-            to bottom,
-            rgba(248, 246, 243, 0.1) 0%,
-            rgba(248, 246, 243, 0.3) 20%,
-            rgba(248, 246, 243, 0.6) 50%,
-            rgba(248, 246, 243, 0.85) 80%,
-            rgba(248, 246, 243, 0.95) 100%
-          )`
+          background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0.1) 0%, rgba(248, 246, 243, 0.3) 20%, rgba(248, 246, 243, 0.6) 50%, rgba(248, 246, 243, 0.85) 80%, rgba(248, 246, 243, 0.95) 100%)'
         }}
       />
 
