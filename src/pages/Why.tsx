@@ -64,6 +64,7 @@ const Why = () => {
           <ul className="hidden md:flex gap-8 list-none">
             <li><button onClick={() => navigate('/landing')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Home</button></li>
             <li><span className="text-sacred-sage-green font-medium">Why</span></li>
+            <li><button onClick={() => navigate('/how')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">How</button></li>
             <li><button onClick={() => navigate('/landing#features')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Features</button></li>
             <li><button onClick={() => navigate('/welcome')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Begin</button></li>
           </ul>

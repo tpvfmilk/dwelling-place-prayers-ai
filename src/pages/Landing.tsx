@@ -43,6 +43,7 @@ const Landing = () => {
           </div>
           <ul className="hidden md:flex gap-8 list-none">
             <li><button onClick={() => navigate('/why')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Why</button></li>
+            <li><button onClick={() => navigate('/how')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">How</button></li>
             <li><a href="#features" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Features</a></li>
             <li><a href="#manifesto" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Manifesto</a></li>
             <li><a href="#journey" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Journey</a></li>
