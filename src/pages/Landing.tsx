@@ -1,13 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
-
 const Landing = () => {
   const navigate = useNavigate();
-  
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -20,19 +17,18 @@ const Landing = () => {
       }
     };
     window.addEventListener('scroll', handleScroll);
-    
+
     // Debug image loading
     const imageUrl = '/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png';
     console.log('Attempting to load background image:', imageUrl);
-    
     const img = new Image();
     img.onload = () => {
       console.log('Background image loaded successfully');
     };
-    img.onerror = (error) => {
+    img.onerror = error => {
       console.error('Background image failed to load:', error);
       console.log('Trying alternative path...');
-      
+
       // Try with public/ prefix
       const altImg = new Image();
       altImg.src = '/public/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png';
@@ -40,10 +36,8 @@ const Landing = () => {
       altImg.onerror = () => console.error('Alternative path also failed');
     };
     img.src = imageUrl;
-    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -63,11 +57,9 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
-
-  return (
-    <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
+  return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
-      <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 landing-header">
+      <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 landing-header px-[103px] mx-[139px]">
         <nav className="flex justify-between items-center max-w-6xl mx-auto">
           <div className="flex items-center gap-3">
             <img src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" alt="Dwelling Place Logo" className="w-8 h-8" />
@@ -93,27 +85,23 @@ const Landing = () => {
 
       <main className="max-w-6xl mx-auto px-8 relative pt-0">
         {/* Hero Section */}
-        <section 
-          className="text-center relative pt-28 pb-[236px]" 
-          style={{
-            backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top center',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: '#F8F6F3',
-            zIndex: 2
-          }}
-        >
+        <section className="text-center relative pt-28 pb-[236px]" style={{
+        backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#F8F6F3',
+        zIndex: 2
+      }}>
           {/* Enhanced Gradient Overlay with fade starting at 40% and fully gone at 70% */}
-          <div 
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 40%, rgba(248, 246, 243, 1) 70%, rgba(248, 246, 243, 1) 100%)',
-              zIndex: 1
-            }}
-          />
+          <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 40%, rgba(248, 246, 243, 1) 70%, rgba(248, 246, 243, 1) 100%)',
+          zIndex: 1
+        }} />
 
-          <div className="relative" style={{ zIndex: 2 }}>
+          <div className="relative" style={{
+          zIndex: 2
+        }}>
             <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8 text-sacred-sage-green animate-fade-in">
               Connect with God.<br />Find your peace.
             </h1>
@@ -136,7 +124,9 @@ const Landing = () => {
         </section>
 
         {/* Manifesto Section */}
-        <section className="py-16 text-center relative" style={{ zIndex: 2 }}>
+        <section className="py-16 text-center relative" style={{
+        zIndex: 2
+      }}>
           <div className="max-w-5xl mx-auto px-[153px] py-[133px]">
             <div className="max-w-4xl mx-auto mb-16">
               <p className="text-lg text-sacred-warm-gray leading-relaxed mb-8 text-left md:text-2xl">
@@ -154,25 +144,21 @@ What should have never been lost is now yours again. We promise:</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
               <div>
-                {noItems.map((item, index) => (
-                  <div key={index} className="text-left mb-4">
+                {noItems.map((item, index) => <div key={index} className="text-left mb-4">
                     <span className="text-2xl md:text-3xl font-bold text-sacred-warm-red">NO</span>
                     <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
                       {item.replace('NO ', '')}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <div>
-                {yesItems.map((item, index) => (
-                  <div key={index} className="text-left mb-4">
+                {yesItems.map((item, index) => <div key={index} className="text-left mb-4">
                     <span className="text-2xl md:text-3xl font-bold text-sacred-sage-green">YES</span>
                     <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
                       {item.replace('YES ', '')}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
@@ -193,7 +179,9 @@ What should have never been lost is now yours again. We promise:</p>
         </section>
 
         {/* Privacy & Trust Section */}
-        <section className="py-20 relative" style={{ zIndex: 2 }}>
+        <section className="py-20 relative" style={{
+        zIndex: 2
+      }}>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-light mb-6 text-sacred-sage-green tracking-tight">
               Privacy & Trust
@@ -205,9 +193,8 @@ What should have never been lost is now yours again. We promise:</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {privacyPoints.map((point, index) => {
-              const Icon = point.icon;
-              return (
-                <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
+            const Icon = point.icon;
+            return <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="bg-sacred-cream p-3 rounded-full border border-sacred-sage-border/30">
@@ -223,9 +210,8 @@ What should have never been lost is now yours again. We promise:</p>
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           <Card className="bg-sacred-cream/40 border-sacred-sage-border/20 max-w-3xl mx-auto">
@@ -241,7 +227,9 @@ What should have never been lost is now yours again. We promise:</p>
         </section>
 
         {/* Features Section */}
-        <section className="py-24 relative" id="features" style={{ zIndex: 2 }}>
+        <section className="py-24 relative" id="features" style={{
+        zIndex: 2
+      }}>
           <h2 className="text-4xl md:text-6xl font-light text-center mb-16 text-sacred-sage-green tracking-tight">
             One sacred place for your spiritual life.
           </h2>
@@ -277,7 +265,9 @@ What should have never been lost is now yours again. We promise:</p>
         </section>
 
         {/* Additional Features */}
-        <section className="py-24 relative" id="journey" style={{ zIndex: 2 }}>
+        <section className="py-24 relative" id="journey" style={{
+        zIndex: 2
+      }}>
           <h2 className="text-4xl md:text-6xl font-light text-center mb-16 text-sacred-sage-green tracking-tight">
             For every heart seeking God.
           </h2>
@@ -372,8 +362,6 @@ What should have never been lost is now yours again. We promise:</p>
           }
         `}
       </style>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;
