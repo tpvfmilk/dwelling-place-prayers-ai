@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -73,7 +74,7 @@ const Landing = () => {
       <main 
         className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
         style={{
-          backgroundImage: 'url("/lovable-uploads/b88a0498-1e26-437d-aad0-ce0383cf16e9.png")',
+          backgroundImage: 'url("/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
@@ -353,3 +354,4 @@ What should have never been lost is now yours again. We promise:</p>
 };
 
 export default Landing;
+
