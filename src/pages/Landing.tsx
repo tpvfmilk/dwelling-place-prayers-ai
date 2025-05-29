@@ -85,7 +85,7 @@ const Landing = () => {
       </header>
 
       <main className="max-w-6xl mx-auto px-8 relative pt-0" style={{
-        boxShadow: '-20px 0 40px rgba(0, 0, 0, 0.02), 20px 0 40px rgba(0, 0, 0, 0.02)',
+        boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.1), 30px 0 60px rgba(0, 0, 0, 0.1)',
         backgroundColor: '#F8F6F3'
       }}>
         {/* Hero Section */}
