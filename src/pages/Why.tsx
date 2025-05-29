@@ -76,22 +76,22 @@ const Why = () => {
           <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-10 text-sacred-sage-green animate-fade-in">
             Why?
           </h1>
-          <p className="text-xl md:text-2xl font-light text-sacred-warm-gray mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl md:text-2xl font-light text-sacred-warm-gray mb-8 animate-fade-in animation-delay-200">
             Everything we do starts with this sacred question.
           </p>
-          <p className="text-lg text-sacred-warm-gray leading-relaxed animate-fade-in" style={{animationDelay: '0.4s'}}>
+          <p className="text-lg text-sacred-warm-gray leading-relaxed animate-fade-in animation-delay-400">
             Why should Dwelling Place exist? Why should anyone seek to deepen their spiritual connection? Why is sacred space so important to us?
           </p>
         </section>
 
         {/* Content sections */}
-        <div className="my-20 opacity-0 animate-fade-in" style={{animationDelay: '0.6s'}}>
+        <div className="my-20 animate-fade-in animation-delay-600">
           <div className="text-lg text-sacred-warm-gray leading-relaxed">
             <p>Eventually, the "why" led us to this sacred calling.</p>
           </div>
         </div>
 
-        <section className="bg-gradient-to-br from-white/70 to-sacred-terracotta/20 rounded-3xl p-16 my-20 text-center relative overflow-hidden border border-sacred-sage-border/20 opacity-0 animate-fade-in" style={{animationDelay: '0.8s'}}>
+        <section className="bg-gradient-to-br from-white/70 to-sacred-terracotta/20 rounded-3xl p-16 my-20 text-center relative overflow-hidden border border-sacred-sage-border/20 animate-fade-in animation-delay-800">
           <div className="absolute top-0 left-0 w-full h-full opacity-10">
             <div className="w-full h-full bg-gradient-to-r from-sacred-sage-light to-sacred-golden-tan animate-[spin_40s_linear_infinite]"></div>
           </div>
@@ -109,7 +109,7 @@ const Why = () => {
           </div>
         </section>
 
-        <div className="my-20 opacity-0 animate-fade-in" style={{animationDelay: '1.0s'}}>
+        <div className="my-20 animate-fade-in animation-delay-1000">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-light text-sacred-sage-green mb-6">
               Because we need better relationships with our spiritual tools.
@@ -128,7 +128,7 @@ const Why = () => {
           </div>
         </div>
 
-        <div className="my-20 opacity-0 animate-fade-in" style={{animationDelay: '1.2s'}}>
+        <div className="my-20 animate-fade-in animation-delay-1200">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-light text-sacred-sage-green mb-6">
               Because new spiritual beginnings are beautiful.
@@ -140,7 +140,7 @@ const Why = () => {
           </div>
         </div>
 
-        <section className="bg-gradient-to-br from-white/70 to-sacred-terracotta/20 rounded-3xl p-16 my-20 text-center relative overflow-hidden border border-sacred-sage-border/20 opacity-0 animate-fade-in" style={{animationDelay: '1.4s'}}>
+        <section className="bg-gradient-to-br from-white/70 to-sacred-terracotta/20 rounded-3xl p-16 my-20 text-center relative overflow-hidden border border-sacred-sage-border/20 animate-fade-in animation-delay-1400">
           <div className="absolute top-0 left-0 w-full h-full opacity-10">
             <div className="w-full h-full bg-gradient-to-r from-sacred-sage-light to-sacred-golden-tan animate-[spin_40s_linear_infinite]"></div>
           </div>
@@ -164,6 +164,34 @@ const Why = () => {
             backdrop-filter: blur(15px) !important;
             border: 1px solid rgba(0, 0, 0, 0.05) !important;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+          }
+          
+          .animation-delay-200 {
+            animation-delay: 0.2s;
+          }
+          
+          .animation-delay-400 {
+            animation-delay: 0.4s;
+          }
+          
+          .animation-delay-600 {
+            animation-delay: 0.6s;
+          }
+          
+          .animation-delay-800 {
+            animation-delay: 0.8s;
+          }
+          
+          .animation-delay-1000 {
+            animation-delay: 1.0s;
+          }
+          
+          .animation-delay-1200 {
+            animation-delay: 1.2s;
+          }
+          
+          .animation-delay-1400 {
+            animation-delay: 1.4s;
           }
         `}
       </style>
