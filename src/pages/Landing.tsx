@@ -95,17 +95,17 @@ const Landing = () => {
         className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
         style={{
           backgroundImage: `url("/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png?v=${Date.now()}")`,
-          backgroundSize: '100% auto',
-          backgroundPosition: 'center top',
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
           backgroundColor: '#F8F6F3'
         }}
       >
-        {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 50% */}
+        {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 40% */}
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 25%, rgba(248, 246, 243, 0.8) 40%, rgba(248, 246, 243, 1) 50%, rgba(248, 246, 243, 1) 100%)',
+            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 25%, rgba(248, 246, 243, 1) 40%, rgba(248, 246, 243, 1) 100%)',
             zIndex: 1
           }}
         />
