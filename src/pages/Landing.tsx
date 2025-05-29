@@ -97,9 +97,9 @@ const Landing = () => {
         }}>
             The sacred space for your spiritual journey.
           </p>
-          <p className="text-lg text-sacred-warm-gray max-w-2xl mx-auto mb-12 animate-fade-in" style={{
+          <p style={{
           animationDelay: '0.4s'
-        }}>
+        }} className="text-lg text-sacred-warm-gray max-w-2xl mx-auto mb-12 animate-fade-in py-0">
             All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
           </p>
           <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in" style={{
