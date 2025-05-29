@@ -3,8 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
+
 const Landing = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -38,6 +40,7 @@ const Landing = () => {
     img.src = imageUrl;
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -84,7 +87,7 @@ const Landing = () => {
       </header>
 
       <main className="max-w-6xl mx-auto px-8 relative pt-0" style={{
-      boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.1), 30px 0 60px rgba(0, 0, 0, 0.1)',
+      boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.15), 30px 0 60px rgba(0, 0, 0, 0.15)',
       backgroundColor: '#F8F6F3'
     }}>
         {/* Hero Section */}
@@ -165,7 +168,7 @@ What should have never been lost is now yours again. We promise:</p>
               </div>
             </div>
 
-            <div className="max-w-6xl mx-auto space-y-8 py-[135px] bg-stone-300">
+            <div className="w-full mx-auto space-y-8 py-[135px] bg-stone-300">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
               </h3>
@@ -367,4 +370,5 @@ What should have never been lost is now yours again. We promise:</p>
       </style>
     </div>;
 };
+
 export default Landing;
