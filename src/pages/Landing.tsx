@@ -22,7 +22,7 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     
     // Debug image loading
-    const imageUrl = '/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png';
+    const imageUrl = '/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png';
     console.log('Attempting to load background image:', imageUrl);
     
     const img = new Image();
@@ -35,7 +35,7 @@ const Landing = () => {
       
       // Try with public/ prefix
       const altImg = new Image();
-      altImg.src = '/public/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png';
+      altImg.src = '/public/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png';
       altImg.onload = () => console.log('Alternative path worked');
       altImg.onerror = () => console.error('Alternative path also failed');
     };
@@ -94,7 +94,7 @@ const Landing = () => {
       <main 
         className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
         style={{
-          backgroundImage: `url("/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png?v=${Date.now()}")`,
+          backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
