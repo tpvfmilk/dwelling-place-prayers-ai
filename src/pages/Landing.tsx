@@ -75,7 +75,7 @@ const Landing = () => {
         className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
         style={{
           backgroundImage: 'url("/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png")',
-          backgroundSize: 'cover',
+          backgroundSize: '100% auto',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
           backgroundColor: '#F8F6F3'
