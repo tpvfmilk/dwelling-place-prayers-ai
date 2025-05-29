@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +20,27 @@ const Landing = () => {
       }
     };
     window.addEventListener('scroll', handleScroll);
+    
+    // Debug image loading
+    const imageUrl = '/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png';
+    console.log('Attempting to load background image:', imageUrl);
+    
+    const img = new Image();
+    img.onload = () => {
+      console.log('Background image loaded successfully');
+    };
+    img.onerror = (error) => {
+      console.error('Background image failed to load:', error);
+      console.log('Trying alternative path...');
+      
+      // Try with public/ prefix
+      const altImg = new Image();
+      altImg.src = '/public/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png';
+      altImg.onload = () => console.log('Alternative path worked');
+      altImg.onerror = () => console.error('Alternative path also failed');
+    };
+    img.src = imageUrl;
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -72,7 +94,7 @@ const Landing = () => {
       <main 
         className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
         style={{
-          backgroundImage: 'url("/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png")',
+          backgroundImage: `url("/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png?v=${Date.now()}")`,
           backgroundSize: '100% auto',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
