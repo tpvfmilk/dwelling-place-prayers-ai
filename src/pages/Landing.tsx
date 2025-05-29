@@ -1,13 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
-
 const Landing = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -19,54 +16,29 @@ const Landing = () => {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const noItems = [
-    "NO social features",
-    "NO vanity metrics", 
-    "NO invasive tracking",
-    "NO social pressure",
-    "NO advertisements",
-    "NO performance anxiety"
-  ];
-
-  const yesItems = [
-    "YES to sacred silence",
-    "YES to private prayer",
-    "YES to your own pace",
-    "YES to authentic faith",
-    "YES to uninterrupted communion",
-    "YES to dwelling in peace"
-  ];
-
-  const privacyPoints = [
-    {
-      icon: Shield,
-      title: "Your prayers are private",
-      description: "Personal spiritual content stays between you and God"
-    },
-    {
-      icon: Lock,
-      title: "Secure & encrypted",
-      description: "All data is protected with industry-standard security"
-    },
-    {
-      icon: Eye,
-      title: "You're in control",
-      description: "Manage, edit, or delete your content anytime"
-    },
-    {
-      icon: Heart,
-      title: "Built with love",
-      description: "Created by believers, for believers, with reverence"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
+  const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
+  const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
+  const privacyPoints = [{
+    icon: Shield,
+    title: "Your prayers are private",
+    description: "Personal spiritual content stays between you and God"
+  }, {
+    icon: Lock,
+    title: "Secure & encrypted",
+    description: "All data is protected with industry-standard security"
+  }, {
+    icon: Eye,
+    title: "You're in control",
+    description: "Manage, edit, or delete your content anytime"
+  }, {
+    icon: Heart,
+    title: "Built with love",
+    description: "Created by believers, for believers, with reverence"
+  }];
+  return <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
       {/* Animated gradient background */}
       <div className="fixed top-0 left-0 w-full h-full opacity-80 -z-10">
         <div className="w-full h-full bg-gradient-to-br from-sacred-cream via-white to-sacred-terracotta/20 animate-gentle-pulse"></div>
@@ -75,17 +47,17 @@ const Landing = () => {
       {/* Floating decorative elements */}
       <div className="fixed top-[10%] left-[10%] opacity-10 animate-[float_20s_ease-in-out_infinite] -z-10">
         <svg width="60" height="60" viewBox="0 0 60 60">
-          <circle cx="30" cy="30" r="25" fill="none" stroke="#7A8B5C" strokeWidth="1"/>
+          <circle cx="30" cy="30" r="25" fill="none" stroke="#7A8B5C" strokeWidth="1" />
         </svg>
       </div>
       <div className="fixed top-[30%] right-[15%] opacity-10 animate-[float_20s_ease-in-out_infinite_5s] -z-10">
         <svg width="40" height="40" viewBox="0 0 40 40">
-          <rect x="10" y="10" width="20" height="20" fill="none" stroke="#7A8B5C" strokeWidth="1"/>
+          <rect x="10" y="10" width="20" height="20" fill="none" stroke="#7A8B5C" strokeWidth="1" />
         </svg>
       </div>
       <div className="fixed bottom-[20%] left-[20%] opacity-10 animate-[float_20s_ease-in-out_infinite_10s] -z-10">
         <svg width="50" height="50" viewBox="0 0 50 50">
-          <polygon points="25,5 45,40 5,40" fill="none" stroke="#7A8B5C" strokeWidth="1"/>
+          <polygon points="25,5 45,40 5,40" fill="none" stroke="#7A8B5C" strokeWidth="1" />
         </svg>
       </div>
 
@@ -93,11 +65,7 @@ const Landing = () => {
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 landing-header">
         <nav className="flex justify-between items-center max-w-6xl mx-auto">
           <div className="flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
-              alt="Dwelling Place Logo" 
-              className="w-8 h-8"
-            />
+            <img src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" alt="Dwelling Place Logo" className="w-8 h-8" />
             <span className="text-2xl font-semibold text-sacred-sage-green">Dwelling Place</span>
           </div>
           <div className="flex items-center gap-8">
@@ -107,16 +75,10 @@ const Landing = () => {
               <li><a href="#features" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Features</a></li>
             </ul>
             <div className="flex items-center gap-4">
-              <Button 
-                variant="ghost" 
-                className="text-sacred-warm-gray hover:text-sacred-sage-green hover:bg-transparent"
-              >
+              <Button variant="ghost" className="text-sacred-warm-gray hover:text-sacred-sage-green hover:bg-transparent">
                 Login
               </Button>
-              <Button 
-                onClick={() => navigate('/welcome')}
-                className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white"
-              >
+              <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white">
                 Sign Up
               </Button>
             </div>
@@ -130,17 +92,19 @@ const Landing = () => {
           <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8 text-sacred-sage-green animate-fade-in">
             Connect with God.<br />Find your peace.
           </h1>
-          <p className="text-xl md:text-3xl font-light text-sacred-warm-gray mb-12 animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl md:text-3xl font-light text-sacred-warm-gray mb-12 animate-fade-in" style={{
+          animationDelay: '0.2s'
+        }}>
             The sacred space for your spiritual journey.
           </p>
-          <p className="text-lg text-sacred-warm-gray max-w-2xl mx-auto mb-12 animate-fade-in" style={{animationDelay: '0.4s'}}>
+          <p className="text-lg text-sacred-warm-gray max-w-2xl mx-auto mb-12 animate-fade-in" style={{
+          animationDelay: '0.4s'
+        }}>
             All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
           </p>
-          <Button 
-            onClick={() => navigate('/welcome')}
-            className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in"
-            style={{animationDelay: '0.6s'}}
-          >
+          <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in" style={{
+          animationDelay: '0.6s'
+        }}>
             Begin Your Journey
           </Button>
         </section>
@@ -170,31 +134,27 @@ const Landing = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
               {/* NO List */}
               <div>
-                {noItems.map((item, index) => (
-                  <div key={index} className="text-left mb-4">
+                {noItems.map((item, index) => <div key={index} className="text-left mb-4">
                     <span className="text-2xl md:text-3xl font-bold text-sacred-warm-red">NO</span>
                     <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
                       {item.replace('NO ', '')}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               {/* YES List */}
               <div>
-                {yesItems.map((item, index) => (
-                  <div key={index} className="text-left mb-4">
+                {yesItems.map((item, index) => <div key={index} className="text-left mb-4">
                     <span className="text-2xl md:text-3xl font-bold text-sacred-sage-green">YES</span>
                     <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
                       {item.replace('YES ', '')}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-8">
-              <h3 className="text-2xl md:text-3xl font-light text-sacred-sage-green">
+              <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
               </h3>
               
@@ -222,9 +182,8 @@ const Landing = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {privacyPoints.map((point, index) => {
-              const Icon = point.icon;
-              return (
-                <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
+            const Icon = point.icon;
+            return <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="bg-sacred-cream p-3 rounded-full border border-sacred-sage-border/30">
@@ -240,15 +199,16 @@ const Landing = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           {/* Scripture */}
           <Card className="bg-sacred-cream/40 border-sacred-sage-border/20 max-w-3xl mx-auto">
             <CardContent className="p-8 text-center">
-              <p className="text-lg italic text-sacred-terracotta font-medium leading-relaxed" style={{fontFamily: 'Crimson Text, serif'}}>
+              <p className="text-lg italic text-sacred-terracotta font-medium leading-relaxed" style={{
+              fontFamily: 'Crimson Text, serif'
+            }}>
                 "The Lord your God is with you, the Mighty Warrior who saves. 
                 He will take great delight in you." - Zephaniah 3:17
               </p>
@@ -388,8 +348,6 @@ const Landing = () => {
           }
         `}
       </style>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;
