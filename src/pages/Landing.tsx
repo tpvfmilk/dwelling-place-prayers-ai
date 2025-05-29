@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
-
 const Landing = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -85,9 +84,9 @@ const Landing = () => {
       </header>
 
       <main className="max-w-6xl mx-auto px-8 relative pt-0" style={{
-        boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.1), 30px 0 60px rgba(0, 0, 0, 0.1)',
-        backgroundColor: '#F8F6F3'
-      }}>
+      boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.1), 30px 0 60px rgba(0, 0, 0, 0.1)',
+      backgroundColor: '#F8F6F3'
+    }}>
         {/* Hero Section */}
         <section className="text-center relative pt-28 pb-[236px]" style={{
         backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
@@ -166,7 +165,7 @@ What should have never been lost is now yours again. We promise:</p>
               </div>
             </div>
 
-            <div className="max-w-6xl mx-auto space-y-8 py-[135px]">
+            <div className="max-w-6xl mx-auto space-y-8 py-[135px] bg-stone-300">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
               </h3>
@@ -368,5 +367,4 @@ What should have never been lost is now yours again. We promise:</p>
       </style>
     </div>;
 };
-
 export default Landing;
