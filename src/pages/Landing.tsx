@@ -92,13 +92,15 @@ const Landing = () => {
       </header>
 
       <main 
-        className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
+        className="pt-28 max-w-6xl mx-auto px-8 relative"
         style={{
           backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
-          backgroundColor: '#F8F6F3'
+          backgroundColor: '#F8F6F3',
+          minHeight: '100vh',
+          maxHeight: '150vh'
         }}
       >
         {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 45% */}
