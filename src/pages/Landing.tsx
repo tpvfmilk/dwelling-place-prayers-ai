@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -90,45 +91,48 @@ const Landing = () => {
         </nav>
       </header>
 
-      <main 
-        className="pt-28 max-w-6xl mx-auto px-8 relative"
-        style={{
-          backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#F8F6F3'
-        }}
-      >
-        {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 45% */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 25%, rgba(248, 246, 243, 1) 45%, rgba(248, 246, 243, 1) 100%)',
-            zIndex: 1
-          }}
-        />
-
+      <main className="pt-28 max-w-6xl mx-auto px-8 relative">
         {/* Hero Section */}
-        <section className="text-center relative py-[236px]" style={{ zIndex: 2 }}>
-          <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8 text-sacred-sage-green animate-fade-in">
-            Connect with God.<br />Find your peace.
-          </h1>
-          <p className="text-xl md:text-3xl font-light text-sacred-warm-gray mb-12 animate-fade-in" style={{
-          animationDelay: '0.2s'
-        }}>
-            The sacred space for your spiritual journey.
-          </p>
-          <p style={{
-          animationDelay: '0.4s'
-        }} className="text-lg text-sacred-warm-gray max-w-2xl mx-auto mb-12 animate-fade-in py-0">
-            All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
-          </p>
-          <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in" style={{
-          animationDelay: '0.6s'
-        }}>
-            Begin Your Journey
-          </Button>
+        <section 
+          className="text-center relative py-[236px]" 
+          style={{
+            backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: '#F8F6F3',
+            zIndex: 2
+          }}
+        >
+          {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 45% */}
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 25%, rgba(248, 246, 243, 1) 45%, rgba(248, 246, 243, 1) 100%)',
+              zIndex: 1
+            }}
+          />
+
+          <div className="relative" style={{ zIndex: 2 }}>
+            <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8 text-sacred-sage-green animate-fade-in">
+              Connect with God.<br />Find your peace.
+            </h1>
+            <p className="text-xl md:text-3xl font-light text-sacred-warm-gray mb-12 animate-fade-in" style={{
+            animationDelay: '0.2s'
+          }}>
+              The sacred space for your spiritual journey.
+            </p>
+            <p style={{
+            animationDelay: '0.4s'
+          }} className="text-lg text-sacred-warm-gray max-w-2xl mx-auto mb-12 animate-fade-in py-0">
+              All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
+            </p>
+            <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in" style={{
+            animationDelay: '0.6s'
+          }}>
+              Begin Your Journey
+            </Button>
+          </div>
         </section>
 
         {/* Manifesto Section */}
