@@ -2,9 +2,26 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Landing = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('header');
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
@@ -31,7 +48,7 @@ const Landing = () => {
       </div>
 
       {/* Header */}
-      <header className="fixed top-5 left-5 right-5 bg-white/90 backdrop-blur-sm border border-sacred-sage-border/20 rounded-2xl shadow-lg z-50 p-4">
+      <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 landing-header">
         <nav className="flex justify-between items-center max-w-6xl mx-auto">
           <div className="flex items-center gap-3">
             <img 
@@ -41,13 +58,27 @@ const Landing = () => {
             />
             <span className="text-2xl font-semibold text-sacred-sage-green">Dwelling Place</span>
           </div>
-          <ul className="hidden md:flex gap-8 list-none">
-            <li><button onClick={() => navigate('/why')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Why</button></li>
-            <li><button onClick={() => navigate('/how')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">How</button></li>
-            <li><a href="#features" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Features</a></li>
-            <li><a href="#manifesto" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Manifesto</a></li>
-            <li><a href="#journey" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Journey</a></li>
-          </ul>
+          <div className="flex items-center gap-8">
+            <ul className="hidden md:flex gap-8 list-none">
+              <li><button onClick={() => navigate('/why')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Why</button></li>
+              <li><button onClick={() => navigate('/how')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">How</button></li>
+              <li><a href="#features" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Features</a></li>
+            </ul>
+            <div className="flex items-center gap-4">
+              <Button 
+                variant="ghost" 
+                className="text-sacred-warm-gray hover:text-sacred-sage-green hover:bg-transparent"
+              >
+                Login
+              </Button>
+              <Button 
+                onClick={() => navigate('/welcome')}
+                className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white"
+              >
+                Sign Up
+              </Button>
+            </div>
+          </div>
         </nav>
       </header>
 
@@ -105,23 +136,6 @@ const Landing = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </section>
-
-        {/* Manifesto Section */}
-        <section className="py-20 my-20" id="manifesto">
-          <div className="bg-gradient-to-br from-white/90 to-sacred-terracotta/20 rounded-3xl p-16 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full opacity-10">
-              <div className="w-full h-full bg-gradient-to-r from-sacred-sage-light to-sacred-golden-tan animate-[spin_30s_linear_infinite]"></div>
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-sm font-semibold tracking-widest uppercase text-sacred-warm-gray mb-8">
-                Our Sacred Mission
-              </h2>
-              <p className="text-2xl md:text-4xl font-light leading-relaxed text-sacred-sage-green italic">
-                "In a world of endless noise and distraction, we believe everyone deserves a sacred space to connect with the divine, to find peace, and to nurture their spiritual growth."
-              </p>
-            </div>
           </div>
         </section>
 
@@ -187,7 +201,6 @@ const Landing = () => {
               <h4 className="text-lg font-semibold mb-5 text-sacred-sage-green">Community</h4>
               <ul className="space-y-3 list-none">
                 <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">About</a></li>
-                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Manifesto</a></li>
                 <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Stories</a></li>
                 <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Contact</a></li>
               </ul>
@@ -211,6 +224,17 @@ const Landing = () => {
           </div>
         </div>
       </footer>
+
+      <style>
+        {`
+          .landing-header.scrolled {
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(15px) !important;
+            border: 1px solid rgba(0, 0, 0, 0.05) !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+          }
+        `}
+      </style>
     </div>
   );
 };
