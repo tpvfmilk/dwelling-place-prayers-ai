@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -73,7 +72,7 @@ const Landing = () => {
       <main 
         className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
         style={{
-          backgroundImage: 'url("/lovable-uploads/05f55c35-9e58-4e6e-a563-17c3d1c5d5a3.png")',
+          backgroundImage: 'url("/lovable-uploads/c43b3f53-45b5-431d-926b-4ad31bb8bb98.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
