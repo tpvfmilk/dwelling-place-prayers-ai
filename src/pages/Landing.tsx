@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -98,9 +97,7 @@ const Landing = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
-          backgroundColor: '#F8F6F3',
-          minHeight: '100vh',
-          maxHeight: '150vh'
+          backgroundColor: '#F8F6F3'
         }}
       >
         {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 45% */}
@@ -313,7 +310,7 @@ What should have never been lost is now yours again. We promise:</p>
       </main>
 
       {/* Footer */}
-      <footer className="bg-white/60 mt-20 py-16 px-8">
+      <footer className="bg-white/60 py-16 px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
             <div>
