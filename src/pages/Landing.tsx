@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -91,10 +90,10 @@ const Landing = () => {
         </nav>
       </header>
 
-      <main className="pt-28 max-w-6xl mx-auto px-8 relative">
+      <main className="max-w-6xl mx-auto px-8 relative">
         {/* Hero Section */}
         <section 
-          className="text-center relative py-[236px]" 
+          className="text-center relative pt-28 pb-[236px]" 
           style={{
             backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
             backgroundSize: 'cover',
