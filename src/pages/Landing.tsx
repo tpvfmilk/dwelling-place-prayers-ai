@@ -44,25 +44,6 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
-      {/* Background Image */}
-      <div 
-        className="fixed inset-0 -z-10 w-full h-full"
-        style={{
-          backgroundImage: 'url("/lovable-uploads/05f55c35-9e58-4e6e-a563-17c3d1c5d5a3.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
-      
-      {/* Gradient Overlay */}
-      <div 
-        className="fixed inset-0 -z-10 w-full h-full"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0.1) 0%, rgba(248, 246, 243, 0.3) 20%, rgba(248, 246, 243, 0.6) 50%, rgba(248, 246, 243, 0.85) 80%, rgba(248, 246, 243, 0.95) 100%)'
-        }}
-      />
-
       {/* Header */}
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 landing-header">
         <nav className="flex justify-between items-center max-w-6xl mx-auto">
@@ -88,7 +69,24 @@ const Landing = () => {
         </nav>
       </header>
 
-      <main className="pt-28 max-w-6xl mx-auto px-8">
+      <main 
+        className="pt-28 max-w-6xl mx-auto px-8 relative"
+        style={{
+          backgroundImage: 'url("/lovable-uploads/05f55c35-9e58-4e6e-a563-17c3d1c5d5a3.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'local'
+        }}
+      >
+        {/* Gradient Overlay for the main content */}
+        <div 
+          className="absolute inset-0 -z-10"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0.1) 0%, rgba(248, 246, 243, 0.3) 20%, rgba(248, 246, 243, 0.6) 50%, rgba(248, 246, 243, 0.85) 80%, rgba(248, 246, 243, 0.95) 100%)'
+          }}
+        />
+
         {/* Hero Section */}
         <section className="text-center relative py-[236px]">
           <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8 text-sacred-sage-green animate-fade-in">
