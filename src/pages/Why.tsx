@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+
 const Why = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -91,9 +93,12 @@ const Why = () => {
               <p className="text-left">We've always approached spiritual technology this way. We look at our current prayer tools and ask ourselves why it's done the way it is. Why do prayer apps have social feeds? Why do we use categories and folders for our deepest conversations with God? Are these patterns serving our spiritual growth or just creating digital noise?</p>
               <p className="text-left">With Dwelling Place we ultimately asked ourselves, why not? Why not find a different way to nurture our relationship with the divine? Why not remove all the distractions that get in the way of true connection? Forget how it's usually done. Why not make it sacred?</p>
             </div>
-            <div className="text-sm font-semibold tracking-widest uppercase text-sacred-warm-gray mt-8">
+            <Button 
+              variant="outline" 
+              className="mt-8 border-sacred-sage-green text-sacred-sage-green hover:bg-sacred-sage-green hover:text-white transition-colors"
+            >
               More on Our Sacred Mission
-            </div>
+            </Button>
           </div>
         </section>
 
@@ -110,8 +115,13 @@ const Why = () => {
               Could we not use the gift of technology to build something better? Something that truly nurtures our souls, rather than distracting from them. Something designed to foster a sacred relationship with the divine once again. Something that serves a simple, holy purpose.
             </div>
             <p>We decided we could.</p>
-            <div className="text-sm font-semibold tracking-widest uppercase text-sacred-warm-gray mt-8">
-              How We Make Sacred Decisions
+            <div className="flex justify-center mt-8">
+              <Button 
+                variant="outline" 
+                className="border-sacred-sage-green text-sacred-sage-green hover:bg-sacred-sage-green hover:text-white transition-colors"
+              >
+                How We Make Sacred Decisions
+              </Button>
             </div>
           </div>
         </div>
