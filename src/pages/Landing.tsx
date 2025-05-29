@@ -1,8 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Shield, Eye, Lock, Heart } from "lucide-react";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -22,6 +22,38 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const manifestoItems = [
+    "NO distractions from prayer",
+    "NO judgment or guilt", 
+    "NO invasive tracking",
+    "NO social pressure",
+    "NO commercialization",
+    "NO barriers to God"
+  ];
+
+  const privacyPoints = [
+    {
+      icon: Shield,
+      title: "Your prayers are private",
+      description: "Personal spiritual content stays between you and God"
+    },
+    {
+      icon: Lock,
+      title: "Secure & encrypted",
+      description: "All data is protected with industry-standard security"
+    },
+    {
+      icon: Eye,
+      title: "You're in control",
+      description: "Manage, edit, or delete your content anytime"
+    },
+    {
+      icon: Heart,
+      title: "Built with love",
+      description: "Created by believers, for believers, with reverence"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
@@ -101,6 +133,75 @@ const Landing = () => {
           >
             Begin Your Journey
           </Button>
+        </section>
+
+        {/* Manifesto Section */}
+        <section className="py-16 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-light mb-8 text-sacred-sage-green tracking-tight">
+              What was always meant to be sacred<br />is now yours again.
+            </h2>
+            <p className="text-xl text-sacred-warm-gray mb-12 font-medium">
+              We promise:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              {manifestoItems.map((item, index) => (
+                <div key={index} className="text-left">
+                  <span className="text-2xl md:text-3xl font-bold text-sacred-warm-red">NO</span>
+                  <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
+                    {item.replace('NO ', '')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Privacy & Trust Section */}
+        <section className="py-20">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-light mb-6 text-sacred-sage-green tracking-tight">
+              Privacy & Trust
+            </h2>
+            <p className="text-xl text-sacred-warm-gray max-w-2xl mx-auto">
+              Your spiritual journey deserves the highest protection
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {privacyPoints.map((point, index) => {
+              const Icon = point.icon;
+              return (
+                <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-sacred-cream p-3 rounded-full border border-sacred-sage-border/30">
+                        <Icon className="w-6 h-6 text-sacred-sage-green" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-sacred-sage-green mb-2">
+                          {point.title}
+                        </h3>
+                        <p className="text-sacred-warm-gray leading-relaxed">
+                          {point.description}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
+          {/* Scripture */}
+          <Card className="bg-sacred-cream/40 border-sacred-sage-border/20 max-w-3xl mx-auto">
+            <CardContent className="p-8 text-center">
+              <p className="text-lg italic text-sacred-terracotta font-medium leading-relaxed" style={{fontFamily: 'Crimson Text, serif'}}>
+                "The Lord your God is with you, the Mighty Warrior who saves. 
+                He will take great delight in you." - Zephaniah 3:17
+              </p>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Features Section */}
