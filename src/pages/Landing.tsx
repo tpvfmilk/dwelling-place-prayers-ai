@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -70,25 +71,26 @@ const Landing = () => {
       </header>
 
       <main 
-        className="pt-28 max-w-6xl mx-auto px-8 relative"
+        className="pt-28 max-w-6xl mx-auto px-8 relative min-h-screen"
         style={{
           backgroundImage: 'url("/lovable-uploads/05f55c35-9e58-4e6e-a563-17c3d1c5d5a3.png")',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'local'
+          backgroundColor: '#F8F6F3'
         }}
       >
-        {/* Gradient Overlay for the main content */}
+        {/* Gradient Overlay for the main content - much lighter */}
         <div 
-          className="absolute inset-0 -z-10"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0.1) 0%, rgba(248, 246, 243, 0.3) 20%, rgba(248, 246, 243, 0.6) 50%, rgba(248, 246, 243, 0.85) 80%, rgba(248, 246, 243, 0.95) 100%)'
+            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0.05) 0%, rgba(248, 246, 243, 0.1) 20%, rgba(248, 246, 243, 0.3) 50%, rgba(248, 246, 243, 0.6) 80%, rgba(248, 246, 243, 0.8) 100%)',
+            zIndex: 1
           }}
         />
 
         {/* Hero Section */}
-        <section className="text-center relative py-[236px]">
+        <section className="text-center relative py-[236px]" style={{ zIndex: 2 }}>
           <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8 text-sacred-sage-green animate-fade-in">
             Connect with God.<br />Find your peace.
           </h1>
@@ -110,7 +112,7 @@ const Landing = () => {
         </section>
 
         {/* Manifesto Section */}
-        <section className="py-16 text-center">
+        <section className="py-16 text-center relative" style={{ zIndex: 2 }}>
           <div className="max-w-5xl mx-auto px-[153px] py-[133px]">
             <div className="max-w-4xl mx-auto mb-16">
               <p className="text-lg text-sacred-warm-gray leading-relaxed mb-8 text-left md:text-2xl">
@@ -167,7 +169,7 @@ What should have never been lost is now yours again. We promise:</p>
         </section>
 
         {/* Privacy & Trust Section */}
-        <section className="py-20">
+        <section className="py-20 relative" style={{ zIndex: 2 }}>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-light mb-6 text-sacred-sage-green tracking-tight">
               Privacy & Trust
@@ -215,7 +217,7 @@ What should have never been lost is now yours again. We promise:</p>
         </section>
 
         {/* Features Section */}
-        <section className="py-24" id="features">
+        <section className="py-24 relative" id="features" style={{ zIndex: 2 }}>
           <h2 className="text-4xl md:text-6xl font-light text-center mb-16 text-sacred-sage-green tracking-tight">
             One sacred place for your spiritual life.
           </h2>
@@ -251,7 +253,7 @@ What should have never been lost is now yours again. We promise:</p>
         </section>
 
         {/* Additional Features */}
-        <section className="py-24" id="journey">
+        <section className="py-24 relative" id="journey" style={{ zIndex: 2 }}>
           <h2 className="text-4xl md:text-6xl font-light text-center mb-16 text-sacred-sage-green tracking-tight">
             For every heart seeking God.
           </h2>
