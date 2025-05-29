@@ -1,10 +1,7 @@
-
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 const Why = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -16,13 +13,10 @@ const Why = () => {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  return (
-    <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
+  return <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
       {/* Animated gradient background */}
       <div className="fixed top-0 left-0 w-full h-full opacity-80 -z-10">
         <div className="w-full h-full bg-gradient-to-br from-sacred-cream via-white to-sacred-terracotta/20 animate-gentle-pulse"></div>
@@ -31,17 +25,17 @@ const Why = () => {
       {/* Floating decorative elements with sacred geometry */}
       <div className="fixed top-[15%] left-[8%] opacity-[0.08] animate-[float_25s_ease-in-out_infinite] -z-10">
         <svg width="80" height="80" viewBox="0 0 80 80">
-          <circle cx="40" cy="40" r="35" fill="none" stroke="#7A8B5C" strokeWidth="1"/>
+          <circle cx="40" cy="40" r="35" fill="none" stroke="#7A8B5C" strokeWidth="1" />
         </svg>
       </div>
       <div className="fixed top-[40%] right-[12%] opacity-[0.08] animate-[float_25s_ease-in-out_infinite_8s] -z-10">
         <svg width="60" height="60" viewBox="0 0 60 60">
-          <rect x="15" y="15" width="30" height="30" fill="none" stroke="#7A8B5C" strokeWidth="1"/>
+          <rect x="15" y="15" width="30" height="30" fill="none" stroke="#7A8B5C" strokeWidth="1" />
         </svg>
       </div>
       <div className="fixed bottom-[25%] left-[15%] opacity-[0.08] animate-[float_25s_ease-in-out_infinite_16s] -z-10">
         <svg width="70" height="70" viewBox="0 0 70 70">
-          <polygon points="35,10 60,55 10,55" fill="none" stroke="#7A8B5C" strokeWidth="1"/>
+          <polygon points="35,10 60,55 10,55" fill="none" stroke="#7A8B5C" strokeWidth="1" />
         </svg>
       </div>
 
@@ -49,15 +43,8 @@ const Why = () => {
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 why-header">
         <nav className="flex justify-between items-center max-w-6xl mx-auto">
           <div className="flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
-              alt="Dwelling Place Logo" 
-              className="w-8 h-8"
-            />
-            <button 
-              onClick={() => navigate('/landing')}
-              className="text-2xl font-semibold text-sacred-sage-green hover:text-sacred-warm-gray transition-colors cursor-pointer"
-            >
+            <img src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" alt="Dwelling Place Logo" className="w-8 h-8" />
+            <button onClick={() => navigate('/landing')} className="text-2xl font-semibold text-sacred-sage-green hover:text-sacred-warm-gray transition-colors cursor-pointer">
               Dwelling Place
             </button>
           </div>
@@ -101,8 +88,8 @@ const Why = () => {
               Because why not create something sacred?
             </h2>
             <div className="text-lg text-sacred-warm-gray leading-relaxed space-y-6">
-              <p>We've always approached spiritual technology this way. We look at our current prayer tools and ask ourselves why it's done the way it is. Why do prayer apps have social feeds? Why do we use categories and folders for our deepest conversations with God? Are these patterns serving our spiritual growth or just creating digital noise?</p>
-              <p>With Dwelling Place we ultimately asked ourselves, why not? Why not find a different way to nurture our relationship with the divine? Why not remove all the distractions that get in the way of true connection? Forget how it's usually done. Why not make it sacred?</p>
+              <p className="text-left">We've always approached spiritual technology this way. We look at our current prayer tools and ask ourselves why it's done the way it is. Why do prayer apps have social feeds? Why do we use categories and folders for our deepest conversations with God? Are these patterns serving our spiritual growth or just creating digital noise?</p>
+              <p className="text-left">With Dwelling Place we ultimately asked ourselves, why not? Why not find a different way to nurture our relationship with the divine? Why not remove all the distractions that get in the way of true connection? Forget how it's usually done. Why not make it sacred?</p>
             </div>
             <div className="text-sm font-semibold tracking-widest uppercase text-sacred-warm-gray mt-8">
               More on Our Sacred Mission
@@ -117,7 +104,7 @@ const Why = () => {
             </h2>
           </div>
           <div className="text-lg text-sacred-warm-gray leading-relaxed space-y-6">
-            <p>There was a time when our spiritual tools were just tools. We picked up a prayer book to commune with God, then closed it when we were finished. It was a tool made for one sacred purpose. It had no ulterior motives.</p>
+            <p className="text-left">There was a time when our spiritual tools were just tools. We picked up a prayer book to commune with God, then closed it when we were finished. It was a tool made for one sacred purpose. It had no ulterior motives.</p>
             <p>Fast forward to today, and our digital tools have evolved. They've become smarter, with algorithms, feeds, notifications. They are designed to make us spend as much time with them as possible. We must feed them, manage them, engage with them. Our tools no longer serve our spiritual purpose. We serve theirs.</p>
             <div className="text-xl italic text-sacred-sage-green my-8 pl-8 border-l-4 border-sacred-sage-border/30">
               Could we not use the gift of technology to build something better? Something that truly nurtures our souls, rather than distracting from them. Something designed to foster a sacred relationship with the divine once again. Something that serves a simple, holy purpose.
@@ -196,8 +183,6 @@ const Why = () => {
           }
         `}
       </style>
-    </div>
-  );
+    </div>;
 };
-
 export default Why;
