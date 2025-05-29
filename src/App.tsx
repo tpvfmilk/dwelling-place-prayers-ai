@@ -12,6 +12,7 @@ import PrayerInput from "./pages/PrayerInput";
 import PrayerDisplay from "./pages/PrayerDisplay";
 import PrayerJournal from "./pages/PrayerJournal";
 import Settings from "./pages/Settings";
+import Landing from "./pages/Landing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
+          <Route path="/landing" element={<Landing />} />
           <Route path="/prayer-style" element={<PrayerStyleSelection />} />
           <Route path="/privacy" element={<PrivacyTrust />} />
           <Route path="/home" element={<Home />} />
