@@ -1,5 +1,3 @@
-
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -81,11 +79,11 @@ const Landing = () => {
           backgroundColor: '#F8F6F3'
         }}
       >
-        {/* Enhanced Gradient Overlay with bottom fade-out */}
+        {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 50% */}
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0.1) 0%, rgba(248, 246, 243, 0.2) 30%, rgba(248, 246, 243, 0.4) 60%, rgba(248, 246, 243, 0.8) 85%, rgba(248, 246, 243, 0.95) 100%)',
+            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 25%, rgba(248, 246, 243, 0.8) 40%, rgba(248, 246, 243, 1) 50%, rgba(248, 246, 243, 1) 100%)',
             zIndex: 1
           }}
         />
@@ -354,4 +352,3 @@ What should have never been lost is now yours again. We promise:</p>
 };
 
 export default Landing;
-
