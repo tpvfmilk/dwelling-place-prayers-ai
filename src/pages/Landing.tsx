@@ -3,9 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
-import InteractiveSolarBackground from "@/components/InteractiveSolarBackground";
+
 const Landing = () => {
   const navigate = useNavigate();
+  
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -20,6 +21,7 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -39,9 +41,35 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
-  return <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
-      {/* Interactive Solar Background */}
-      <InteractiveSolarBackground />
+
+  return (
+    <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
+      {/* Custom Background with Image and Gradient Fade */}
+      <div 
+        className="fixed top-0 left-0 w-full h-full -z-10"
+        style={{
+          backgroundImage: `url('/lovable-uploads/05f55c35-9e58-4e6e-a563-17c3d1c5d5a3.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      />
+      
+      {/* Gradient Fade Overlay */}
+      <div 
+        className="fixed top-0 left-0 w-full h-full -z-10"
+        style={{
+          background: `linear-gradient(
+            to bottom,
+            rgba(248, 246, 243, 0.1) 0%,
+            rgba(248, 246, 243, 0.3) 20%,
+            rgba(248, 246, 243, 0.6) 50%,
+            rgba(248, 246, 243, 0.85) 80%,
+            rgba(248, 246, 243, 0.95) 100%
+          )`
+        }}
+      />
 
       {/* Header */}
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 landing-header">
@@ -105,32 +133,30 @@ const Landing = () => {
               
               <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices.
 
-
 What should have never been lost is now yours again. We promise:</p>
             </div>
 
-            
-            
-            {/* NO and YES Lists Side by Side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
-              {/* NO List */}
               <div>
-                {noItems.map((item, index) => <div key={index} className="text-left mb-4">
+                {noItems.map((item, index) => (
+                  <div key={index} className="text-left mb-4">
                     <span className="text-2xl md:text-3xl font-bold text-sacred-warm-red">NO</span>
                     <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
                       {item.replace('NO ', '')}
                     </span>
-                  </div>)}
+                  </div>
+                ))}
               </div>
               
-              {/* YES List */}
               <div>
-                {yesItems.map((item, index) => <div key={index} className="text-left mb-4">
+                {yesItems.map((item, index) => (
+                  <div key={index} className="text-left mb-4">
                     <span className="text-2xl md:text-3xl font-bold text-sacred-sage-green">YES</span>
                     <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
                       {item.replace('YES ', '')}
                     </span>
-                  </div>)}
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -163,8 +189,9 @@ What should have never been lost is now yours again. We promise:</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {privacyPoints.map((point, index) => {
-            const Icon = point.icon;
-            return <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
+              const Icon = point.icon;
+              return (
+                <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className="bg-sacred-cream p-3 rounded-full border border-sacred-sage-border/30">
@@ -180,11 +207,11 @@ What should have never been lost is now yours again. We promise:</p>
                       </div>
                     </div>
                   </CardContent>
-                </Card>;
-          })}
+                </Card>
+              );
+            })}
           </div>
 
-          {/* Scripture */}
           <Card className="bg-sacred-cream/40 border-sacred-sage-border/20 max-w-3xl mx-auto">
             <CardContent className="p-8 text-center">
               <p className="text-lg italic text-sacred-terracotta font-medium leading-relaxed" style={{
@@ -329,6 +356,8 @@ What should have never been lost is now yours again. We promise:</p>
           }
         `}
       </style>
-    </div>;
+    </div>
+  );
 };
+
 export default Landing;
