@@ -3,8 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
+import InteractiveSolarBackground from "@/components/InteractiveSolarBackground";
+
 const Landing = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -19,6 +22,7 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -38,28 +42,11 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
-  return <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
-      {/* Animated gradient background */}
-      <div className="fixed top-0 left-0 w-full h-full opacity-80 -z-10">
-        <div className="w-full h-full bg-gradient-to-br from-sacred-cream via-white to-sacred-terracotta/20 animate-gentle-pulse"></div>
-      </div>
 
-      {/* Floating decorative elements */}
-      <div className="fixed top-[10%] left-[10%] opacity-10 animate-[float_20s_ease-in-out_infinite] -z-10">
-        <svg width="60" height="60" viewBox="0 0 60 60">
-          <circle cx="30" cy="30" r="25" fill="none" stroke="#7A8B5C" strokeWidth="1" />
-        </svg>
-      </div>
-      <div className="fixed top-[30%] right-[15%] opacity-10 animate-[float_20s_ease-in-out_infinite_5s] -z-10">
-        <svg width="40" height="40" viewBox="0 0 40 40">
-          <rect x="10" y="10" width="20" height="20" fill="none" stroke="#7A8B5C" strokeWidth="1" />
-        </svg>
-      </div>
-      <div className="fixed bottom-[20%] left-[20%] opacity-10 animate-[float_20s_ease-in-out_infinite_10s] -z-10">
-        <svg width="50" height="50" viewBox="0 0 50 50">
-          <polygon points="25,5 45,40 5,40" fill="none" stroke="#7A8B5C" strokeWidth="1" />
-        </svg>
-      </div>
+  return (
+    <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
+      {/* Interactive Solar Background */}
+      <InteractiveSolarBackground />
 
       {/* Header */}
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 landing-header">
@@ -348,6 +335,8 @@ const Landing = () => {
           }
         `}
       </style>
-    </div>;
+    </div>
+  );
 };
+
 export default Landing;

@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import InteractiveSolarBackground from "@/components/InteractiveSolarBackground";
 
 const Why = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -18,28 +20,11 @@ const Why = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
-      {/* Animated gradient background */}
-      <div className="fixed top-0 left-0 w-full h-full opacity-80 -z-10">
-        <div className="w-full h-full bg-gradient-to-br from-sacred-cream via-white to-sacred-terracotta/20 animate-gentle-pulse"></div>
-      </div>
 
-      {/* Floating decorative elements with sacred geometry */}
-      <div className="fixed top-[15%] left-[8%] opacity-[0.08] animate-[float_25s_ease-in-out_infinite] -z-10">
-        <svg width="80" height="80" viewBox="0 0 80 80">
-          <circle cx="40" cy="40" r="35" fill="none" stroke="#7A8B5C" strokeWidth="1" />
-        </svg>
-      </div>
-      <div className="fixed top-[40%] right-[12%] opacity-[0.08] animate-[float_25s_ease-in-out_infinite_8s] -z-10">
-        <svg width="60" height="60" viewBox="0 0 60 60">
-          <rect x="15" y="15" width="30" height="30" fill="none" stroke="#7A8B5C" strokeWidth="1" />
-        </svg>
-      </div>
-      <div className="fixed bottom-[25%] left-[15%] opacity-[0.08] animate-[float_25s_ease-in-out_infinite_16s] -z-10">
-        <svg width="70" height="70" viewBox="0 0 70 70">
-          <polygon points="35,10 60,55 10,55" fill="none" stroke="#7A8B5C" strokeWidth="1" />
-        </svg>
-      </div>
+  return (
+    <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
+      {/* Interactive Solar Background */}
+      <InteractiveSolarBackground />
 
       {/* Header */}
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 why-header">
@@ -193,6 +178,8 @@ const Why = () => {
           }
         `}
       </style>
-    </div>;
+    </div>
+  );
 };
+
 export default Why;
