@@ -103,11 +103,11 @@ const Landing = () => {
             zIndex: 2
           }}
         >
-          {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 45% */}
+          {/* Enhanced Gradient Overlay with fade starting at 25% and fully gone at 60% */}
           <div 
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 25%, rgba(248, 246, 243, 1) 45%, rgba(248, 246, 243, 1) 100%)',
+              background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 25%, rgba(248, 246, 243, 1) 60%, rgba(248, 246, 243, 1) 100%)',
               zIndex: 1
             }}
           />
