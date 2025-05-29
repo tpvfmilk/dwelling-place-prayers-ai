@@ -3,10 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
-
 const Landing = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -40,7 +38,6 @@ const Landing = () => {
     img.src = imageUrl;
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -62,7 +59,7 @@ const Landing = () => {
   }];
   return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
-      <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 landing-header px-[103px] mx-[139px]">
+      <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 p-4 transition-all duration-300 landing-header px-[103px] mx-[139px] rounded-full py-[4px]">
         <nav className="flex justify-between items-center max-w-6xl mx-auto">
           <div className="flex items-center gap-3">
             <img src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" alt="Dwelling Place Logo" className="w-8 h-8" />
@@ -171,7 +168,9 @@ What should have never been lost is now yours again. We promise:</p>
         </section>
 
         {/* Full-width Gray Section */}
-        <section className="relative -mx-8 px-8" style={{ zIndex: 2 }}>
+        <section className="relative -mx-8 px-8" style={{
+        zIndex: 2
+      }}>
           <div className="bg-stone-300 py-[135px]">
             <div className="max-w-4xl mx-auto space-y-8">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
@@ -375,5 +374,4 @@ What should have never been lost is now yours again. We promise:</p>
       </style>
     </div>;
 };
-
 export default Landing;
