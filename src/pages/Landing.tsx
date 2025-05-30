@@ -156,7 +156,7 @@ const Landing = () => {
           zIndex: 2
         }}>
           <div className="py-[135px] px-8" style={{
-            background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 20%, rgba(254, 215, 170, 1) 80%, rgba(254, 215, 170, 1) 100%)'
+            background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 20%, rgba(254, 215, 170, 0) 100%)'
           }}>
             <div className="max-w-4xl mx-auto space-y-8 my-[240px]">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] text-center md:text-5xl">Come as you are, pray as you need...  
