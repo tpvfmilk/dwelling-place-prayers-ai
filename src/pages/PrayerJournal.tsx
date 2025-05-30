@@ -133,7 +133,7 @@ const PrayerJournal = () => {
         {/* Navigation Items */}
         <div className="flex flex-col gap-5 flex-1">
           <div 
-            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group p-2 ${
               activeNav === "all" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("all")}
@@ -145,7 +145,7 @@ const PrayerJournal = () => {
           </div>
           
           <div 
-            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group p-2 ${
               activeNav === "circles" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("circles")}
@@ -157,7 +157,7 @@ const PrayerJournal = () => {
           </div>
           
           <div 
-            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group p-2 ${
               activeNav === "blessing" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("blessing")}
@@ -169,7 +169,7 @@ const PrayerJournal = () => {
           </div>
           
           <div 
-            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group p-2 ${
               activeNav === "scripture" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("scripture")}
@@ -181,7 +181,7 @@ const PrayerJournal = () => {
           </div>
           
           <div 
-            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group p-2 ${
               activeNav === "reflections" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("reflections")}
@@ -196,14 +196,14 @@ const PrayerJournal = () => {
         {/* Bottom Section */}
         <div className="flex flex-col gap-4 items-center">
           <button 
-            className="w-8 h-8 rounded-full bg-gradient-to-br from-sacred-custom-brown to-sacred-custom-brown-dark flex items-center justify-center transition-transform hover:scale-110"
+            className="w-8 h-8 rounded-full bg-gradient-to-br from-sacred-custom-brown to-sacred-custom-brown-dark flex items-center justify-center transition-transform hover:scale-110 p-1"
             onClick={() => setIsDarkTheme(!isDarkTheme)}
           >
             {isDarkTheme ? <Moon className="w-4 h-4 text-white" /> : <Sun className="w-4 h-4 text-white" />}
           </button>
           
           <div 
-            className="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
+            className="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green p-2"
             onClick={() => navigate("/settings")}
           >
             <Settings className="w-6 h-6" />
@@ -297,7 +297,7 @@ const PrayerJournal = () => {
 
                 {/* Reflection */}
                 {prayer.reflection && (
-                  <div className="bg-sacred-custom-brown/30 p-3 rounded-lg my-4">
+                  <div className="my-4">
                     <div className="text-xs text-sacred-sage-green font-medium mb-1">Your Reflection:</div>
                     <div className="text-sm text-sacred-warm-gray italic">"{prayer.reflection}"</div>
                   </div>
