@@ -19,9 +19,9 @@ const HeaderNavigation = () => {
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center gap-8">
         <ul className="flex gap-8 list-none">
+          <li><button onClick={() => navigate('/landing')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">What</button></li>
           <li><button onClick={() => navigate('/why')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Why</button></li>
           <li><button onClick={() => navigate('/how')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">How</button></li>
-          <li><a href="#features" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Features</a></li>
         </ul>
         <div className="flex items-center gap-4">
           <Button variant="ghost" className="text-sacred-warm-gray hover:text-sacred-sage-green hover:bg-transparent">
@@ -42,14 +42,14 @@ const HeaderNavigation = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-white z-50">
+            <DropdownMenuItem onClick={() => navigate('/landing')}>
+              What
+            </DropdownMenuItem>
             <DropdownMenuItem onClick={() => navigate('/why')}>
               Why
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => navigate('/how')}>
               How
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a href="#features">Features</a>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -72,14 +72,14 @@ const HeaderNavigation = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-white z-50">
+            <DropdownMenuItem onClick={() => navigate('/landing')}>
+              What
+            </DropdownMenuItem>
             <DropdownMenuItem onClick={() => navigate('/why')}>
               Why
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => navigate('/how')}>
               How
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a href="#features">Features</a>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
