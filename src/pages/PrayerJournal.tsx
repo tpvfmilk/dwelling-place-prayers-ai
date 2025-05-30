@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -100,8 +101,8 @@ const PrayerJournal = () => {
   const getCardGradient = (type: string) => {
     switch (type) {
       case "prayer": return "linear-gradient(135deg, #F8F6F3 0%, #FFFFFF 50%, #F0EBE5 100%)";
-      case "reflection": return "linear-gradient(135deg, #F8F6F3 0%, #D4A574 20%, #F8F6F3 100%)";
-      case "verse": return "linear-gradient(135deg, #4A5D23 0%, #7A8B5C 100%)";
+      case "reflection": return "linear-gradient(135deg, #F8F6F3 0%, #F5F1ED 30%, #F8F6F3 100%)";
+      case "verse": return "linear-gradient(135deg, #E8EDE0 0%, #F0F4E8 100%)";
       case "note": return "linear-gradient(135deg, #D4B5A0 0%, #F8F6F3 100%)";
       default: return "rgba(248, 246, 243, 0.95)";
     }
@@ -137,7 +138,7 @@ const PrayerJournal = () => {
             }`}
             onClick={() => setActiveNav("all")}
           >
-            <Book className="w-5 h-5" />
+            <Book className="w-6 h-6" />
             <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               All Prayers
             </div>
@@ -149,7 +150,7 @@ const PrayerJournal = () => {
             }`}
             onClick={() => setActiveNav("circles")}
           >
-            <Circle className="w-5 h-5" />
+            <Circle className="w-6 h-6" />
             <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Prayer Circles
             </div>
@@ -161,7 +162,7 @@ const PrayerJournal = () => {
             }`}
             onClick={() => setActiveNav("blessing")}
           >
-            <Star className="w-5 h-5" />
+            <Star className="w-6 h-6" />
             <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Daily Blessing
             </div>
@@ -173,7 +174,7 @@ const PrayerJournal = () => {
             }`}
             onClick={() => setActiveNav("scripture")}
           >
-            <Book className="w-5 h-5" />
+            <Book className="w-6 h-6" />
             <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Scripture
             </div>
@@ -185,7 +186,7 @@ const PrayerJournal = () => {
             }`}
             onClick={() => setActiveNav("reflections")}
           >
-            <MessageSquare className="w-5 h-5" />
+            <MessageSquare className="w-6 h-6" />
             <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Reflections
             </div>
@@ -205,7 +206,7 @@ const PrayerJournal = () => {
             className="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             onClick={() => navigate("/settings")}
           >
-            <Settings className="w-5 h-5" />
+            <Settings className="w-6 h-6" />
             <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Settings
             </div>
@@ -214,7 +215,7 @@ const PrayerJournal = () => {
       </div>
 
       {/* Main Content */}
-      <div className="ml-15 flex-1 p-5">
+      <div className="ml-15 flex-1 pl-8">
         {/* Search Bar */}
         <div className="sticky top-0 z-40 mb-10 py-10">
           <div className="max-w-7xl mx-auto relative">
@@ -236,7 +237,7 @@ const PrayerJournal = () => {
 
         {/* Masonry Gallery */}
         <div 
-          className="max-w-7xl mx-auto pb-24"
+          className="max-w-7xl mx-auto pb-24 pl-4"
           style={{
             columnCount: "4",
             columnGap: "20px",
@@ -271,13 +272,13 @@ const PrayerJournal = () => {
                       style={{ backgroundColor: getMoodColor(prayer.mood) }}
                     />
                   )}
-                  <h3 className={`text-lg font-semibold ${prayer.type === 'verse' ? 'text-white' : 'text-sacred-sage-green'}`}>
+                  <h3 className={`text-lg font-semibold ${prayer.type === 'verse' ? 'text-sacred-sage-green' : 'text-sacred-sage-green'}`}>
                     {prayer.title}
                   </h3>
                 </div>
 
                 {/* Content */}
-                <div className={`text-sm leading-relaxed mb-4 ${prayer.type === 'verse' ? 'text-white' : 'text-sacred-warm-gray'}`}>
+                <div className={`text-sm leading-relaxed mb-4 ${prayer.type === 'verse' ? 'text-sacred-warm-gray' : 'text-sacred-warm-gray'}`}>
                   {prayer.preview.split('\n').map((line, i) => (
                     <div key={i}>{line}</div>
                   ))}
@@ -287,7 +288,7 @@ const PrayerJournal = () => {
                 {prayer.scripture && (
                   <div className={`italic border-l-3 pl-3 my-4 text-sm ${
                     prayer.type === 'verse' 
-                      ? 'border-white/40 text-white/90' 
+                      ? 'border-sacred-sage-green/40 text-sacred-sage-green' 
                       : 'border-sacred-custom-brown text-sacred-sage-green'
                   }`}>
                     {prayer.scripture}
@@ -323,7 +324,7 @@ const PrayerJournal = () => {
                       key={index}
                       className={`px-2 py-1 rounded-xl text-xs ${
                         prayer.type === 'verse'
-                          ? 'bg-white/20 text-white'
+                          ? 'bg-sacred-sage-green/20 text-sacred-sage-green'
                           : 'bg-sacred-sage-green/10 text-sacred-sage-green'
                       }`}
                     >
