@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -219,14 +218,15 @@ const PrayerJournal = () => {
         {/* Search Bar */}
         <div className="sticky top-0 z-40 mb-10 py-10">
           <div className="max-w-7xl mx-auto relative">
-            <div className="relative flex items-center min-h-[200px]">
-              <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-16 h-16 text-sacred-sage-light pointer-events-none z-10" />
+            <div className="relative flex items-center min-h-[300px]">
+              <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-6 h-6 text-sacred-sage-light pointer-events-none z-10" />
               <Input
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search your heart and prayers..."
-                className="w-full pl-32 pr-60 py-12 text-9xl italic border-none bg-transparent outline-none placeholder:text-sacred-sage-light focus:ring-0 focus:border-none shadow-none text-sacred-sage-green"
+                className="w-full pl-20 pr-60 py-12 border-none bg-transparent outline-none placeholder:text-sacred-sage-light focus:ring-0 focus:border-none focus:outline-none hover:ring-0 hover:outline-none shadow-none text-sacred-sage-green"
+                style={{ fontSize: '12rem', lineHeight: '1.2' }}
               />
               <div className="absolute right-8 top-1/2 transform -translate-y-1/2 text-2xl text-sacred-sage-light flex items-center gap-2 pointer-events-none">
                 Press <strong className="text-sacred-sage-green font-semibold">ESC</strong> to reset search
@@ -357,40 +357,34 @@ const PrayerJournal = () => {
           .max-w-7xl {
             column-count: 2 !important;
           }
-          .text-9xl {
-            font-size: 4rem !important;
+          .min-h-\\[300px\\] {
+            min-height: 180px !important;
           }
-          .min-h-[200px] {
-            min-height: 120px !important;
+          .pl-20 {
+            padding-left: 3rem !important;
           }
-          .pl-32 {
-            padding-left: 4rem !important;
+          .w-6 {
+            width: 1.5rem !important;
           }
-          .w-16 {
-            width: 2rem !important;
-          }
-          .h-16 {
-            height: 2rem !important;
+          .h-6 {
+            height: 1.5rem !important;
           }
         }
         @media (max-width: 480px) {
           .max-w-7xl {
             column-count: 1 !important;
           }
-          .text-9xl {
-            font-size: 2.5rem !important;
+          .min-h-\\[300px\\] {
+            min-height: 150px !important;
           }
-          .min-h-[200px] {
-            min-height: 100px !important;
+          .pl-20 {
+            padding-left: 2.5rem !important;
           }
-          .pl-32 {
-            padding-left: 3rem !important;
+          .w-6 {
+            width: 1.25rem !important;
           }
-          .w-16 {
-            width: 1.5rem !important;
-          }
-          .h-16 {
-            height: 1.5rem !important;
+          .h-6 {
+            height: 1.25rem !important;
           }
         }
       `}</style>
