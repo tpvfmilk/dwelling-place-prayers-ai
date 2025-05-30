@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -81,9 +82,9 @@ const Landing = () => {
         backgroundColor: '#F8F6F3',
         zIndex: 1
       }}>
-          {/* White Fade-Out Gradient Overlay */}
+          {/* Sacred-Cream Fade-Out Gradient Overlay */}
           <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 100%)',
+          background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 50%, rgba(248, 246, 243, 1) 80%, rgba(248, 246, 243, 1) 100%)',
           zIndex: 2
         }} />
 
