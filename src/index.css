@@ -54,8 +54,8 @@
   }
 
   body {
-    @apply bg-sacred-cream text-foreground font-serif;
-    font-family: 'Crimson Text', serif;
+    @apply bg-sacred-cream text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
   }
 
   .sacred-text {
@@ -64,12 +64,12 @@
 
   .prayer-text {
     @apply text-lg leading-loose tracking-wide;
-    font-family: 'Crimson Text', serif;
+    font-family: 'Inter', sans-serif;
   }
 
   .scripture-text {
     @apply italic text-sacred-terracotta font-medium;
-    font-family: 'Crimson Text', serif;
+    font-family: 'Inter', sans-serif;
   }
 
   /* Force all form inputs to have white background */
