@@ -3,10 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
-
 const Landing = () => {
   const navigate = useNavigate();
-
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -21,7 +19,6 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -41,9 +38,7 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
-  
-  return (
-    <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
+  return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 p-4 transition-all duration-300 landing-header px-[103px] mx-[139px] rounded-full py-[4px]">
         <nav className="flex justify-between items-center max-w-6xl mx-auto">
@@ -70,25 +65,27 @@ const Landing = () => {
       </header>
 
       <main className="max-w-6xl mx-auto px-8 relative pt-0" style={{
-        boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.15), 30px 0 60px rgba(0, 0, 0, 0.15)',
-        backgroundColor: '#F8F6F3'
-      }}>
+      boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.15), 30px 0 60px rgba(0, 0, 0, 0.15)',
+      backgroundColor: '#F8F6F3'
+    }}>
         {/* Hero Section */}
         <section className="text-center relative pt-28 pb-[236px] -mx-8 px-8" style={{
-          backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#F8F6F3',
-          zIndex: 2
-        }}>
+        backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png")`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#F8F6F3',
+        zIndex: 2
+      }}>
           {/* Adjusted Gradient Overlay - much more transparent to show background image */}
           <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 60%, rgba(248, 246, 243, 0.7) 85%, rgba(248, 246, 243, 1) 100%)',
-            zIndex: 1
-          }} />
+          background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 60%, rgba(248, 246, 243, 0.7) 85%, rgba(248, 246, 243, 1) 100%)',
+          zIndex: 1
+        }} />
 
-          <div className="relative" style={{ zIndex: 2 }}>
+          <div className="relative" style={{
+          zIndex: 2
+        }}>
             <h1 className="text-5xl tracking-tight mb-8 text-sacred-sage-green animate-fade-in font-semibold text-center px-0 md:text-7xl py-0 my-[166px]">
               Connect with God.<br />Find your peace.
             </h1>
@@ -111,11 +108,13 @@ const Landing = () => {
         </section>
 
         {/* Full-width Orange Section with Gradient - Moved after Hero */}
-        <section className="relative -mx-8" style={{ zIndex: 2 }}>
+        <section className="relative -mx-8" style={{
+        zIndex: 2
+      }}>
           <div className="py-[135px] px-8" style={{
-            background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 20%, rgba(254, 215, 170, 1) 80%, rgba(254, 215, 170, 0) 100%)'
-          }}>
-            <div className="max-w-4xl mx-auto space-y-8 my-[113px]">
+          background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 20%, rgba(254, 215, 170, 1) 80%, rgba(254, 215, 170, 0) 100%)'
+        }}>
+            <div className="max-w-4xl mx-auto space-y-8 my-[240px]">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
               </h3>
@@ -133,9 +132,9 @@ const Landing = () => {
 
         {/* Manifesto Section - Part 1 - Moved after orange section */}
         <section className="py-16 text-center relative" style={{
-          zIndex: 2
-        }}>
-          <div className="max-w-5xl mx-auto py-[133px] px-[142px]">
+        zIndex: 2
+      }}>
+          <div className="max-w-5xl mx-auto px-[142px] py-[193px]">
             <div className="max-w-4xl mx-auto mb-16">
               <p className="text-lg text-sacred-warm-gray leading-relaxed mb-8 text-left md:text-2xl">
                 In a time when every app demands our attention, when notifications steal our peace, when every spiritual moment is measured and shared, we have little space to call our own.
@@ -174,9 +173,9 @@ We promise:</p>
         </section>
 
         {/* Privacy & Trust Section */}
-        <section className="py-20 relative" style={{
-          zIndex: 2
-        }}>
+        <section style={{
+        zIndex: 2
+      }} className="relative py-[121px]">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-light mb-6 text-sacred-sage-green tracking-tight">
               Privacy & Trust
@@ -188,8 +187,8 @@ We promise:</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {privacyPoints.map((point, index) => {
-              const Icon = point.icon;
-              return <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
+            const Icon = point.icon;
+            return <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="bg-sacred-cream p-3 rounded-full border border-sacred-sage-border/30">
@@ -206,14 +205,14 @@ We promise:</p>
                   </div>
                 </CardContent>
               </Card>;
-            })}
+          })}
           </div>
 
           <Card className="bg-sacred-cream/40 border-sacred-sage-border/20 max-w-3xl mx-auto">
-            <CardContent className="p-8 text-center">
+            <CardContent className="p-8 text-center py-[22px] my-0">
               <p className="text-lg italic text-sacred-terracotta font-medium leading-relaxed" style={{
-                fontFamily: 'Crimson Text, serif'
-              }}>
+              fontFamily: 'Crimson Text, serif'
+            }}>
                 "The Lord your God is with you, the Mighty Warrior who saves. 
                 He will take great delight in you." - Zephaniah 3:17
               </p>
@@ -222,84 +221,14 @@ We promise:</p>
         </section>
 
         {/* Features Section */}
-        <section className="py-24 relative" id="features" style={{
-          zIndex: 2
-        }}>
-          <h2 className="text-4xl md:text-6xl font-light text-center mb-16 text-sacred-sage-green tracking-tight">
-            One sacred place for your spiritual life.
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-20">
-            <Card className="text-center p-8 bg-white/50 hover:bg-white/80 transition-all hover:-translate-y-2 hover:shadow-xl border-sacred-sage-border/20">
-              <CardContent className="p-4">
-                <h3 className="text-xl font-medium mb-5 text-sacred-sage-green">IT JUST FLOWS</h3>
-                <p className="text-sacred-warm-gray leading-relaxed">
-                  Capture your prayers and thoughts naturally. Our AI understands your spiritual language and remembers what matters most.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center p-8 bg-white/50 hover:bg-white/80 transition-all hover:-translate-y-2 hover:shadow-xl border-sacred-sage-border/20">
-              <CardContent className="p-4">
-                <h3 className="text-xl font-medium mb-5 text-sacred-sage-green">NO DISTRACTION</h3>
-                <p className="text-sacred-warm-gray leading-relaxed">
-                  Find your prayers instantly. Search by feeling, scripture, or theme – however your heart remembers.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center p-8 bg-white/50 hover:bg-white/80 transition-all hover:-translate-y-2 hover:shadow-xl border-sacred-sage-border/20">
-              <CardContent className="p-4">
-                <h3 className="text-xl font-medium mb-5 text-sacred-sage-green">YOUR SACRED SPACE</h3>
-                <p className="text-sacred-warm-gray leading-relaxed">
-                  A treasure of faith, prayers & reflections. All your spiritual content in one private, sacred place.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        
 
         {/* Additional Features */}
-        <section className="py-24 relative" id="journey" style={{
-          zIndex: 2
-        }}>
-          <h2 className="text-4xl md:text-6xl font-light text-center mb-16 text-sacred-sage-green tracking-tight">
-            For every heart seeking God.
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <Card className="text-center p-8 bg-white/50 hover:bg-white/80 transition-all hover:-translate-y-2 hover:shadow-xl border-sacred-sage-border/20">
-              <CardContent className="p-4">
-                <h3 className="text-xl font-medium mb-5 text-sacred-sage-green">FOR THE FAITHFUL</h3>
-                <p className="text-sacred-warm-gray leading-relaxed">
-                  Deepen your prayer life with guided reflections.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center p-8 bg-white/50 hover:bg-white/80 transition-all hover:-translate-y-2 hover:shadow-xl border-sacred-sage-border/20">
-              <CardContent className="p-4">
-                <h3 className="text-xl font-medium mb-5 text-sacred-sage-green">FOR THE SEEKING</h3>
-                <p className="text-sacred-warm-gray leading-relaxed">
-                  Explore faith through meaningful conversations.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center p-8 bg-white/50 hover:bg-white/80 transition-all hover:-translate-y-2 hover:shadow-xl border-sacred-sage-border/20">
-              <CardContent className="p-4">
-                <h3 className="text-xl font-medium mb-5 text-sacred-sage-green">FOR EVERYONE</h3>
-                <p className="text-sacred-warm-gray leading-relaxed">
-                  A place for every spiritual moment worth remembering.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        
       </main>
 
       {/* Footer */}
-      <footer className="bg-white/60 py-16 px-8 relative z-10">
+      <footer className="bg-white/60 px-8 relative z-10 py-[77px] my-0">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
             <div>
@@ -357,8 +286,6 @@ We promise:</p>
           }
         `}
       </style>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;
