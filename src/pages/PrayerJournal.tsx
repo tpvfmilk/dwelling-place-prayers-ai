@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -89,21 +90,21 @@ const PrayerJournal = () => {
 
   const getMoodColor = (mood: string) => {
     switch (mood) {
-      case "peaceful": return "#48bb78";
-      case "grateful": return "#ed8936";
-      case "seeking": return "#4299e1";
-      case "comforted": return "#9f7aea";
-      default: return "#a0aec0";
+      case "peaceful": return "#4A5D23";
+      case "grateful": return "#D4A574";
+      case "seeking": return "#7A8B5C";
+      case "comforted": return "#D4B5A0";
+      default: return "#A8B88A";
     }
   };
 
   const getCardGradient = (type: string) => {
     switch (type) {
-      case "prayer": return "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)";
-      case "reflection": return "linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%)";
-      case "verse": return "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)";
-      case "note": return "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)";
-      default: return "rgba(255, 255, 255, 0.95)";
+      case "prayer": return "linear-gradient(135deg, #F8F6F3 0%, #FFFFFF 50%, #F0EBE5 100%)";
+      case "reflection": return "linear-gradient(135deg, #F8F6F3 0%, #D4A574 20%, #F8F6F3 100%)";
+      case "verse": return "linear-gradient(135deg, #4A5D23 0%, #7A8B5C 100%)";
+      case "note": return "linear-gradient(135deg, #D4B5A0 0%, #F8F6F3 100%)";
+      default: return "rgba(248, 246, 243, 0.95)";
     }
   };
 
@@ -114,12 +115,12 @@ const PrayerJournal = () => {
   };
 
   return (
-    <div className="min-h-screen flex" style={{ background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" }}>
+    <div className="min-h-screen flex bg-sacred-gradient">
       {/* Sidebar */}
-      <div className="w-20 bg-white/95 backdrop-blur-sm border-r border-white/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-2xl">
+      <div className="w-20 bg-white/95 backdrop-blur-sm border-r border-sacred-sage-border/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-xl">
         {/* Logo */}
         <div 
-          className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white font-semibold text-lg mb-8 cursor-pointer hover:scale-110 transition-transform"
+          className="w-10 h-10 bg-gradient-to-br from-sacred-sage-green to-sacred-sage-light rounded-xl flex items-center justify-center text-white font-semibold text-lg mb-8 cursor-pointer hover:scale-110 transition-transform"
           onClick={() => navigate("/home")}
         >
           DP
@@ -129,7 +130,7 @@ const PrayerJournal = () => {
         <div className="flex flex-col gap-5 flex-1">
           <div 
             className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
-              activeNav === "all" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+              activeNav === "all" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("all")}
           >
@@ -141,7 +142,7 @@ const PrayerJournal = () => {
           
           <div 
             className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
-              activeNav === "circles" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+              activeNav === "circles" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("circles")}
           >
@@ -153,7 +154,7 @@ const PrayerJournal = () => {
           
           <div 
             className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
-              activeNav === "blessing" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+              activeNav === "blessing" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("blessing")}
           >
@@ -165,7 +166,7 @@ const PrayerJournal = () => {
           
           <div 
             className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
-              activeNav === "scripture" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+              activeNav === "scripture" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("scripture")}
           >
@@ -177,7 +178,7 @@ const PrayerJournal = () => {
           
           <div 
             className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
-              activeNav === "reflections" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+              activeNav === "reflections" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("reflections")}
           >
@@ -191,14 +192,14 @@ const PrayerJournal = () => {
         {/* Bottom Section */}
         <div className="flex flex-col gap-4 items-center">
           <button 
-            className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center transition-transform hover:scale-110"
+            className="w-8 h-8 rounded-full bg-gradient-to-br from-sacred-golden-tan to-sacred-golden-tan-dark flex items-center justify-center transition-transform hover:scale-110"
             onClick={() => setIsDarkTheme(!isDarkTheme)}
           >
             {isDarkTheme ? <Moon className="w-4 h-4 text-white" /> : <Sun className="w-4 h-4 text-white" />}
           </button>
           
           <div 
-            className="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+            className="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             onClick={() => navigate("/settings")}
           >
             <Settings className="w-5 h-5" />
@@ -215,16 +216,16 @@ const PrayerJournal = () => {
         <div className="sticky top-0 z-40 mb-10 py-10">
           <div className="max-w-7xl mx-auto relative">
             <div className="relative flex items-center min-h-[104px]">
-              <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-10 h-10 text-gray-400 pointer-events-none z-10" />
+              <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-10 h-10 text-sacred-sage-light pointer-events-none z-10" />
               <Input
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search your heart and prayers..."
-                className="w-full pl-24 pr-60 py-8 text-3xl border-none bg-transparent outline-none placeholder:text-gray-400 focus:ring-0 focus:border-none shadow-none"
+                className="w-full pl-24 pr-60 py-8 text-3xl border-none bg-transparent outline-none placeholder:text-sacred-sage-light focus:ring-0 focus:border-none shadow-none text-sacred-sage-green"
               />
-              <div className="absolute right-8 top-1/2 transform -translate-y-1/2 text-2xl text-gray-400 flex items-center gap-2 pointer-events-none">
-                Press <strong className="text-gray-600 font-semibold">ESC</strong> to reset search
+              <div className="absolute right-8 top-1/2 transform -translate-y-1/2 text-2xl text-sacred-sage-light flex items-center gap-2 pointer-events-none">
+                Press <strong className="text-sacred-sage-green font-semibold">ESC</strong> to reset search
               </div>
             </div>
           </div>
@@ -242,7 +243,7 @@ const PrayerJournal = () => {
           {filteredPrayers.map((prayer) => (
             <div
               key={prayer.id}
-              className="cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden backdrop-blur-sm shadow-lg mb-5"
+              className="cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden backdrop-blur-sm shadow-lg mb-5 border border-sacred-sage-border/20"
               style={{
                 breakInside: "avoid",
                 background: getCardGradient(prayer.type),
@@ -251,13 +252,13 @@ const PrayerJournal = () => {
               onClick={() => navigate("/prayer-display", { state: { prayerId: prayer.id } })}
             >
               {/* Card Type Badge */}
-              <div className="absolute top-3 right-3 bg-white/90 px-2 py-1 rounded-xl text-xs font-medium text-gray-600 z-10">
+              <div className="absolute top-3 right-3 bg-white/90 px-2 py-1 rounded-xl text-xs font-medium text-sacred-sage-green z-10">
                 {prayer.type.charAt(0).toUpperCase() + prayer.type.slice(1)}
               </div>
 
               <div className="p-5">
                 {/* Date */}
-                <div className="text-xs text-gray-500 mb-2">{prayer.date}</div>
+                <div className="text-xs text-sacred-sage-light mb-2">{prayer.date}</div>
                 
                 {/* Title with Mood Indicator */}
                 <div className="flex items-center mb-3">
@@ -267,13 +268,13 @@ const PrayerJournal = () => {
                       style={{ backgroundColor: getMoodColor(prayer.mood) }}
                     />
                   )}
-                  <h3 className={`text-lg font-semibold ${prayer.type === 'verse' ? 'text-white' : 'text-gray-800'}`}>
+                  <h3 className={`text-lg font-semibold ${prayer.type === 'verse' ? 'text-white' : 'text-sacred-sage-green'}`}>
                     {prayer.title}
                   </h3>
                 </div>
 
                 {/* Content */}
-                <div className={`text-sm leading-relaxed mb-4 ${prayer.type === 'verse' ? 'text-white' : 'text-gray-600'}`}>
+                <div className={`text-sm leading-relaxed mb-4 ${prayer.type === 'verse' ? 'text-white' : 'text-sacred-warm-gray'}`}>
                   {prayer.preview.split('\n').map((line, i) => (
                     <div key={i}>{line}</div>
                   ))}
@@ -284,7 +285,7 @@ const PrayerJournal = () => {
                   <div className={`italic border-l-3 pl-3 my-4 text-sm ${
                     prayer.type === 'verse' 
                       ? 'border-white/40 text-white/90' 
-                      : 'border-purple-300 text-purple-700'
+                      : 'border-sacred-golden-tan text-sacred-sage-green'
                   }`}>
                     {prayer.scripture}
                   </div>
@@ -292,16 +293,16 @@ const PrayerJournal = () => {
 
                 {/* Reflection */}
                 {prayer.reflection && (
-                  <div className="bg-gradient-to-r from-yellow-100 to-orange-100 p-3 rounded-lg my-4">
-                    <div className="text-xs text-gray-600 font-medium mb-1">Your Reflection:</div>
-                    <div className="text-sm text-gray-700 italic">"{prayer.reflection}"</div>
+                  <div className="bg-sacred-golden-tan/30 p-3 rounded-lg my-4">
+                    <div className="text-xs text-sacred-sage-green font-medium mb-1">Your Reflection:</div>
+                    <div className="text-sm text-sacred-warm-gray italic">"{prayer.reflection}"</div>
                   </div>
                 )}
 
                 {/* Audio Button */}
                 {prayer.hasAudio && (
                   <Button 
-                    className="bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white rounded-full px-4 py-2 text-sm mt-3 flex items-center gap-2"
+                    className="bg-sacred-custom-brown hover:bg-sacred-golden-tan-dark text-white rounded-full px-4 py-2 text-sm mt-3 flex items-center gap-2"
                     onClick={(e) => {
                       e.stopPropagation();
                       console.log('Playing audio for:', prayer.title);
@@ -320,7 +321,7 @@ const PrayerJournal = () => {
                       className={`px-2 py-1 rounded-xl text-xs ${
                         prayer.type === 'verse'
                           ? 'bg-white/20 text-white'
-                          : 'bg-black/10 text-gray-600'
+                          : 'bg-sacred-sage-green/10 text-sacred-sage-green'
                       }`}
                     >
                       {tag}
@@ -334,7 +335,7 @@ const PrayerJournal = () => {
 
         {/* Floating Add Button */}
         <Button
-          className="fixed bottom-8 right-8 w-15 h-15 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white shadow-2xl text-2xl transition-transform hover:scale-110 z-50"
+          className="fixed bottom-8 right-8 w-15 h-15 rounded-full bg-sacred-custom-brown hover:bg-sacred-golden-tan-dark text-white shadow-2xl text-2xl transition-transform hover:scale-110 z-50"
           onClick={() => navigate("/prayer-input")}
         >
           +
