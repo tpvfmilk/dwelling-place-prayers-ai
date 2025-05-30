@@ -130,7 +130,7 @@ const Landing = () => {
         <section className="py-16 text-center relative" style={{
         zIndex: 2
       }}>
-          <div className="max-w-5xl mx-auto px-[153px] py-[133px]">
+          <div className="max-w-5xl mx-auto py-[133px] px-[142px]">
             <div className="max-w-4xl mx-auto mb-16">
               <p className="text-lg text-sacred-warm-gray leading-relaxed mb-8 text-left md:text-2xl">
                 In a time when every app demands our attention, when notifications steal our peace, when every spiritual moment is measured and shared, we have little space to call our own.
