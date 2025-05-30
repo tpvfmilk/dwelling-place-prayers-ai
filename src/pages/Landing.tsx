@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -164,7 +165,7 @@ const Landing = () => {
             }}
           >
             <div className="max-w-4xl mx-auto space-y-8 my-[240px]">
-              <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] text-center md:text-5xl">Come as you are, pray as you need...  
+              <h3 className="text-2xl text-white my-[53px] font-semibold py-[28px] text-center md:text-5xl italic">Come as you are, pray as you need...  
 
 
                            ...Dwell in peace.</h3>
