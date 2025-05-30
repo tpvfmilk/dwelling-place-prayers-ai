@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
-
 const Landing = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -172,7 +171,7 @@ What should have never been lost is now yours again. We promise:</p>
         <section className="relative -mx-8" style={{
         zIndex: 2
       }}>
-          <div className="bg-stone-300 py-[135px] px-8">
+          <div className="py-[135px] px-8 bg-orange-100">
             <div className="max-w-4xl mx-auto space-y-8">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
@@ -375,5 +374,4 @@ What should have never been lost is now yours again. We promise:</p>
       </style>
     </div>;
 };
-
 export default Landing;
