@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -191,20 +192,20 @@ We promise:</p>
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
                 {privacyPoints.map((point, index) => {
                 const Icon = point.icon;
                 return <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
                     <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-col items-center text-center gap-4">
                         <div className="bg-sacred-cream p-3 rounded-full border border-sacred-sage-border/30">
                           <Icon className="w-6 h-6 text-sacred-sage-green" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold text-sacred-sage-green mb-2">
+                          <h3 className="text-lg font-semibold text-sacred-sage-green mb-2">
                             {point.title}
                           </h3>
-                          <p className="text-sacred-warm-gray leading-relaxed">
+                          <p className="text-sm text-sacred-warm-gray leading-relaxed">
                             {point.description}
                           </p>
                         </div>
