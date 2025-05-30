@@ -148,7 +148,7 @@ What should have never been lost is now yours again. We promise:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
               <div>
                 {noItems.map((item, index) => <div key={index} className="text-left mb-4">
-                    <span className="text-2xl md:text-3xl font-bold text-black font-serif italic">NO</span>
+                    <span className="text-2xl text-black font-serif italic font-thin md:text-4xl">NO</span>
                     <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
                       {item.replace('NO ', '')}
                     </span>
@@ -157,7 +157,7 @@ What should have never been lost is now yours again. We promise:</p>
               
               <div>
                 {yesItems.map((item, index) => <div key={index} className="text-left mb-4">
-                    <span className="text-2xl md:text-3xl font-bold text-black font-serif italic">YES</span>
+                    <span className="text-2xl text-black font-serif italic font-thin md:text-3xl">YES</span>
                     <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
                       {item.replace('YES ', '')}
                     </span>
