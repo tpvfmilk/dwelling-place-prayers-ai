@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -59,7 +58,7 @@ const Landing = () => {
 
       <main className="max-w-6xl mx-auto px-8 relative pt-0" style={{
         boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.15), 30px 0 60px rgba(0, 0, 0, 0.15)',
-        backgroundColor: 'rgba(254, 215, 170, 1)'
+        backgroundColor: '#F8F6F3'
       }}>
         {/* Hero Section */}
         <section className="text-center relative pt-28 pb-[236px] -mx-8 px-8" style={{
