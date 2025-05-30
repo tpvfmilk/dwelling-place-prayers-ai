@@ -105,7 +105,7 @@ const Landing = () => {
           <div className="relative" style={{
           zIndex: 2
         }}>
-            <h1 className="text-5xl md:text-8xl font-light tracking-tight mb-8 text-sacred-sage-green animate-fade-in">
+            <h1 className="text-5xl tracking-tight mb-8 text-sacred-sage-green animate-fade-in font-semibold text-center px-0 md:text-7xl py-0 my-[166px]">
               Connect with God.<br />Find your peace.
             </h1>
             <p className="text-xl md:text-3xl font-light text-sacred-warm-gray mb-12 animate-fade-in" style={{
