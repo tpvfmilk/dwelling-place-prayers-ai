@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
-
 const Landing = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -156,14 +155,7 @@ What should have never been lost is now yours again. We promise:</p>
                   </div>)}
               </div>
               
-              <div>
-                {yesItems.map((item, index) => <div key={index} className="text-left mb-4">
-                    <span className="text-2xl md:text-3xl font-bold text-sacred-sage-green">YES</span>
-                    <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
-                      {item.replace('YES ', '')}
-                    </span>
-                  </div>)}
-              </div>
+              
             </div>
           </div>
         </section>
@@ -375,5 +367,4 @@ What should have never been lost is now yours again. We promise:</p>
       </style>
     </div>;
 };
-
 export default Landing;
