@@ -3,8 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
+
 const Landing = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -38,6 +40,7 @@ const Landing = () => {
     img.src = imageUrl;
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -57,6 +60,7 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
+
   return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 p-4 transition-all duration-300 landing-header px-[103px] mx-[139px] rounded-full py-[4px]">
@@ -126,7 +130,28 @@ const Landing = () => {
           </div>
         </section>
 
-        {/* Manifesto Section - Part 1 */}
+        {/* Full-width Gray Section - Moved after Hero */}
+        <section className="relative -mx-8" style={{
+        zIndex: 2
+      }}>
+          <div className="py-[135px] px-8 bg-orange-100">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
+                This is your sanctuary.
+              </h3>
+              
+              <p className="text-lg md:text-xl text-sacred-warm-gray leading-relaxed">
+                A place where your prayers are yours alone, where your spiritual journey isn't content for others, where God meets you without an audience. Where technology serves the timeless instead of replacing it.
+              </p>
+              
+              <p className="text-xl md:text-2xl font-medium text-sacred-sage-green">
+                Come as you are. Pray as you need. Dwell in peace.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Manifesto Section - Part 1 - Moved after orange section */}
         <section className="py-16 text-center relative" style={{
         zIndex: 2
       }}>
@@ -163,27 +188,6 @@ What should have never been lost is now yours again. We promise:</p>
                     </span>
                   </div>)}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Full-width Gray Section */}
-        <section className="relative -mx-8" style={{
-        zIndex: 2
-      }}>
-          <div className="py-[135px] px-8 bg-orange-100">
-            <div className="max-w-4xl mx-auto space-y-8">
-              <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
-                This is your sanctuary.
-              </h3>
-              
-              <p className="text-lg md:text-xl text-sacred-warm-gray leading-relaxed">
-                A place where your prayers are yours alone, where your spiritual journey isn't content for others, where God meets you without an audience. Where technology serves the timeless instead of replacing it.
-              </p>
-              
-              <p className="text-xl md:text-2xl font-medium text-sacred-sage-green">
-                Come as you are. Pray as you need. Dwell in peace.
-              </p>
             </div>
           </div>
         </section>
@@ -374,4 +378,5 @@ What should have never been lost is now yours again. We promise:</p>
       </style>
     </div>;
 };
+
 export default Landing;
