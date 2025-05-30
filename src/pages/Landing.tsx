@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -80,16 +79,16 @@ const Landing = () => {
         backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',
         backgroundColor: '#F8F6F3',
-        zIndex: 2
+        zIndex: 1
       }}>
           {/* White Fade-Out Gradient Overlay */}
           <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0) 100%)',
-          zIndex: 1
+          background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%)',
+          zIndex: 2
         }} />
 
           <div className="relative" style={{
-          zIndex: 2
+          zIndex: 3
         }}>
             <h1 className="text-5xl tracking-tight mb-8 text-sacred-sage-green animate-fade-in font-semibold text-center px-0 md:text-7xl py-0 my-[166px]">
               Connect with God.<br />Find your peace.
