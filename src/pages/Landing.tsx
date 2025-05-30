@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -46,10 +47,11 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
-      <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
-        <nav className="flex justify-between items-center max-w-6xl mx-auto px-8 h-full">
+      <header className="fixed top-5 w-full bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
+        <nav className="flex justify-between items-center max-w-6xl mx-auto px-5 h-full">
           <div className="flex items-center gap-3">
             <img src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" alt="Dwelling Place Logo" className="w-8 h-8" />
+            <span className="text-xl font-semibold text-sacred-sage-green hidden sm:block">Dwelling Place</span>
           </div>
           <HeaderNavigation />
         </nav>
@@ -139,7 +141,8 @@ const Landing = () => {
                 Our souls have been taken captive—
               </p>
               
-              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again.  
+              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">
+                by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again.  
 
 
               <span className="font-bold">We promise:</span></p>
