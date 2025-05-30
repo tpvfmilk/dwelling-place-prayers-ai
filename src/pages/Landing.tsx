@@ -124,9 +124,7 @@ const Landing = () => {
                 A place where your prayers are yours alone, where your spiritual journey isn't content for others, where God meets you without an audience. Where technology serves the timeless instead of replacing it.
               </p>
               
-              <p className="text-xl md:text-2xl font-medium text-sacred-sage-green">
-                Come as you are. Pray as you need. Dwell in peace.
-              </p>
+              
             </div>
           </div>
         </section>
