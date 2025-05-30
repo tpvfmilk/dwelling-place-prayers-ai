@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +46,7 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
-      <header className="fixed top-5 w-full bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
+      <header className="fixed top-5 left-8 right-8 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
         <nav className="flex justify-between items-center max-w-6xl mx-auto px-5 h-full">
           <div className="flex items-center gap-3">
             <img src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" alt="Dwelling Place Logo" className="w-8 h-8" />
