@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -343,7 +342,7 @@ const PrayerJournal = () => {
       </div>
 
       {/* Responsive Styles */}
-      <style jsx>{`
+      <style>{`
         @media (max-width: 1200px) {
           .max-w-7xl {
             column-count: 3 !important;
