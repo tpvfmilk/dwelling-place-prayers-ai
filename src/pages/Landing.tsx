@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -178,7 +177,7 @@ const Landing = () => {
         <section style={{
           zIndex: 2
         }} className="relative py-[121px]">
-          <Card className="bg-sacred-sage-border/30 border-sacred-sage-border/40 rounded-xl shadow-lg">
+          <Card className="bg-sacred-custom-brown/30 border-sacred-sage-border/40 rounded-xl shadow-lg">
             <CardContent className="p-12">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-light mb-6 text-sacred-sage-green tracking-tight">
