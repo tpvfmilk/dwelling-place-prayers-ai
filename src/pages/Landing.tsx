@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -181,46 +180,50 @@ We promise:</p>
         <section style={{
         zIndex: 2
       }} className="relative py-[121px]">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light mb-6 text-sacred-sage-green tracking-tight">
-              Privacy & Trust
-            </h2>
-            <p className="text-xl text-sacred-warm-gray max-w-2xl mx-auto">
-              Your spiritual journey deserves the highest protection
-            </p>
-          </div>
+          <Card className="bg-sacred-sage-border/30 border-sacred-sage-border/40 rounded-xl shadow-lg">
+            <CardContent className="p-12">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-light mb-6 text-sacred-sage-green tracking-tight">
+                  Privacy & Trust
+                </h2>
+                <p className="text-xl text-sacred-warm-gray max-w-2xl mx-auto">
+                  Your spiritual journey deserves the highest protection
+                </p>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {privacyPoints.map((point, index) => {
-            const Icon = point.icon;
-            return <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-sacred-cream p-3 rounded-full border border-sacred-sage-border/30">
-                      <Icon className="w-6 h-6 text-sacred-sage-green" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-sacred-sage-green mb-2">
-                        {point.title}
-                      </h3>
-                      <p className="text-sacred-warm-gray leading-relaxed">
-                        {point.description}
-                      </p>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                {privacyPoints.map((point, index) => {
+                const Icon = point.icon;
+                return <Card key={index} className="bg-white/90 backdrop-blur-sm border-sacred-sage-border/20 hover:bg-white/95 transition-all hover:-translate-y-1 hover:shadow-lg">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-sacred-cream p-3 rounded-full border border-sacred-sage-border/30">
+                          <Icon className="w-6 h-6 text-sacred-sage-green" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-sacred-sage-green mb-2">
+                            {point.title}
+                          </h3>
+                          <p className="text-sacred-warm-gray leading-relaxed">
+                            {point.description}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>;
+              })}
+              </div>
+
+              <Card className="bg-sacred-cream/40 border-sacred-sage-border/20 max-w-3xl mx-auto">
+                <CardContent className="p-8 text-center py-[22px] my-0">
+                  <p className="text-lg italic text-sacred-terracotta font-medium leading-relaxed" style={{
+                  fontFamily: 'Crimson Text, serif'
+                }}>
+                    "The Lord your God is with you, the Mighty Warrior who saves. 
+                    He will take great delight in you." - Zephaniah 3:17
+                  </p>
                 </CardContent>
-              </Card>;
-          })}
-          </div>
-
-          <Card className="bg-sacred-cream/40 border-sacred-sage-border/20 max-w-3xl mx-auto">
-            <CardContent className="p-8 text-center py-[22px] my-0">
-              <p className="text-lg italic text-sacred-terracotta font-medium leading-relaxed" style={{
-              fontFamily: 'Crimson Text, serif'
-            }}>
-                "The Lord your God is with you, the Mighty Warrior who saves. 
-                He will take great delight in you." - Zephaniah 3:17
-              </p>
+              </Card>
             </CardContent>
           </Card>
         </section>
