@@ -89,7 +89,7 @@ const Landing = () => {
       backgroundColor: '#F8F6F3'
     }}>
         {/* Hero Section */}
-        <section className="text-center relative pt-28 pb-[236px]" style={{
+        <section className="text-center relative pt-28 pb-[236px] -mx-8 px-8" style={{
         backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'top center',
