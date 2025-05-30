@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -137,7 +136,7 @@ const Landing = () => {
           <div className="max-w-5xl mx-auto px-[142px] py-[193px]">
             {/* OUR PURPOSE Header */}
             <div className="text-center mb-8">
-              <p className="text-sm text-sacred-warm-gray uppercase tracking-wider">OUR PURPOSE</p>
+              <p className="text-sm text-sacred-warm-gray uppercase tracking-wider text-center">OUR PURPOSE</p>
             </div>
 
             <div className="max-w-4xl mx-auto mb-16">
@@ -152,7 +151,7 @@ const Landing = () => {
               <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again.  
 
 
-<span className="font-bold">We promise:</span></p>
+              <span className="font-bold">We promise:</span></p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
