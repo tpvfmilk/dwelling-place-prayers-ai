@@ -81,9 +81,9 @@ const Landing = () => {
         backgroundColor: '#F8F6F3',
         zIndex: 2
       }}>
-          {/* Updated Gradient Overlay - window effect with transparency at top and bottom */}
+          {/* Fixed Gradient Overlay - now uses dark color for visible overlay effect */}
           <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 20%, rgba(248, 246, 243, 0.1) 40%, rgba(248, 246, 243, 0.7) 60%, rgba(248, 246, 243, 0.1) 80%, rgba(248, 246, 243, 0) 100%)',
+          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0) 100%)',
           zIndex: 1
         }} />
 
