@@ -155,7 +155,14 @@ What should have never been lost is now yours again. We promise:</p>
                   </div>)}
               </div>
               
-              
+              <div>
+                {yesItems.map((item, index) => <div key={index} className="text-left mb-4">
+                    <span className="text-2xl md:text-3xl font-bold text-sacred-sage-green">YES</span>
+                    <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
+                      {item.replace('YES ', '')}
+                    </span>
+                  </div>)}
+              </div>
             </div>
           </div>
         </section>
@@ -164,7 +171,7 @@ What should have never been lost is now yours again. We promise:</p>
         <section className="relative -mx-8" style={{
         zIndex: 2
       }}>
-          <div className="bg-stone-300 py-[135px] px-8">
+          <div className="py-[135px] px-8 bg-orange-100">
             <div className="max-w-4xl mx-auto space-y-8">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
