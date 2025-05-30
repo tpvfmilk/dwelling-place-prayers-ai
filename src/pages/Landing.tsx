@@ -163,9 +163,7 @@ const Landing = () => {
                 Our souls have been taken captive—
               </p>
               
-              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again. 
-
-
+              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again.  
 
 
 We promise:</p>
