@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -117,13 +116,17 @@ const PrayerJournal = () => {
   return (
     <div className="min-h-screen flex bg-sacred-gradient">
       {/* Sidebar */}
-      <div className="w-20 bg-white/95 backdrop-blur-sm border-r border-sacred-sage-border/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-xl">
+      <div className="w-15 bg-white/95 backdrop-blur-sm border-r border-sacred-sage-border/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-xl">
         {/* Logo */}
         <div 
-          className="w-10 h-10 bg-gradient-to-br from-sacred-sage-green to-sacred-sage-light rounded-xl flex items-center justify-center text-white font-semibold text-lg mb-8 cursor-pointer hover:scale-110 transition-transform"
+          className="w-10 h-10 rounded-xl flex items-center justify-center mb-8 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
           onClick={() => navigate("/home")}
         >
-          DP
+          <img 
+            src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
+            alt="Daily Prayer Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
         
         {/* Navigation Items */}
@@ -135,7 +138,7 @@ const PrayerJournal = () => {
             onClick={() => setActiveNav("all")}
           >
             <Book className="w-5 h-5" />
-            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               All Prayers
             </div>
           </div>
@@ -147,7 +150,7 @@ const PrayerJournal = () => {
             onClick={() => setActiveNav("circles")}
           >
             <Circle className="w-5 h-5" />
-            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Prayer Circles
             </div>
           </div>
@@ -159,7 +162,7 @@ const PrayerJournal = () => {
             onClick={() => setActiveNav("blessing")}
           >
             <Star className="w-5 h-5" />
-            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Daily Blessing
             </div>
           </div>
@@ -171,7 +174,7 @@ const PrayerJournal = () => {
             onClick={() => setActiveNav("scripture")}
           >
             <Book className="w-5 h-5" />
-            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Scripture
             </div>
           </div>
@@ -183,7 +186,7 @@ const PrayerJournal = () => {
             onClick={() => setActiveNav("reflections")}
           >
             <MessageSquare className="w-5 h-5" />
-            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Reflections
             </div>
           </div>
@@ -192,7 +195,7 @@ const PrayerJournal = () => {
         {/* Bottom Section */}
         <div className="flex flex-col gap-4 items-center">
           <button 
-            className="w-8 h-8 rounded-full bg-gradient-to-br from-sacred-golden-tan to-sacred-golden-tan-dark flex items-center justify-center transition-transform hover:scale-110"
+            className="w-8 h-8 rounded-full bg-gradient-to-br from-sacred-custom-brown to-sacred-custom-brown-dark flex items-center justify-center transition-transform hover:scale-110"
             onClick={() => setIsDarkTheme(!isDarkTheme)}
           >
             {isDarkTheme ? <Moon className="w-4 h-4 text-white" /> : <Sun className="w-4 h-4 text-white" />}
@@ -203,7 +206,7 @@ const PrayerJournal = () => {
             onClick={() => navigate("/settings")}
           >
             <Settings className="w-5 h-5" />
-            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Settings
             </div>
           </div>
@@ -211,18 +214,18 @@ const PrayerJournal = () => {
       </div>
 
       {/* Main Content */}
-      <div className="ml-20 flex-1 p-5">
+      <div className="ml-15 flex-1 p-5">
         {/* Search Bar */}
         <div className="sticky top-0 z-40 mb-10 py-10">
           <div className="max-w-7xl mx-auto relative">
-            <div className="relative flex items-center min-h-[104px]">
-              <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-10 h-10 text-sacred-sage-light pointer-events-none z-10" />
+            <div className="relative flex items-center min-h-[200px]">
+              <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-16 h-16 text-sacred-sage-light pointer-events-none z-10" />
               <Input
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search your heart and prayers..."
-                className="w-full pl-24 pr-60 py-8 text-3xl border-none bg-transparent outline-none placeholder:text-sacred-sage-light focus:ring-0 focus:border-none shadow-none text-sacred-sage-green"
+                className="w-full pl-32 pr-60 py-12 text-9xl italic border-none bg-transparent outline-none placeholder:text-sacred-sage-light focus:ring-0 focus:border-none shadow-none text-sacred-sage-green"
               />
               <div className="absolute right-8 top-1/2 transform -translate-y-1/2 text-2xl text-sacred-sage-light flex items-center gap-2 pointer-events-none">
                 Press <strong className="text-sacred-sage-green font-semibold">ESC</strong> to reset search
@@ -285,7 +288,7 @@ const PrayerJournal = () => {
                   <div className={`italic border-l-3 pl-3 my-4 text-sm ${
                     prayer.type === 'verse' 
                       ? 'border-white/40 text-white/90' 
-                      : 'border-sacred-golden-tan text-sacred-sage-green'
+                      : 'border-sacred-custom-brown text-sacred-sage-green'
                   }`}>
                     {prayer.scripture}
                   </div>
@@ -293,7 +296,7 @@ const PrayerJournal = () => {
 
                 {/* Reflection */}
                 {prayer.reflection && (
-                  <div className="bg-sacred-golden-tan/30 p-3 rounded-lg my-4">
+                  <div className="bg-sacred-custom-brown/30 p-3 rounded-lg my-4">
                     <div className="text-xs text-sacred-sage-green font-medium mb-1">Your Reflection:</div>
                     <div className="text-sm text-sacred-warm-gray italic">"{prayer.reflection}"</div>
                   </div>
@@ -302,7 +305,7 @@ const PrayerJournal = () => {
                 {/* Audio Button */}
                 {prayer.hasAudio && (
                   <Button 
-                    className="bg-sacred-custom-brown hover:bg-sacred-golden-tan-dark text-white rounded-full px-4 py-2 text-sm mt-3 flex items-center gap-2"
+                    className="bg-sacred-custom-brown hover:bg-sacred-custom-brown-dark text-white rounded-full px-4 py-2 text-sm mt-3 flex items-center gap-2"
                     onClick={(e) => {
                       e.stopPropagation();
                       console.log('Playing audio for:', prayer.title);
@@ -335,7 +338,7 @@ const PrayerJournal = () => {
 
         {/* Floating Add Button */}
         <Button
-          className="fixed bottom-8 right-8 w-15 h-15 rounded-full bg-sacred-custom-brown hover:bg-sacred-golden-tan-dark text-white shadow-2xl text-2xl transition-transform hover:scale-110 z-50"
+          className="fixed bottom-8 right-8 w-15 h-15 rounded-full bg-sacred-custom-brown hover:bg-sacred-custom-brown-dark text-white shadow-2xl text-2xl transition-transform hover:scale-110 z-50"
           onClick={() => navigate("/prayer-input")}
         >
           +
@@ -353,10 +356,40 @@ const PrayerJournal = () => {
           .max-w-7xl {
             column-count: 2 !important;
           }
+          .text-9xl {
+            font-size: 4rem !important;
+          }
+          .min-h-[200px] {
+            min-height: 120px !important;
+          }
+          .pl-32 {
+            padding-left: 4rem !important;
+          }
+          .w-16 {
+            width: 2rem !important;
+          }
+          .h-16 {
+            height: 2rem !important;
+          }
         }
         @media (max-width: 480px) {
           .max-w-7xl {
             column-count: 1 !important;
+          }
+          .text-9xl {
+            font-size: 2.5rem !important;
+          }
+          .min-h-[200px] {
+            min-height: 100px !important;
+          }
+          .pl-32 {
+            padding-left: 3rem !important;
+          }
+          .w-16 {
+            width: 1.5rem !important;
+          }
+          .h-16 {
+            height: 1.5rem !important;
           }
         }
       `}</style>
