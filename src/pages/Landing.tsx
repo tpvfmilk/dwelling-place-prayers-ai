@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -99,29 +100,7 @@ const Landing = () => {
           </div>
         </section>
 
-        {/* Full-width Orange Section with Gradient - Moved after Hero */}
-        <section className="relative -mx-8" style={{
-          zIndex: 2
-        }}>
-          <div className="py-[135px] px-8" style={{
-            background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 20%, rgba(254, 215, 170, 1) 80%, rgba(254, 215, 170, 0) 100%)'
-          }}>
-            <div className="max-w-4xl mx-auto space-y-8 my-[240px]">
-              <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] text-center md:text-5xl">Come as you are, pray as you need...  
-
-
-                           ...Dwell in peace.</h3>
-              
-              <p className="text-lg md:text-xl text-sacred-warm-gray leading-relaxed">
-                A place where your prayers are yours alone, where your spiritual journey isn't content for others, where God meets you without an audience. Where technology serves the timeless instead of replacing it.
-              </p>
-              
-              
-            </div>
-          </div>
-        </section>
-
-        {/* Manifesto Section - Part 1 - Moved after orange section */}
+        {/* Manifesto Section - Part 1 */}
         <section className="py-16 text-center relative" style={{
           zIndex: 2
         }}>
@@ -169,6 +148,28 @@ const Landing = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Full-width Orange Section with Gradient - Moved after Manifesto */}
+        <section className="relative -mx-8" style={{
+          zIndex: 2
+        }}>
+          <div className="py-[135px] px-8" style={{
+            background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 20%, rgba(254, 215, 170, 1) 80%, rgba(254, 215, 170, 0) 100%)'
+          }}>
+            <div className="max-w-4xl mx-auto space-y-8 my-[240px]">
+              <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] text-center md:text-5xl">Come as you are, pray as you need...  
+
+
+                           ...Dwell in peace.</h3>
+              
+              <p className="text-lg md:text-xl text-sacred-warm-gray leading-relaxed">
+                A place where your prayers are yours alone, where your spiritual journey isn't content for others, where God meets you without an audience. Where technology serves the timeless instead of replacing it.
+              </p>
+              
+              
             </div>
           </div>
         </section>
