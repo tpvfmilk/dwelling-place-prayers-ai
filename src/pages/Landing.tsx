@@ -173,7 +173,7 @@ const Landing = () => {
           <Card className="bg-sacred-custom-brown/30 border-sacred-sage-border/40 rounded-xl shadow-lg">
             <CardContent className="p-12">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-light mb-6 text-sacred-sage-green tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-light mb-6 text-black tracking-tight">
                   Privacy & Trust
                 </h2>
                 <p className="text-xl text-sacred-warm-gray max-w-2xl mx-auto">
