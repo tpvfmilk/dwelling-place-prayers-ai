@@ -3,8 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
+
 const Landing = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -19,6 +21,7 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -38,6 +41,7 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
+
   return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
       <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 p-4 transition-all duration-300 landing-header px-[103px] mx-[139px] rounded-full py-[4px]">
@@ -77,9 +81,9 @@ const Landing = () => {
         backgroundColor: '#F8F6F3',
         zIndex: 2
       }}>
-          {/* Adjusted Gradient Overlay - much more transparent to show background image */}
+          {/* Updated Gradient Overlay - window effect with transparency at top and bottom */}
           <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 60%, rgba(248, 246, 243, 0.7) 85%, rgba(248, 246, 243, 1) 100%)',
+          background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 20%, rgba(248, 246, 243, 0.1) 40%, rgba(248, 246, 243, 0.7) 60%, rgba(248, 246, 243, 0.1) 80%, rgba(248, 246, 243, 0) 100%)',
           zIndex: 1
         }} />
 
@@ -288,4 +292,5 @@ We promise:</p>
       </style>
     </div>;
 };
+
 export default Landing;
