@@ -83,7 +83,7 @@ const Landing = () => {
       }}>
           {/* White Fade-Out Gradient Overlay */}
           <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%)',
+          background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1) 100%)',
           zIndex: 2
         }} />
 
