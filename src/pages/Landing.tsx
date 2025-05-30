@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -103,7 +102,7 @@ const Landing = () => {
         {/* Manifesto Section - Part 1 */}
         <section className="py-16 text-center relative -mx-8 px-8" style={{
           zIndex: 2,
-          background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 50%, rgba(254, 215, 170, 1) 100%)'
+          background: 'linear-gradient(to bottom, rgba(254, 215, 170, 1) 0%, rgba(254, 215, 170, 0) 100%)'
         }}>
           <div className="max-w-5xl mx-auto px-[142px] py-[193px]">
             {/* OUR PURPOSE Header */}
