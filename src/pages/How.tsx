@@ -1,6 +1,7 @@
+
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import InteractiveSolarBackground from "@/components/InteractiveSolarBackground";
+import HeaderNavigation from "@/components/HeaderNavigation";
 
 const How = () => {
   const navigate = useNavigate();
@@ -22,13 +23,10 @@ const How = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-sacred-cream overflow-x-hidden">
-      {/* Interactive Solar Background */}
-      <InteractiveSolarBackground />
-
+    <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
-      <header className="fixed top-5 left-5 right-5 bg-transparent backdrop-blur-none border border-transparent rounded-2xl shadow-none z-50 p-4 transition-all duration-300 how-header">
-        <nav className="flex justify-between items-center max-w-6xl mx-auto">
+      <header className="fixed top-5 left-8 right-8 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
+        <nav className="flex justify-between items-center max-w-6xl mx-auto px-5 h-full">
           <div className="flex items-center gap-3">
             <img 
               src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
@@ -37,24 +35,21 @@ const How = () => {
             />
             <button 
               onClick={() => navigate('/landing')}
-              className="text-2xl font-semibold text-sacred-sage-green hover:text-sacred-warm-gray transition-colors cursor-pointer"
+              className="text-xl font-semibold text-sacred-sage-green hidden sm:block"
             >
               Dwelling Place
             </button>
           </div>
-          <ul className="hidden md:flex gap-8 list-none">
-            <li><button onClick={() => navigate('/landing')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Home</button></li>
-            <li><button onClick={() => navigate('/why')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Why</button></li>
-            <li><span className="text-sacred-sage-green font-medium">How</span></li>
-            <li><button onClick={() => navigate('/landing#features')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Features</button></li>
-            <li><button onClick={() => navigate('/welcome')} className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Begin</button></li>
-          </ul>
+          <HeaderNavigation />
         </nav>
       </header>
 
-      <main className="pt-28 max-w-4xl mx-auto px-8 pb-20">
+      <main className="max-w-6xl mx-auto px-8 relative pt-0" style={{
+        boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.15), 30px 0 60px rgba(0, 0, 0, 0.15)',
+        backgroundColor: '#F8F6F3'
+      }}>
         {/* Hero Section */}
-        <section className="text-center py-16 relative">
+        <section className="text-center py-16 relative pt-28">
           <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-10 text-sacred-sage-green animate-fade-in">
             How?
           </h1>
@@ -325,9 +320,58 @@ const How = () => {
         </section>
       </main>
 
+      {/* Footer */}
+      <footer className="bg-white/60 px-8 relative z-10 py-[77px] my-0">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+            <div>
+              <h4 className="text-lg font-semibold mb-5 text-sacred-sage-green">Dwelling Place</h4>
+              <p className="text-sacred-warm-gray leading-relaxed max-w-sm">
+                Your sacred space for spiritual growth. Connect with God, find peace, and nurture your faith.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold mb-5 text-sacred-sage-green">Features</h4>
+              <ul className="space-y-3 list-none">
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Prayer Journal</a></li>
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Spiritual Guidance</a></li>
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Privacy</a></li>
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Support</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold mb-5 text-sacred-sage-green">Community</h4>
+              <ul className="space-y-3 list-none">
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">About</a></li>
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Stories</a></li>
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold mb-5 text-sacred-sage-green">Connect</h4>
+              <ul className="space-y-3 list-none">
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Newsletter</a></li>
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Blog</a></li>
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Community</a></li>
+                <li><a href="#" className="text-sacred-warm-gray hover:text-sacred-sage-green transition-colors">Feedback</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="pt-8 border-t border-sacred-sage-border/20 text-center">
+            <p className="text-sacred-warm-gray text-sm">
+              © 2025 Dwelling Place. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
       <style>
         {`
-          .how-header.scrolled {
+          .landing-header.scrolled {
             background: rgba(255, 255, 255, 0.9) !important;
             backdrop-filter: blur(15px) !important;
             border: 1px solid rgba(0, 0, 0, 0.05) !important;
