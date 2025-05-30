@@ -1,276 +1,365 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Home, Book, Settings, MessageSquare, Circle, Play } from "lucide-react";
+import { Home, Book, Settings, MessageSquare, Circle, Play, Star, Sun, Moon } from "lucide-react";
 
 const PrayerJournal = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterStyle, setFilterStyle] = useState("all");
-  const userName = "Friend"; // In real app, would come from user data
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [activeNav, setActiveNav] = useState("all");
+  const userName = "Friend";
 
-  // Mock saved prayers
+  // Mock saved prayers with enhanced data
   const savedPrayers = [
     {
       id: 1,
-      title: "Morning Gratitude",
-      date: "2024-01-15",
-      preview: "Thank you, Lord, for this new day and the breath in my lungs...",
-      reflection: "Felt a deep sense of peace this morning",
-      style: "conversational"
+      title: "Morning Surrender",
+      date: "Today, 7:30 AM",
+      preview: "Lord, I come before You this morning with a heart full of gratitude. Help me to trust in Your perfect timing and walk in Your peace today.",
+      scripture: "Trust in the Lord with all your heart and lean not on your own understanding. - Proverbs 3:5",
+      reflection: "",
+      type: "prayer",
+      mood: "peaceful",
+      tags: ["Morning", "Trust", "Gratitude"],
+      audioDuration: "0:45",
+      hasAudio: true
     },
     {
       id: 2,
-      title: "Peace in Uncertainty",
-      date: "2024-01-14",
-      preview: "Father, I come to you with a heart full of questions...",
-      reflection: "God reminded me of His faithfulness",
-      style: "scripture"
+      title: "Evening Gratitude",
+      date: "Yesterday, 9:15 PM",
+      preview: "Today was challenging, but I felt God's presence in the small moments - the sunset, a friend's text, and the peace that came during my lunch break prayer.",
+      reflection: "I'm learning that God speaks in whispers, not just in thunderous moments.",
+      type: "reflection",
+      mood: "peaceful",
+      tags: ["Gratitude", "Presence"],
+      hasAudio: false
     },
     {
       id: 3,
-      title: "Strength for the Day",
-      date: "2024-01-13",
-      preview: "Almighty God, source of all strength and comfort...",
-      reflection: "",
-      style: "traditional"
+      title: "Isaiah 41:10",
+      date: "2 days ago",
+      preview: "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+      type: "verse",
+      tags: ["Fear", "Strength", "Comfort"],
+      hasAudio: false
+    },
+    {
+      id: 4,
+      title: "Prayer Requests",
+      date: "3 days ago",
+      preview: "• Healing for mom's back pain\n• Wisdom for the job decision\n• Peace for Sarah during exams\n• Grateful for answered prayer about housing!",
+      type: "note",
+      mood: "seeking",
+      tags: ["Family", "Decisions", "Answered Prayer"],
+      hasAudio: false
+    },
+    {
+      id: 5,
+      title: "Midday Reset",
+      date: "4 days ago, 12:30 PM",
+      preview: "Father, this day feels overwhelming. I need Your strength and clarity. Help me remember that You are in control.",
+      type: "prayer",
+      mood: "comforted",
+      tags: ["Stress", "Strength", "Midday"],
+      audioDuration: "1:12",
+      hasAudio: true
+    },
+    {
+      id: 6,
+      title: "Sunday Service Thoughts",
+      date: "1 week ago",
+      preview: "Pastor John spoke about being still and knowing God. I realized how rarely I actually sit in silence with the Lord. This week I want to practice just being present with Him, without words or requests.",
+      scripture: "Be still, and know that I am God - Psalm 46:10",
+      reflection: "Silence isn't empty - it's full of answers.",
+      type: "reflection",
+      mood: "grateful",
+      tags: ["Stillness", "Sunday", "Presence"],
+      hasAudio: false
     }
   ];
-
-  // Calculate prayer statistics
-  const prayerCount = savedPrayers.length;
-  const calculateJourneyDuration = () => {
-    if (savedPrayers.length === 0) return 0;
-    const dates = savedPrayers.map(prayer => new Date(prayer.date));
-    const earliestDate = new Date(Math.min(...dates.map(date => date.getTime())));
-    const today = new Date();
-    const diffTime = today.getTime() - earliestDate.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays;
-  };
-
-  const journeyDuration = calculateJourneyDuration();
 
   const filteredPrayers = savedPrayers.filter(prayer => {
     const matchesSearch = prayer.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          prayer.preview.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter = filterStyle === "all" || prayer.style === filterStyle;
-    return matchesSearch && matchesFilter;
+    return matchesSearch;
   });
 
-  // ... keep existing code (getStyleColor function)
-  const getStyleColor = (style: string) => {
-    switch (style) {
-      case "scripture":
-        return "text-sacred-blue";
-      case "conversational":
-        return "text-sacred-golden-tan-dark";
-      case "traditional":
-        return "text-sacred-stone";
-      default:
-        return "text-sacred-stone";
+  const getMoodColor = (mood: string) => {
+    switch (mood) {
+      case "peaceful": return "#48bb78";
+      case "grateful": return "#ed8936";
+      case "seeking": return "#4299e1";
+      case "comforted": return "#9f7aea";
+      default: return "#a0aec0";
+    }
+  };
+
+  const getCardGradient = (type: string) => {
+    switch (type) {
+      case "prayer": return "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)";
+      case "reflection": return "linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%)";
+      case "verse": return "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)";
+      case "note": return "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)";
+      default: return "rgba(255, 255, 255, 0.95)";
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setSearchTerm("");
     }
   };
 
   return (
-    <div className="min-h-screen bg-sacred-gradient">
-      {/* Header */}
-      <div className="p-0 my-0">
-        {/* Main header row */}
-        <div className="bg-white/80 backdrop-blur-sm border-b border-sacred-sage-border/20 p-4">
-          <div className="flex items-center justify-between max-w-7xl mx-auto">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" 
-                alt="Dwelling Place Logo" 
-                className="w-8 h-8"
-              />
-              <h1 className="text-xl font-semibold text-sacred-sage-green">
-                Dwelling Place
-              </h1>
+    <div className="min-h-screen flex" style={{ background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" }}>
+      {/* Sidebar */}
+      <div className="w-20 bg-white/95 backdrop-blur-sm border-r border-white/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-2xl">
+        {/* Logo */}
+        <div 
+          className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center text-white font-semibold text-lg mb-8 cursor-pointer hover:scale-110 transition-transform"
+          onClick={() => navigate("/home")}
+        >
+          DP
+        </div>
+        
+        {/* Navigation Items */}
+        <div className="flex flex-col gap-5 flex-1">
+          <div 
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+              activeNav === "all" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+            }`}
+            onClick={() => setActiveNav("all")}
+          >
+            <Book className="w-5 h-5" />
+            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              All Prayers
             </div>
-            <div className="text-center">
-              <h2 className="text-lg font-semibold text-sacred-sage-green">
-                Welcome home, {userName}
-              </h2>
-              <p className="text-sm text-sacred-sage-green">Grace and peace to you</p>
+          </div>
+          
+          <div 
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+              activeNav === "circles" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+            }`}
+            onClick={() => setActiveNav("circles")}
+          >
+            <Circle className="w-5 h-5" />
+            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              Prayer Circles
+            </div>
+          </div>
+          
+          <div 
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+              activeNav === "blessing" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+            }`}
+            onClick={() => setActiveNav("blessing")}
+          >
+            <Star className="w-5 h-5" />
+            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              Daily Blessing
+            </div>
+          </div>
+          
+          <div 
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+              activeNav === "scripture" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+            }`}
+            onClick={() => setActiveNav("scripture")}
+          >
+            <Book className="w-5 h-5" />
+            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              Scripture
+            </div>
+          </div>
+          
+          <div 
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group ${
+              activeNav === "reflections" ? "bg-purple-100 text-purple-600" : "text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+            }`}
+            onClick={() => setActiveNav("reflections")}
+          >
+            <MessageSquare className="w-5 h-5" />
+            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              Reflections
             </div>
           </div>
         </div>
         
-        {/* Sub-header row */}
-        <div className="px-4 py-[56px]">
-          <div className="text-center max-w-7xl mx-auto">
-            <h2 className="text-sacred-sage-green mb-1 text-4xl font-semibold">
-              Your Prayer Journal
-            </h2>
-            <p className="text-sacred-sage-green text-xl">&quot;Write them on the tablet of your heart&quot;  - Proverbs 3:3</p>
+        {/* Bottom Section */}
+        <div className="flex flex-col gap-4 items-center">
+          <button 
+            className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center transition-transform hover:scale-110"
+            onClick={() => setIsDarkTheme(!isDarkTheme)}
+          >
+            {isDarkTheme ? <Moon className="w-4 h-4 text-white" /> : <Sun className="w-4 h-4 text-white" />}
+          </button>
+          
+          <div 
+            className="w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group text-gray-500 hover:bg-purple-50 hover:text-purple-600"
+            onClick={() => navigate("/settings")}
+          >
+            <Settings className="w-5 h-5" />
+            <div className="absolute left-16 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              Settings
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="p-4 space-y-6 max-w-7xl mx-auto pb-24">
-        {/* Prayer Statistics */}
-        <Card className="bg-sacred-sage-light/30 border-sacred-sage-green/20">
-          <CardContent className="p-4">
-            <div className="flex justify-between items-center">
-              <div className="text-left">
-                <p className="text-lg font-semibold text-sacred-sage-green">
-                  Prayers Logged: {prayerCount}
-                </p>
-              </div>
-              <div className="text-right">
-                <p className="text-lg font-semibold text-sacred-sage-green">
-                  Journey Duration: {journeyDuration} days
-                </p>
+      {/* Main Content */}
+      <div className="ml-20 flex-1 p-5">
+        {/* Search Bar */}
+        <div className="sticky top-0 z-40 mb-10 py-10">
+          <div className="max-w-7xl mx-auto relative">
+            <div className="relative flex items-center min-h-[104px]">
+              <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-10 h-10 text-gray-400 pointer-events-none z-10" />
+              <Input
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Search your heart and prayers..."
+                className="w-full pl-24 pr-60 py-8 text-3xl border-none bg-transparent outline-none placeholder:text-gray-400 focus:ring-0 focus:border-none shadow-none"
+              />
+              <div className="absolute right-8 top-1/2 transform -translate-y-1/2 text-2xl text-gray-400 flex items-center gap-2 pointer-events-none">
+                Press <strong className="text-gray-600 font-semibold">ESC</strong> to reset search
               </div>
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Search and Filter */}
-        <div className="flex items-center gap-4">
-          <Input
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search your prayers..."
-            className="border-sacred-golden-tan/30 focus:border-sacred-golden-tan bg-white flex-1 placeholder:text-gray-400"
-          />
-          <Select value={filterStyle} onValueChange={setFilterStyle}>
-            <SelectTrigger className="w-48 border-sacred-golden-tan/30 focus:border-sacred-golden-tan bg-white">
-              <SelectValue placeholder="Filter by style" />
-            </SelectTrigger>
-            <SelectContent className="bg-white border-sacred-golden-tan/30">
-              <SelectItem value="all">All Styles</SelectItem>
-              <SelectItem value="conversational">Conversational</SelectItem>
-              <SelectItem value="scripture">Scripture-based</SelectItem>
-              <SelectItem value="traditional">Traditional</SelectItem>
-            </SelectContent>
-          </Select>
+          </div>
         </div>
 
-        {/* Prayers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPrayers.length > 0 ? (
-            filteredPrayers.map((prayer) => (
-              <Card 
-                key={prayer.id} 
-                className="bg-white/90 hover:bg-white/95 cursor-pointer transition-all border-sacred-golden-tan/20 hover:border-sacred-golden-tan h-full flex flex-col"
-                onClick={() => navigate("/prayer-display", { state: { prayerId: prayer.id } })}
-              >
-                <CardContent className="p-4 flex flex-col justify-between h-full">
-                  <div className="space-y-3 flex-1">
-                    <div className="flex justify-between items-start">
-                      <h3 className="font-semibold text-sacred-sage-green">{prayer.title}</h3>
-                      <span className="text-xs text-sacred-sage-green">
-                        {new Date(prayer.date).toLocaleDateString()}
-                      </span>
-                    </div>
-                    
-                    <p className="text-sm sacred-text line-clamp-2">
-                      {prayer.preview}
-                    </p>
-                    
-                    {prayer.reflection && (
-                      <div className="bg-sacred-golden-tan/30 p-3 rounded-lg">
-                        <p className="text-xs text-sacred-sage-green font-medium mb-1">Your Reflection:</p>
-                        <p className="text-sm sacred-text italic">"{prayer.reflection}"</p>
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="flex justify-between items-center mt-4 pt-3 border-t border-sacred-golden-tan/20">
-                    <span className="text-xs font-medium text-gray-500">
-                      {prayer.style.charAt(0).toUpperCase() + prayer.style.slice(1)} style
-                    </span>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      className="text-white border-none bg-[#d2b48c] hover:bg-[#c19660]"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        navigate("/prayer-display", { state: { prayerId: prayer.id } });
-                      }}
-                    >
-                      <Play className="w-4 h-4 mr-1" />
-                      Play
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))
-          ) : (
-            <div className="col-span-full">
-              <Card className="bg-white/90">
-                <CardContent className="p-8 text-center">
-                  <Book className="w-16 h-16 mx-auto text-sacred-sage-green/50 mb-4" />
-                  <h3 className="font-semibold text-sacred-sage-green mb-2">
-                    {searchTerm || filterStyle !== "all" ? "No prayers found" : "Start your prayer journey"}
+        {/* Masonry Gallery */}
+        <div 
+          className="max-w-7xl mx-auto pb-24"
+          style={{
+            columnCount: "4",
+            columnGap: "20px",
+            columnFill: "balance"
+          }}
+        >
+          {filteredPrayers.map((prayer) => (
+            <div
+              key={prayer.id}
+              className="cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden backdrop-blur-sm shadow-lg mb-5"
+              style={{
+                breakInside: "avoid",
+                background: getCardGradient(prayer.type),
+                maxHeight: "500px"
+              }}
+              onClick={() => navigate("/prayer-display", { state: { prayerId: prayer.id } })}
+            >
+              {/* Card Type Badge */}
+              <div className="absolute top-3 right-3 bg-white/90 px-2 py-1 rounded-xl text-xs font-medium text-gray-600 z-10">
+                {prayer.type.charAt(0).toUpperCase() + prayer.type.slice(1)}
+              </div>
+
+              <div className="p-5">
+                {/* Date */}
+                <div className="text-xs text-gray-500 mb-2">{prayer.date}</div>
+                
+                {/* Title with Mood Indicator */}
+                <div className="flex items-center mb-3">
+                  {prayer.mood && (
+                    <div 
+                      className="w-3 h-3 rounded-full mr-2"
+                      style={{ backgroundColor: getMoodColor(prayer.mood) }}
+                    />
+                  )}
+                  <h3 className={`text-lg font-semibold ${prayer.type === 'verse' ? 'text-white' : 'text-gray-800'}`}>
+                    {prayer.title}
                   </h3>
-                  <p className="sacred-text text-sm mb-4">
-                    {searchTerm || filterStyle !== "all" 
-                      ? "Try a different search term or filter" 
-                      : "Your saved prayers will appear here as you create them"
-                    }
-                  </p>
+                </div>
+
+                {/* Content */}
+                <div className={`text-sm leading-relaxed mb-4 ${prayer.type === 'verse' ? 'text-white' : 'text-gray-600'}`}>
+                  {prayer.preview.split('\n').map((line, i) => (
+                    <div key={i}>{line}</div>
+                  ))}
+                </div>
+
+                {/* Scripture */}
+                {prayer.scripture && (
+                  <div className={`italic border-l-3 pl-3 my-4 text-sm ${
+                    prayer.type === 'verse' 
+                      ? 'border-white/40 text-white/90' 
+                      : 'border-purple-300 text-purple-700'
+                  }`}>
+                    {prayer.scripture}
+                  </div>
+                )}
+
+                {/* Reflection */}
+                {prayer.reflection && (
+                  <div className="bg-gradient-to-r from-yellow-100 to-orange-100 p-3 rounded-lg my-4">
+                    <div className="text-xs text-gray-600 font-medium mb-1">Your Reflection:</div>
+                    <div className="text-sm text-gray-700 italic">"{prayer.reflection}"</div>
+                  </div>
+                )}
+
+                {/* Audio Button */}
+                {prayer.hasAudio && (
                   <Button 
-                    onClick={() => navigate("/prayer-input")}
-                    className="bg-[#d2b48c] hover:bg-[#c19660] text-white"
+                    className="bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white rounded-full px-4 py-2 text-sm mt-3 flex items-center gap-2"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      console.log('Playing audio for:', prayer.title);
+                    }}
                   >
-                    <MessageSquare className="w-4 h-4 mr-2" />
-                    Create Prayer
+                    <Play className="w-4 h-4" />
+                    Listen ({prayer.audioDuration})
                   </Button>
-                </CardContent>
-              </Card>
+                )}
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {prayer.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className={`px-2 py-1 rounded-xl text-xs ${
+                        prayer.type === 'verse'
+                          ? 'bg-white/20 text-white'
+                          : 'bg-black/10 text-gray-600'
+                      }`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          )}
+          ))}
         </div>
+
+        {/* Floating Add Button */}
+        <Button
+          className="fixed bottom-8 right-8 w-15 h-15 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white shadow-2xl text-2xl transition-transform hover:scale-110 z-50"
+          onClick={() => navigate("/prayer-input")}
+        >
+          +
+        </Button>
       </div>
 
-      {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-sacred-golden-tan/20 p-4">
-        <div className="flex justify-center items-center max-w-7xl mx-auto">
-          <div className="flex justify-between items-center w-full max-w-md">
-            <Button 
-              variant="ghost" 
-              onClick={() => navigate("/home")} 
-              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:bg-sacred-cream/50 hover:text-sacred-sage-green/80"
-            >
-              <Home className="w-5 h-5" />
-              <span className="text-xs">Home</span>
-            </Button>
-            <div className="flex items-center gap-8">
-              <Button 
-                variant="ghost" 
-                onClick={() => navigate("/journal")}
-                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:bg-sacred-cream/50 hover:text-sacred-sage-green/80"
-              >
-                <Book className="w-5 h-5" />
-                <span className="text-xs">Journal</span>
-              </Button>
-              <Button 
-                variant="ghost" 
-                onClick={() => navigate("/circles")}
-                className="flex flex-col items-center gap-1 text-sacred-sage-green hover:bg-sacred-cream/50 hover:text-sacred-sage-green/80"
-              >
-                <Circle className="w-5 h-5" />
-                <span className="text-xs">Circles</span>
-              </Button>
-            </div>
-            <Button
-              variant="ghost"
-              onClick={() => navigate("/settings")}
-              className="flex flex-col items-center gap-1 text-sacred-sage-green hover:bg-sacred-cream/50 hover:text-sacred-sage-green/80"
-            >
-              <Settings className="w-5 h-5" />
-              <span className="text-xs">Settings</span>
-            </Button>
-          </div>
-        </div>
-      </div>
+      {/* Responsive Styles */}
+      <style jsx>{`
+        @media (max-width: 1200px) {
+          .max-w-7xl {
+            column-count: 3 !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .max-w-7xl {
+            column-count: 2 !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .max-w-7xl {
+            column-count: 1 !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
