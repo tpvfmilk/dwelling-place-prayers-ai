@@ -75,16 +75,16 @@ const Landing = () => {
       }}>
         {/* Hero Section */}
         <section className="text-center relative pt-28 pb-[236px] -mx-8 px-8" style={{
-          backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-4b0b1aba7708.png")`,
+          backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png")`,
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
           backgroundColor: '#F8F6F3',
           zIndex: 2
         }}>
-          {/* Enhanced Gradient Overlay with fade starting at 40% and fully gone at 70% */}
+          {/* Adjusted Gradient Overlay - much more transparent to show background image */}
           <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 40%, rgba(248, 246, 243, 1) 70%, rgba(248, 246, 243, 1) 100%)',
+            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 60%, rgba(248, 246, 243, 0.7) 85%, rgba(248, 246, 243, 1) 100%)',
             zIndex: 1
           }} />
 
@@ -145,7 +145,7 @@ const Landing = () => {
                 Our souls have been taken captive—
               </p>
               
-              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again.  
+              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again.  
 
 
 We promise:</p>
