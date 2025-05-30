@@ -19,7 +19,7 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
 
     // Debug image loading
-    const imageUrl = '/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png';
+    const imageUrl = '/lovable-uploads/b4353237-f6ca-4d94-4b0b1aba7708.png';
     console.log('Attempting to load background image:', imageUrl);
     const img = new Image();
     img.onload = () => {
@@ -31,7 +31,7 @@ const Landing = () => {
 
       // Try with public/ prefix
       const altImg = new Image();
-      altImg.src = '/public/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png';
+      altImg.src = '/public/lovable-uploads/b4353237-f6ca-4d94-4b0b1aba7708.png';
       altImg.onload = () => console.log('Alternative path worked');
       altImg.onerror = () => console.error('Alternative path also failed');
     };
@@ -89,7 +89,7 @@ const Landing = () => {
     }}>
         {/* Hero Section */}
         <section className="text-center relative pt-28 pb-[236px] -mx-8 px-8" style={{
-        backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png?v=${Date.now()}")`,
+        backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-4b0b1aba7708.png?v=${Date.now()}")`,
         backgroundSize: 'cover',
         backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',
@@ -126,11 +126,13 @@ const Landing = () => {
           </div>
         </section>
 
-        {/* Full-width Gray Section - Moved after Hero */}
+        {/* Full-width Orange Section with Gradient - Moved after Hero */}
         <section className="relative -mx-8" style={{
         zIndex: 2
       }}>
-          <div className="py-[135px] px-8 bg-orange-100">
+          <div className="py-[135px] px-8" style={{
+            background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 20%, rgba(254, 215, 170, 1) 80%, rgba(254, 215, 170, 0) 100%)'
+          }}>
             <div className="max-w-4xl mx-auto space-y-8 my-[113px]">
               <h3 className="text-2xl text-sacred-sage-green my-[53px] font-semibold py-[28px] md:text-5xl">
                 This is your sanctuary.
