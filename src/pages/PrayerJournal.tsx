@@ -146,10 +146,10 @@ const PrayerJournal = () => {
     <div className="min-h-screen flex bg-sacred-gradient">
       {/* Sidebar */}
       <div className="bg-white/95 backdrop-blur-sm border-r border-sacred-sage-border/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-xl" style={{ width: '55px' }}>
-        {/* Logo with top padding to align with search bar bottom */}
+        {/* Logo with reduced top padding to align with search bar */}
         <div 
-          className="w-10 h-10 rounded-xl flex items-center justify-center mb-8 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
-          style={{ marginTop: '320px' }}
+          className="w-10 h-10 rounded-xl flex items-center justify-center mb-6 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
+          style={{ marginTop: '220px' }}
           onClick={() => navigate("/home")}
         >
           <img 
@@ -246,9 +246,9 @@ const PrayerJournal = () => {
       {/* Main Content */}
       <div className="flex-1 pl-8" style={{ marginLeft: '55px' }}>
         {/* Search Bar */}
-        <div className="sticky top-0 z-40 mb-10 py-10">
+        <div className="sticky top-0 z-40 mb-6 py-6">
           <div className="max-w-7xl mx-auto relative">
-            <div className="relative flex items-center min-h-[300px]">
+            <div className="relative flex items-center min-h-[200px]">
               <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-6 h-6 text-sacred-sage-light pointer-events-none z-10" />
               <Input
                 value={searchTerm}
@@ -351,8 +351,6 @@ const PrayerJournal = () => {
             </div>
           ))}
         </div>
-
-        {/* Removed floating add button */}
       </div>
 
       {/* Responsive Styles */}
@@ -366,8 +364,8 @@ const PrayerJournal = () => {
           .max-w-7xl {
             column-count: 2 !important;
           }
-          .min-h-\\[300px\\] {
-            min-height: 180px !important;
+          .min-h-\\[200px\\] {
+            min-height: 120px !important;
           }
           .pl-20 {
             padding-left: 3rem !important;
@@ -383,8 +381,8 @@ const PrayerJournal = () => {
           .max-w-7xl {
             column-count: 1 !important;
           }
-          .min-h-\\[300px\\] {
-            min-height: 150px !important;
+          .min-h-\\[200px\\] {
+            min-height: 100px !important;
           }
           .pl-20 {
             padding-left: 2.5rem !important;
