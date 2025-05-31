@@ -62,7 +62,7 @@ const Onboarding = () => {
 
   return (
     <div className="onboarding-container">
-      <style jsx>{`
+      <style>{`
         .onboarding-container {
           position: relative;
           width: 100vw;
@@ -79,32 +79,65 @@ const Onboarding = () => {
           width: 100%;
           height: 100%;
           background: 
-            radial-gradient(circle at 20% 50%, rgba(33, 150, 243, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(100, 181, 246, 0.25) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(25, 118, 210, 0.2) 0%, transparent 50%),
-            radial-gradient(circle at 60% 60%, rgba(187, 222, 251, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 90% 90%, rgba(66, 165, 245, 0.25) 0%, transparent 50%);
-          animation: water-surface 12s ease-in-out infinite;
+            radial-gradient(circle at 20% 50%, rgba(33, 150, 243, 0.5) 0%, transparent 40%),
+            radial-gradient(circle at 80% 20%, rgba(100, 181, 246, 0.45) 0%, transparent 45%),
+            radial-gradient(circle at 40% 80%, rgba(25, 118, 210, 0.4) 0%, transparent 50%),
+            radial-gradient(circle at 60% 60%, rgba(187, 222, 251, 0.55) 0%, transparent 45%),
+            radial-gradient(circle at 90% 90%, rgba(66, 165, 245, 0.5) 0%, transparent 50%),
+            radial-gradient(circle at 30% 20%, rgba(144, 202, 249, 0.4) 0%, transparent 55%),
+            radial-gradient(circle at 70% 70%, rgba(30, 136, 229, 0.35) 0%, transparent 50%);
+          animation: enhanced-water-surface 8s ease-in-out infinite;
           pointer-events: none;
           z-index: 0;
         }
 
-        @keyframes water-surface {
+        .onboarding-container::after {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: 
+            radial-gradient(circle at 60% 30%, rgba(21, 101, 192, 0.3) 0%, transparent 60%),
+            radial-gradient(circle at 30% 80%, rgba(100, 181, 246, 0.35) 0%, transparent 55%),
+            radial-gradient(circle at 85% 60%, rgba(33, 150, 243, 0.4) 0%, transparent 50%);
+          animation: secondary-water-ripples 10s ease-in-out infinite reverse;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        @keyframes enhanced-water-surface {
           0%, 100% {
-            transform: translateX(0) translateY(0) scale(1);
-            opacity: 0.8;
+            transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+            opacity: 0.6;
           }
           25% {
-            transform: translateX(-15px) translateY(-8px) scale(1.03);
-            opacity: 0.9;
+            transform: translateX(-35px) translateY(-20px) scale(1.08) rotate(1.5deg);
+            opacity: 1.0;
           }
           50% {
-            transform: translateX(8px) translateY(12px) scale(0.97);
+            transform: translateX(25px) translateY(30px) scale(0.92) rotate(-1deg);
             opacity: 0.95;
           }
           75% {
-            transform: translateX(12px) translateY(-10px) scale(1.02);
-            opacity: 0.85;
+            transform: translateX(30px) translateY(-25px) scale(1.1) rotate(2deg);
+            opacity: 0.7;
+          }
+        }
+
+        @keyframes secondary-water-ripples {
+          0%, 100% {
+            transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+            opacity: 0.8;
+          }
+          33% {
+            transform: translateX(20px) translateY(15px) scale(1.06) rotate(-1.5deg);
+            opacity: 0.6;
+          }
+          66% {
+            transform: translateX(-30px) translateY(-20px) scale(0.94) rotate(1deg);
+            opacity: 0.9;
           }
         }
 
@@ -146,25 +179,25 @@ const Onboarding = () => {
           width: 100%;
           height: 100%;
           background: 
-            radial-gradient(circle at 30% 40%, rgba(100, 181, 246, 0.4) 0%, transparent 40%),
-            radial-gradient(circle at 70% 30%, rgba(227, 242, 253, 0.5) 0%, transparent 50%),
-            radial-gradient(circle at 20% 70%, rgba(187, 222, 251, 0.3) 0%, transparent 45%);
-          animation: gentle-water-flow 15s ease-in-out infinite;
+            radial-gradient(circle at 30% 40%, rgba(100, 181, 246, 0.6) 0%, transparent 35%),
+            radial-gradient(circle at 70% 30%, rgba(227, 242, 253, 0.7) 0%, transparent 45%),
+            radial-gradient(circle at 20% 70%, rgba(187, 222, 251, 0.5) 0%, transparent 40%);
+          animation: gentle-water-flow 10s ease-in-out infinite;
           pointer-events: none;
         }
 
         @keyframes gentle-water-flow {
           0%, 100% {
             transform: translateX(0) translateY(0) rotate(0deg);
-            opacity: 0.7;
+            opacity: 0.6;
           }
           33% {
-            transform: translateX(-20px) translateY(10px) rotate(1.5deg);
+            transform: translateX(-30px) translateY(15px) rotate(2deg);
             opacity: 0.9;
           }
           66% {
-            transform: translateX(15px) translateY(-15px) rotate(-1deg);
-            opacity: 0.8;
+            transform: translateX(25px) translateY(-25px) rotate(-1.5deg);
+            opacity: 0.75;
           }
         }
 
@@ -521,12 +554,12 @@ const Onboarding = () => {
         }
 
         .step-final {
-          background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+          background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
         }
 
         .step-final h1 {
           font-size: 3rem;
-          color: #f57f17;
+          color: #2e7d32;
           margin-bottom: 2rem;
           font-weight: 300;
           line-height: 1.2;
@@ -534,16 +567,35 @@ const Onboarding = () => {
 
         .step-final p {
           font-size: 1.3rem;
-          color: #f9a825;
+          color: #388e3c;
           max-width: 600px;
           margin: 0 auto;
           line-height: 1.6;
         }
 
-        .final-icon {
+        .final-logo {
           font-size: 6rem;
           margin: 2rem 0;
           animation: gentle-pulse 3s ease-in-out infinite;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #2e7d32;
+        }
+
+        .final-logo .logo-icon {
+          font-size: 4rem;
+          margin-bottom: 0.5rem;
+          background: linear-gradient(135deg, #4caf50, #2e7d32);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .final-logo .logo-text {
+          font-size: 1.5rem;
+          font-weight: 300;
+          color: #2e7d32;
         }
 
         .nav-button {
@@ -821,7 +873,10 @@ const Onboarding = () => {
       {/* Step 8: Final Welcome */}
       <div className={`step step-final ${currentStep === 7 ? 'active' : ''}`}>
         <h1>Welcome to the Dwelling Place,<br/>the garden of your heart.</h1>
-        <div className="final-icon">🏡</div>
+        <div className="final-logo">
+          <div className="logo-icon">🏠</div>
+          <div className="logo-text">Dwelling Place</div>
+        </div>
         <p>Your personal sanctuary for prayer and God's presence is ready. Begin your journey of faith, one prayer at a time.</p>
       </div>
 
