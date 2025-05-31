@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Home, Book, Settings, MessageSquare, Circle, Play, Star, Sun, Moon } from "lucide-react";
+import { Home, Book, Settings, MessageSquare, Circle, Play, Star, Sun, Moon, Plus } from "lucide-react";
 
 const PrayerJournal = () => {
   const navigate = useNavigate();
@@ -113,13 +113,35 @@ const PrayerJournal = () => {
     }
   };
 
+  // Create New Card Component
+  const CreateNewCard = () => (
+    <div
+      className="cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden backdrop-blur-sm shadow-lg mb-5 border border-sacred-sage-border/20"
+      style={{
+        breakInside: "avoid",
+        background: "linear-gradient(135deg, #F8F6F3 0%, #F0EBE5 30%, #E8EDE0 100%)",
+        minHeight: "200px"
+      }}
+      onClick={() => navigate("/prayer-input")}
+    >
+      <div className="p-5 h-full flex flex-col justify-center items-center text-center">
+        <div className="w-12 h-12 rounded-full bg-sacred-sage-green/20 flex items-center justify-center mb-4">
+          <Plus className="w-6 h-6 text-sacred-sage-green" />
+        </div>
+        <h3 className="text-lg font-semibold text-sacred-sage-green mb-2">ADD A NEW NOTE</h3>
+        <p className="text-sm text-sacred-warm-gray italic">Start typing here...</p>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen flex bg-sacred-gradient">
       {/* Sidebar */}
       <div className="bg-white/95 backdrop-blur-sm border-r border-sacred-sage-border/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-xl" style={{ width: '55px' }}>
-        {/* Logo */}
+        {/* Logo with top padding to align with search bar bottom */}
         <div 
           className="w-10 h-10 rounded-xl flex items-center justify-center mb-8 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
+          style={{ marginTop: '320px' }}
           onClick={() => navigate("/home")}
         >
           <img 
@@ -241,6 +263,9 @@ const PrayerJournal = () => {
             columnFill: "balance"
           }}
         >
+          {/* Always show Create New Card first */}
+          <CreateNewCard />
+          
           {filteredPrayers.map((prayer) => (
             <div
               key={prayer.id}
@@ -334,13 +359,7 @@ const PrayerJournal = () => {
           ))}
         </div>
 
-        {/* Floating Add Button */}
-        <Button
-          className="fixed bottom-8 right-8 w-15 h-15 rounded-full bg-sacred-custom-brown hover:bg-sacred-custom-brown-dark text-white shadow-2xl text-2xl transition-transform hover:scale-110 z-50"
-          onClick={() => navigate("/prayer-input")}
-        >
-          +
-        </Button>
+        {/* Removed floating add button */}
       </div>
 
       {/* Responsive Styles */}
