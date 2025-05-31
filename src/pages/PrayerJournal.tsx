@@ -97,39 +97,47 @@ const PrayerJournal = () => {
     }
   };
 
-  const getCardGradient = (type: string) => {
-    switch (type) {
-      case "prayer": return "linear-gradient(135deg, #F8F6F3 0%, #FFFFFF 50%, #F0EBE5 100%)";
-      case "reflection": return "linear-gradient(135deg, #F8F6F3 0%, #F5F1ED 30%, #F8F6F3 100%)";
-      case "verse": return "linear-gradient(135deg, #E8EDE0 0%, #F0F4E8 100%)";
-      case "note": return "linear-gradient(135deg, #D4B5A0 0%, #F8F6F3 100%)";
-      default: return "rgba(248, 246, 243, 0.95)";
-    }
-  };
-
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
       setSearchTerm("");
     }
   };
 
-  // Create New Card Component
+  // Create New Card Component - updated to match prayer card style
   const CreateNewCard = () => (
     <div
       className="cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden backdrop-blur-sm shadow-lg mb-5 border border-sacred-sage-border/20"
       style={{
         breakInside: "avoid",
-        background: "linear-gradient(135deg, #F8F6F3 0%, #F0EBE5 30%, #E8EDE0 100%)",
+        background: "#FFFFFF",
         minHeight: "200px"
       }}
       onClick={() => navigate("/prayer-input")}
     >
-      <div className="p-5 h-full flex flex-col justify-center items-center text-center">
-        <div className="w-12 h-12 rounded-full bg-sacred-sage-green/20 flex items-center justify-center mb-4">
-          <Plus className="w-6 h-6 text-sacred-sage-green" />
+      <div className="p-6">
+        {/* Date */}
+        <div className="text-xs text-sacred-sage-light mb-2">Ready to write</div>
+        
+        {/* Title with Dot */}
+        <div className="flex items-center mb-3">
+          <div 
+            className="w-3 h-3 rounded-full mr-2"
+            style={{ backgroundColor: "#A8B88A" }}
+          />
+          <h3 className="text-lg font-semibold text-sacred-sage-green">ADD A NEW NOTE</h3>
         </div>
-        <h3 className="text-lg font-semibold text-sacred-sage-green mb-2">ADD A NEW NOTE</h3>
-        <p className="text-sm text-sacred-warm-gray italic">Start typing here...</p>
+
+        {/* Content */}
+        <div className="text-sm leading-relaxed mb-4 text-sacred-warm-gray">
+          Start typing here...
+        </div>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mt-4">
+          <span className="px-2 py-1 rounded-xl text-xs bg-sacred-sage-green/10 text-sacred-sage-green">
+            New Entry
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -272,35 +280,28 @@ const PrayerJournal = () => {
               className="cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-xl rounded-2xl overflow-hidden backdrop-blur-sm shadow-lg mb-5 border border-sacred-sage-border/20"
               style={{
                 breakInside: "avoid",
-                background: getCardGradient(prayer.type),
+                background: "#FFFFFF",
                 maxHeight: "500px"
               }}
               onClick={() => navigate("/prayer-display", { state: { prayerId: prayer.id } })}
             >
-              {/* Card Type Badge */}
-              <div className="absolute top-3 right-3 bg-white/90 px-2 py-1 rounded-xl text-xs font-medium text-sacred-sage-green z-10">
-                {prayer.type.charAt(0).toUpperCase() + prayer.type.slice(1)}
-              </div>
-
-              <div className="p-5">
+              <div className="p-6">
                 {/* Date */}
                 <div className="text-xs text-sacred-sage-light mb-2">{prayer.date}</div>
                 
                 {/* Title with Mood Indicator */}
                 <div className="flex items-center mb-3">
-                  {prayer.mood && (
-                    <div 
-                      className="w-3 h-3 rounded-full mr-2"
-                      style={{ backgroundColor: getMoodColor(prayer.mood) }}
-                    />
-                  )}
-                  <h3 className={`text-lg font-semibold ${prayer.type === 'verse' ? 'text-sacred-sage-green' : 'text-sacred-sage-green'}`}>
+                  <div 
+                    className="w-3 h-3 rounded-full mr-2"
+                    style={{ backgroundColor: getMoodColor(prayer.mood || prayer.type) }}
+                  />
+                  <h3 className="text-lg font-semibold text-sacred-sage-green">
                     {prayer.title}
                   </h3>
                 </div>
 
                 {/* Content */}
-                <div className={`text-sm leading-relaxed mb-4 ${prayer.type === 'verse' ? 'text-sacred-warm-gray' : 'text-sacred-warm-gray'}`}>
+                <div className="text-sm leading-relaxed mb-4 text-sacred-warm-gray">
                   {prayer.preview.split('\n').map((line, i) => (
                     <div key={i}>{line}</div>
                   ))}
@@ -308,11 +309,7 @@ const PrayerJournal = () => {
 
                 {/* Scripture */}
                 {prayer.scripture && (
-                  <div className={`italic border-l-3 pl-3 my-4 text-sm ${
-                    prayer.type === 'verse' 
-                      ? 'border-sacred-sage-green/40 text-sacred-sage-green' 
-                      : 'border-sacred-custom-brown text-sacred-sage-green'
-                  }`}>
+                  <div className="italic border-l-3 pl-3 my-4 text-sm border-sacred-sage-green/40 text-sacred-sage-green">
                     {prayer.scripture}
                   </div>
                 )}
@@ -344,11 +341,7 @@ const PrayerJournal = () => {
                   {prayer.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className={`px-2 py-1 rounded-xl text-xs ${
-                        prayer.type === 'verse'
-                          ? 'bg-sacred-sage-green/20 text-sacred-sage-green'
-                          : 'bg-sacred-sage-green/10 text-sacred-sage-green'
-                      }`}
+                      className="px-2 py-1 rounded-xl text-xs bg-sacred-sage-green/10 text-sacred-sage-green"
                     >
                       {tag}
                     </span>
