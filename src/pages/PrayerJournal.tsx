@@ -246,7 +246,7 @@ const PrayerJournal = () => {
       {/* Main Content */}
       <div className="flex-1 pl-8" style={{ marginLeft: '55px' }}>
         {/* Search Bar */}
-        <div className="sticky top-0 z-40 mb-6 py-6">
+        <div className="sticky top-0 z-40 mb-6" style={{ padding: '10px' }}>
           <div className="max-w-7xl mx-auto relative">
             <div className="relative flex items-center min-h-[200px]">
               <MessageSquare className="absolute left-8 top-1/2 transform -translate-y-1/2 w-6 h-6 text-sacred-sage-light pointer-events-none z-10" />
