@@ -116,7 +116,7 @@ const PrayerJournal = () => {
   return (
     <div className="min-h-screen flex bg-sacred-gradient">
       {/* Sidebar */}
-      <div className="bg-white/95 backdrop-blur-sm border-r border-sacred-sage-border/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-xl" style={{ width: '65px' }}>
+      <div className="bg-white/95 backdrop-blur-sm border-r border-sacred-sage-border/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-xl" style={{ width: '55px' }}>
         {/* Logo */}
         <div 
           className="w-10 h-10 rounded-xl flex items-center justify-center mb-8 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
@@ -214,7 +214,7 @@ const PrayerJournal = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 pl-8" style={{ marginLeft: '65px' }}>
+      <div className="flex-1 pl-8" style={{ marginLeft: '55px' }}>
         {/* Search Bar */}
         <div className="sticky top-0 z-40 mb-10 py-10">
           <div className="max-w-7xl mx-auto relative">
