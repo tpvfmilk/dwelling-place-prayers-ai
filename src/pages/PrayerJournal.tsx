@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -177,18 +175,6 @@ const PrayerJournal = () => {
           
           <div 
             className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group p-2 ${
-              activeNav === "circles" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
-            }`}
-            onClick={() => setActiveNav("circles")}
-          >
-            <Circle className="w-6 h-6" />
-            <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-              Prayer Circles
-            </div>
-          </div>
-          
-          <div 
-            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group p-2 ${
               activeNav === "blessing" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
             }`}
             onClick={() => setActiveNav("blessing")}
@@ -220,6 +206,18 @@ const PrayerJournal = () => {
             <MessageSquare className="w-6 h-6" />
             <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
               Reflections
+            </div>
+          </div>
+          
+          <div 
+            className={`w-10 h-10 rounded-lg flex items-center justify-center cursor-pointer transition-all relative group p-2 ${
+              activeNav === "circles" ? "bg-sacred-sage-green/20 text-sacred-sage-green" : "text-sacred-warm-gray hover:bg-sacred-sage-green/10 hover:text-sacred-sage-green"
+            }`}
+            onClick={() => setActiveNav("circles")}
+          >
+            <Circle className="w-6 h-6" />
+            <div className="absolute left-14 bg-black/80 text-white px-3 py-2 rounded-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              Prayer Circles
             </div>
           </div>
         </div>
@@ -402,4 +400,3 @@ const PrayerJournal = () => {
 };
 
 export default PrayerJournal;
-
