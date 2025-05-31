@@ -225,8 +225,8 @@ const PrayerJournal = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search your heart and prayers..."
-                className="w-full pl-20 pr-60 py-12 border-none bg-transparent outline-none placeholder:text-sacred-sage-light focus:ring-0 focus:border-none focus:outline-none hover:ring-0 hover:outline-none shadow-none text-sacred-sage-green"
-                style={{ fontSize: '12rem', lineHeight: '1.2' }}
+                className="w-full pl-20 pr-60 py-12 border-none bg-transparent outline-none placeholder:text-sacred-sage-light focus:ring-0 focus:border-none focus:outline-none hover:ring-0 hover:outline-none shadow-none text-sacred-sage-green focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none"
+                style={{ fontSize: '70px', lineHeight: '1.2' }}
               />
               <div className="absolute right-8 top-1/2 transform -translate-y-1/2 text-2xl text-sacred-sage-light flex items-center gap-2 pointer-events-none">
                 Press <strong className="text-sacred-sage-green font-semibold">ESC</strong> to reset search
@@ -237,7 +237,7 @@ const PrayerJournal = () => {
 
         {/* Masonry Gallery */}
         <div 
-          className="max-w-7xl mx-auto pb-24 pl-4"
+          className="max-w-7xl mx-auto pb-24 pl-4 pr-8"
           style={{
             columnCount: "4",
             columnGap: "20px",
