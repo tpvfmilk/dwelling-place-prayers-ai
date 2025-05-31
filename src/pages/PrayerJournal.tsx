@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -146,10 +147,10 @@ const PrayerJournal = () => {
     <div className="min-h-screen flex bg-sacred-gradient">
       {/* Sidebar */}
       <div className="bg-white/95 backdrop-blur-sm border-r border-sacred-sage-border/20 flex flex-col items-center py-5 fixed h-full left-0 top-0 z-50 shadow-xl" style={{ width: '55px' }}>
-        {/* Logo with reduced top padding to align with search bar */}
+        {/* Logo with reduced top padding - moved up by 72px (1 inch) */}
         <div 
           className="w-10 h-10 rounded-xl flex items-center justify-center mb-6 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
-          style={{ marginTop: '220px' }}
+          style={{ marginTop: '148px' }}
           onClick={() => navigate("/home")}
         >
           <img 
