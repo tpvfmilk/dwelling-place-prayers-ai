@@ -17,6 +17,7 @@ import PrayerJournal from "./pages/PrayerJournal";
 import PrayerStyleSelection from "./pages/PrayerStyleSelection";
 import Settings from "./pages/Settings";
 import PrivacyTrust from "./pages/PrivacyTrust";
+import Onboarding from "./pages/Onboarding";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/prayer-style-selection" element={<PrayerStyleSelection />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/privacy-trust" element={<PrivacyTrust />} />
+          <Route path="/onboarding" element={<Onboarding />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
