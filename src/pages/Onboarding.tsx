@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -69,76 +68,7 @@ const Onboarding = () => {
           height: 100vh;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           overflow: hidden;
-        }
-
-        .onboarding-container::before {
-          content: '';
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: 
-            radial-gradient(circle at 20% 50%, rgba(33, 150, 243, 0.5) 0%, transparent 40%),
-            radial-gradient(circle at 80% 20%, rgba(100, 181, 246, 0.45) 0%, transparent 45%),
-            radial-gradient(circle at 40% 80%, rgba(25, 118, 210, 0.4) 0%, transparent 50%),
-            radial-gradient(circle at 60% 60%, rgba(187, 222, 251, 0.55) 0%, transparent 45%),
-            radial-gradient(circle at 90% 90%, rgba(66, 165, 245, 0.5) 0%, transparent 50%),
-            radial-gradient(circle at 30% 20%, rgba(144, 202, 249, 0.4) 0%, transparent 55%),
-            radial-gradient(circle at 70% 70%, rgba(30, 136, 229, 0.35) 0%, transparent 50%);
-          animation: enhanced-water-surface 8s ease-in-out infinite;
-          pointer-events: none;
-          z-index: 0;
-        }
-
-        .onboarding-container::after {
-          content: '';
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: 
-            radial-gradient(circle at 60% 30%, rgba(21, 101, 192, 0.3) 0%, transparent 60%),
-            radial-gradient(circle at 30% 80%, rgba(100, 181, 246, 0.35) 0%, transparent 55%),
-            radial-gradient(circle at 85% 60%, rgba(33, 150, 243, 0.4) 0%, transparent 50%);
-          animation: secondary-water-ripples 10s ease-in-out infinite reverse;
-          pointer-events: none;
-          z-index: 0;
-        }
-
-        @keyframes enhanced-water-surface {
-          0%, 100% {
-            transform: translateX(0) translateY(0) scale(1) rotate(0deg);
-            opacity: 0.6;
-          }
-          25% {
-            transform: translateX(-35px) translateY(-20px) scale(1.08) rotate(1.5deg);
-            opacity: 1.0;
-          }
-          50% {
-            transform: translateX(25px) translateY(30px) scale(0.92) rotate(-1deg);
-            opacity: 0.95;
-          }
-          75% {
-            transform: translateX(30px) translateY(-25px) scale(1.1) rotate(2deg);
-            opacity: 0.7;
-          }
-        }
-
-        @keyframes secondary-water-ripples {
-          0%, 100% {
-            transform: translateX(0) translateY(0) scale(1) rotate(0deg);
-            opacity: 0.8;
-          }
-          33% {
-            transform: translateX(20px) translateY(15px) scale(1.06) rotate(-1.5deg);
-            opacity: 0.6;
-          }
-          66% {
-            transform: translateX(-30px) translateY(-20px) scale(0.94) rotate(1deg);
-            opacity: 0.9;
-          }
+          background: linear-gradient(135deg, #f8f6f3 0%, #e3f2fd 100%);
         }
 
         .step {
@@ -168,37 +98,6 @@ const Onboarding = () => {
 
         .step-welcome {
           background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-          position: relative;
-        }
-
-        .step-welcome::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: 
-            radial-gradient(circle at 30% 40%, rgba(100, 181, 246, 0.6) 0%, transparent 35%),
-            radial-gradient(circle at 70% 30%, rgba(227, 242, 253, 0.7) 0%, transparent 45%),
-            radial-gradient(circle at 20% 70%, rgba(187, 222, 251, 0.5) 0%, transparent 40%);
-          animation: gentle-water-flow 10s ease-in-out infinite;
-          pointer-events: none;
-        }
-
-        @keyframes gentle-water-flow {
-          0%, 100% {
-            transform: translateX(0) translateY(0) rotate(0deg);
-            opacity: 0.6;
-          }
-          33% {
-            transform: translateX(-30px) translateY(15px) rotate(2deg);
-            opacity: 0.9;
-          }
-          66% {
-            transform: translateX(25px) translateY(-25px) rotate(-1.5deg);
-            opacity: 0.75;
-          }
         }
 
         .step-welcome h1 {
@@ -207,8 +106,6 @@ const Onboarding = () => {
           color: #1565c0;
           margin-bottom: 2rem;
           line-height: 1.2;
-          position: relative;
-          z-index: 2;
         }
 
         .welcome-circle {
@@ -221,25 +118,11 @@ const Onboarding = () => {
           align-items: center;
           justify-content: center;
           box-shadow: 0 20px 40px rgba(25, 118, 210, 0.2);
-          animation: gentle-pulse 4s ease-in-out infinite;
-          position: relative;
-          z-index: 2;
         }
 
         .welcome-circle::before {
           content: '🕊️';
           font-size: 4rem;
-        }
-
-        @keyframes gentle-pulse {
-          0%, 100% { 
-            transform: scale(1);
-            box-shadow: 0 20px 40px rgba(25, 118, 210, 0.2);
-          }
-          50% { 
-            transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(25, 118, 210, 0.3);
-          }
         }
 
         .step-privacy {
@@ -576,7 +459,6 @@ const Onboarding = () => {
         .final-logo {
           font-size: 6rem;
           margin: 2rem 0;
-          animation: gentle-pulse 3s ease-in-out infinite;
           display: flex;
           flex-direction: column;
           align-items: center;
