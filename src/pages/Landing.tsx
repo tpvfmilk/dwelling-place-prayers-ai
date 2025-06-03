@@ -4,11 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
 import HeaderNavigation from "@/components/HeaderNavigation";
-
 const Landing = () => {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -25,7 +23,6 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -45,9 +42,7 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
-  
   const logoTextColor = isScrolled ? "text-sacred-sage-green" : "text-white";
-  
   return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
       <header className="fixed top-5 left-8 right-8 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
@@ -64,29 +59,23 @@ const Landing = () => {
         {/* Hero Section with Video Background */}
         <section className="text-center relative h-screen -mx-8 px-8 overflow-hidden">
           {/* Video Background */}
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
-            preload="metadata" 
-            poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png" 
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            style={{ zIndex: 1 }}
-          >
+          <video autoPlay muted loop playsInline preload="metadata" poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png" className="absolute inset-0 w-full h-full object-cover object-center" style={{
+          zIndex: 1
+        }}>
             <source src="/lovable-uploads/0602.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
-          <div className="relative h-full flex flex-col justify-end items-end pr-8 pb-16" style={{ zIndex: 3 }}>
+          <div className="relative h-full flex flex-col justify-end items-end pr-8 pb-16" style={{
+          zIndex: 3
+        }}>
             <div className="w-1/2 text-right">
-              <h1 className="text-5xl tracking-tight text-white animate-fade-in font-thin md:text-6xl mb-6">
+              <h1 className="text-5xl tracking-tight text-white animate-fade-in font-thin md:text-6xl mb-6 px-[42px]">
                 Find peace in the everyday.<br />Connect with God anytime, anywhere.
               </h1>
-              <p 
-                style={{ animationDelay: '0.2s' }} 
-                className="text-xl text-white mb-6 animate-fade-in font-thin md:text-base"
-              >
+              <p style={{
+              animationDelay: '0.2s'
+            }} className="text-xl text-white mb-6 animate-fade-in font-thin md:text-2xl">
                 The sacred space for your spiritual journey. All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
               </p>
             </div>
@@ -272,5 +261,4 @@ const Landing = () => {
       </style>
     </div>;
 };
-
 export default Landing;
