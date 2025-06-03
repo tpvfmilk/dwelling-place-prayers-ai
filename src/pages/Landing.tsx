@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
 import HeaderNavigation from "@/components/HeaderNavigation";
+
 const Landing = () => {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
+  
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -23,6 +25,7 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -42,7 +45,9 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
+  
   const logoTextColor = isScrolled ? "text-sacred-sage-green" : "text-white";
+  
   return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
       <header className="fixed top-5 left-8 right-8 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
@@ -69,9 +74,6 @@ const Landing = () => {
           <div className="relative" style={{
           zIndex: 3
         }}>
-            <h1 className="text-5xl tracking-tight mb-8 text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right my-[59px]">
-              Find peace in the everyday.<br />Connect with God anytime, anywhere.
-            </h1>
             <p className="text-xl md:text-3xl font-light text-sacred-warm-gray mb-12 animate-fade-in" style={{
             animationDelay: '0.2s'
           }}>
@@ -82,11 +84,14 @@ const Landing = () => {
           }} className="text-lg text-sacred-warm-gray max-w-2xl mx-auto mb-12 animate-fade-in py-0">
               All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
             </p>
-            <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in" style={{
+            <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in mb-8" style={{
             animationDelay: '0.6s'
           }}>
               Begin Your Journey
             </Button>
+            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right my-[59px]">
+              Find peace in the everyday.<br />Connect with God anytime, anywhere.
+            </h1>
           </div>
         </section>
 
@@ -269,4 +274,5 @@ const Landing = () => {
       </style>
     </div>;
 };
+
 export default Landing;
