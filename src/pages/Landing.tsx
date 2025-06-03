@@ -92,9 +92,8 @@ const Landing = () => {
         </section>
 
         {/* Manifesto Section - Part 1 */}
-        <section className="py-16 text-center relative -mx-8 px-8" style={{
-        zIndex: 2,
-        background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 50%, rgba(254, 215, 170, 1) 100%)'
+        <section className="py-16 text-center relative -mx-8 px-8 bg-sacred-golden-tan" style={{
+        zIndex: 2
       }}>
           {/* OUR PURPOSE Header */}
           <div className="text-center mb-8">
@@ -138,12 +137,11 @@ const Landing = () => {
           </div>
         </section>
 
-        {/* Full-width Orange Section with Gradient - Moved after Manifesto */}
+        {/* Full-width Orange Section - Moved after Manifesto */}
         <section className="relative -mx-8" style={{
         zIndex: 2
       }}>
-          <div className="py-[135px] px-8" style={{
-          background: 'linear-gradient(to bottom, rgba(254, 215, 170, 1) 50%, rgba(254, 215, 170, 0) 100%)',
+          <div className="py-[135px] px-8 bg-sacred-golden-tan" style={{
           minHeight: '600px'
         }}>
             <div className="max-w-4xl mx-auto space-y-8 my-[240px]">
