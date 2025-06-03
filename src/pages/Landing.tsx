@@ -1,15 +1,12 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
 import HeaderNavigation from "@/components/HeaderNavigation";
-
 const Landing = () => {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
-  
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -26,7 +23,6 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -46,9 +42,7 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
-  
   const logoTextColor = isScrolled ? "text-sacred-sage-green" : "text-white";
-  
   return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
       <header className="fixed top-5 left-8 right-8 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
@@ -65,9 +59,9 @@ const Landing = () => {
         {/* Hero Section with Video Background */}
         <section className="text-center relative pt-28 pb-[236px] -mx-8 px-8 overflow-hidden">
           {/* Video Background */}
-          <video autoPlay muted loop playsInline preload="metadata" poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png" className="absolute inset-0 w-full h-full object-cover" style={{
+          <video autoPlay muted loop playsInline preload="metadata" poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png" style={{
           zIndex: 1
-        }}>
+        }} className="absolute inset-0 w-full h-full object-cover py-0 my-[11px]">
             <source src="/lovable-uploads/0602.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -90,7 +84,7 @@ const Landing = () => {
           }}>
               Begin Your Journey
             </Button>
-            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right mt-6">
+            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right mt-6 my-[46px]">
               Find peace in the everyday.<br />Connect with God anytime, anywhere.
             </h1>
           </div>
@@ -275,5 +269,4 @@ const Landing = () => {
       </style>
     </div>;
 };
-
 export default Landing;
