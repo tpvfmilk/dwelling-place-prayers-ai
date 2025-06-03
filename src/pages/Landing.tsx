@@ -69,11 +69,7 @@ const Landing = () => {
           <div className="relative mt-6" style={{
           zIndex: 3
         }}>
-            <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in mb-8" style={{
-            animationDelay: '0.6s'
-          }}>
-              Begin Your Journey
-            </Button>
+            
             <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 py-[10px] text-right mt-12 my-0 font-thin md:text-6xl">
               Find peace in the everyday.<br />Connect with God anytime, anywhere.
             </h1>
