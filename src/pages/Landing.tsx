@@ -66,7 +66,7 @@ const Landing = () => {
             Your browser does not support the video tag.
           </video>
 
-          <div className="relative mt-[384px]" style={{
+          <div className="absolute bottom-8 right-8" style={{
           zIndex: 3
         }}>
             
