@@ -1,18 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
 import HeaderNavigation from "@/components/HeaderNavigation";
 
 const Landing = () => {
   const navigate = useNavigate();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
+      const scrolled = window.scrollY > 50;
+      
+      setIsScrolled(scrolled);
+      
       if (header) {
-        if (window.scrollY > 50) {
+        if (scrolled) {
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
@@ -44,6 +49,8 @@ const Landing = () => {
     description: "Created by believers, for believers, with reverence"
   }];
 
+  const logoTextColor = isScrolled ? "text-sacred-sage-green" : "text-white";
+
   return (
     <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
@@ -51,9 +58,9 @@ const Landing = () => {
         <nav className="flex justify-between items-center max-w-6xl mx-auto px-5 h-full">
           <div className="flex items-center gap-3">
             <img src="/lovable-uploads/ef3ce29a-120f-4b0c-8e59-384f0f3de52d.png" alt="Dwelling Place Logo" className="w-8 h-8" />
-            <span className="text-xl font-semibold text-sacred-sage-green hidden sm:block">Dwelling Place</span>
+            <span className={`text-xl font-semibold ${logoTextColor} hidden sm:block transition-colors`}>Dwelling Place</span>
           </div>
-          <HeaderNavigation />
+          <HeaderNavigation scrolled={isScrolled} />
         </nav>
       </header>
 
