@@ -96,7 +96,7 @@ const Landing = () => {
         zIndex: 2
       }}>
           {/* OUR PURPOSE Header */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 mt-24">
             <p className="text-sm text-sacred-warm-gray uppercase tracking-wider text-center">OUR PURPOSE</p>
           </div>
 
