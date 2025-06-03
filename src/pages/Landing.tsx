@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -75,19 +74,15 @@ const Landing = () => {
           }}>
               Begin Your Journey
             </Button>
-            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right mt-12 my-[46px]">
+            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right mt-12 my-0">
               Find peace in the everyday.<br />Connect with God anytime, anywhere.
             </h1>
-            <p className="text-xl md:text-3xl font-light text-white mb-6 animate-fade-in" style={{
-            animationDelay: '0.2s'
-          }}>
-              The sacred space for your spiritual journey.
-            </p>
             <p style={{
-            animationDelay: '0.4s'
-          }} className="text-lg text-white max-w-2xl mx-auto mb-12 animate-fade-in py-0">
-              All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
-            </p>
+            animationDelay: '0.2s'
+          }} className="text-xl md:text-3xl font-light text-white mb-6 animate-fade-in px-[19px] text-right">The sacred space for your spiritual journey. 
+All your prayers, reflections, and spiritual insights 
+in one beautiful, private sanctuary.</p>
+            
           </div>
         </section>
 
