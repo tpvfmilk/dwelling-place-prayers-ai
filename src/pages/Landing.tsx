@@ -74,7 +74,7 @@ const Landing = () => {
                 playsInline 
                 preload="metadata" 
                 poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png"
-                className="absolute inset-0 w-full h-full object-contain bg-black"
+                className="absolute inset-0 w-full h-full object-cover bg-black"
                 style={{ zIndex: 1 }}
               >
                 <source src="/lovable-uploads/0602.mp4" type="video/mp4" />
