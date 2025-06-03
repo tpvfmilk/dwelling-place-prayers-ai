@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -89,7 +90,7 @@ const Landing = () => {
           }}>
               Begin Your Journey
             </Button>
-            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right my-[59px]">
+            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right mt-6">
               Find peace in the everyday.<br />Connect with God anytime, anywhere.
             </h1>
           </div>
