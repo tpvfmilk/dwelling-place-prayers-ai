@@ -51,10 +51,7 @@ const Landing = () => {
         </nav>
       </header>
 
-      <main className="max-w-6xl mx-auto px-8 relative pt-0" style={{
-      boxShadow: '-30px 0 60px rgba(0, 0, 0, 0.15), 30px 0 60px rgba(0, 0, 0, 0.15)',
-      backgroundColor: '#F8F6F3'
-    }}>
+      <main className="w-full px-8 relative pt-0 bg-sacred-cream">
         {/* Hero Section */}
         <section className="text-center relative pt-28 pb-[236px] -mx-8 px-8" style={{
         backgroundImage: `url("/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png")`,
@@ -99,46 +96,44 @@ const Landing = () => {
         zIndex: 2,
         background: 'linear-gradient(to bottom, rgba(254, 215, 170, 0) 0%, rgba(254, 215, 170, 1) 50%, rgba(254, 215, 170, 1) 100%)'
       }}>
-          <div className="max-w-5xl mx-auto px-[142px] py-[193px]">
-            {/* OUR PURPOSE Header */}
-            <div className="text-center mb-8">
-              <p className="text-sm text-sacred-warm-gray uppercase tracking-wider text-center">OUR PURPOSE</p>
+          {/* OUR PURPOSE Header */}
+          <div className="text-center mb-8">
+            <p className="text-sm text-sacred-warm-gray uppercase tracking-wider text-center">OUR PURPOSE</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-16">
+            <p className="text-lg text-sacred-warm-gray leading-relaxed mb-8 text-left md:text-2xl">
+              <span className="text-4xl md:text-5xl italic font-light">In</span> a time when every app demands our attention, when notifications steal our peace, when every spiritual moment is measured and shared, we have little space to call our own.
+            </p>
+            
+            <p className="text-lg text-sacred-warm-gray leading-relaxed mb-8 text-left md:text-2xl">
+              Our souls have been taken captive—
+            </p>
+            
+            <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">
+              by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again.  
+
+
+            <span className="font-bold">We promise:</span></p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
+            <div>
+              {noItems.map((item, index) => <div key={index} className="text-left mb-4">
+                  <span className="text-2xl text-black font-serif italic font-thin md:text-3xl">NO</span>
+                  <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
+                    {item.replace('NO ', '')}
+                  </span>
+                </div>)}
             </div>
-
-            <div className="max-w-4xl mx-auto mb-16">
-              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-8 text-left md:text-2xl">
-                <span className="text-4xl md:text-5xl italic font-light">In</span> a time when every app demands our attention, when notifications steal our peace, when every spiritual moment is measured and shared, we have little space to call our own.
-              </p>
-              
-              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-8 text-left md:text-2xl">
-                Our souls have been taken captive—
-              </p>
-              
-              <p className="text-lg text-sacred-warm-gray leading-relaxed mb-12 text-left md:text-2xl">
-                by endless scrolling, by comparison culture, by the pressure to perform our faith for others. Our prayers are interrupted by pings, our quiet moments hijacked by the urgent, our connection with God competing with a thousand digital voices. What should have never been lost is now yours again.  
-
-
-              <span className="font-bold">We promise:</span></p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
-              <div>
-                {noItems.map((item, index) => <div key={index} className="text-left mb-4">
-                    <span className="text-2xl text-black font-serif italic font-thin md:text-3xl">NO</span>
-                    <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
-                      {item.replace('NO ', '')}
-                    </span>
-                  </div>)}
-              </div>
-              
-              <div>
-                {yesItems.map((item, index) => <div key={index} className="text-left mb-4">
-                    <span className="text-2xl text-black font-serif italic font-thin md:text-3xl">YES</span>
-                    <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
-                      {item.replace('YES ', '')}
-                    </span>
-                  </div>)}
-              </div>
+            
+            <div>
+              {yesItems.map((item, index) => <div key={index} className="text-left mb-4">
+                  <span className="text-2xl text-black font-serif italic font-thin md:text-3xl">YES</span>
+                  <span className="text-lg md:text-xl text-sacred-warm-gray ml-3">
+                    {item.replace('YES ', '')}
+                  </span>
+                </div>)}
             </div>
           </div>
         </section>
