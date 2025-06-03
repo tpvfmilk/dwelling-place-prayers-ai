@@ -57,28 +57,34 @@ const Landing = () => {
 
       <main className="w-full px-8 relative pt-0 bg-sacred-cream">
         {/* Hero Section with Video Background */}
-        <section className="text-center relative pt-28 pb-[380px] -mx-8 px-8 overflow-hidden">
+        <section className="text-center relative h-screen -mx-8 px-8 overflow-hidden">
           {/* Video Background */}
-          <video autoPlay muted loop playsInline preload="metadata" poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png" style={{
-          zIndex: 1
-        }} className="absolute inset-0 w-full h-full object-cover py-0 my-0">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            preload="metadata" 
+            poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png" 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ zIndex: 1 }}
+          >
             <source src="/lovable-uploads/0602.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
-          <div className="relative mt-6" style={{
-          zIndex: 3
-        }}>
-            
-            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 py-[10px] text-right mt-12 my-0 font-thin md:text-6xl">
-              Find peace in the everyday.<br />Connect with God anytime, anywhere.
-            </h1>
-            <p style={{
-            animationDelay: '0.2s'
-          }} className="w-1/3 ml-auto text-xl text-white mb-6 animate-fade-in px-[19px] text-right font-thin md:text-base">The sacred space for your spiritual journey.  
-All your prayers, reflections, and spiritual insights 
-in one beautiful, private sanctuary.</p>
-            
+          <div className="relative mt-6 h-full flex flex-col justify-center items-end pr-8" style={{ zIndex: 3 }}>
+            <div className="w-1/2 text-right">
+              <h1 className="text-5xl tracking-tight text-white animate-fade-in font-thin md:text-6xl mb-6">
+                Find peace in the everyday.<br />Connect with God anytime, anywhere.
+              </h1>
+              <p 
+                style={{ animationDelay: '0.2s' }} 
+                className="text-xl text-white mb-6 animate-fade-in font-thin md:text-base"
+              >
+                The sacred space for your spiritual journey. All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
+              </p>
+            </div>
           </div>
         </section>
 
