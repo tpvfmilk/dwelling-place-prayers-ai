@@ -57,7 +57,7 @@ const Landing = () => {
 
       <main className="w-full px-8 relative pt-0 bg-sacred-cream">
         {/* Hero Section with Video Background */}
-        <section className="text-center relative pt-28 pb-[236px] -mx-8 px-8 overflow-hidden">
+        <section className="text-center relative pt-28 pb-[380px] -mx-8 px-8 overflow-hidden">
           {/* Video Background */}
           <video autoPlay muted loop playsInline preload="metadata" poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png" style={{
           zIndex: 1
