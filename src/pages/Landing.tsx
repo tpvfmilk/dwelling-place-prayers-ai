@@ -61,7 +61,7 @@ const Landing = () => {
           {/* Video Background */}
           <video autoPlay muted loop playsInline preload="metadata" poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png" style={{
           zIndex: 1
-        }} className="absolute inset-0 w-full h-full object-cover py-0 my-[11px]">
+        }} className="absolute inset-0 w-full h-full object-cover py-0 my-0">
             <source src="/lovable-uploads/0602.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
