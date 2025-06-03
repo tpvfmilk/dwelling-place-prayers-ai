@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
 import HeaderNavigation from "@/components/HeaderNavigation";
+
 const Landing = () => {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector('header');
@@ -23,6 +25,7 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const noItems = ["NO social features", "NO vanity metrics", "NO invasive tracking", "NO social pressure", "NO advertisements", "NO performance anxiety"];
   const yesItems = ["YES to sacred silence", "YES to private prayer", "YES to your own pace", "YES to authentic faith", "YES to uninterrupted communion", "YES to dwelling in peace"];
   const privacyPoints = [{
@@ -42,7 +45,9 @@ const Landing = () => {
     title: "Built with love",
     description: "Created by believers, for believers, with reverence"
   }];
+  
   const logoTextColor = isScrolled ? "text-sacred-sage-green" : "text-white";
+  
   return <div className="min-h-screen bg-sacred-cream overflow-x-hidden relative">
       {/* Header */}
       <header className="fixed top-5 left-8 right-8 bg-transparent backdrop-blur-none border border-transparent shadow-none z-50 transition-all duration-300 landing-header rounded-full h-16">
@@ -73,7 +78,7 @@ const Landing = () => {
             Your browser does not support the video tag.
           </video>
 
-          <div className="relative mt-6 h-full flex flex-col justify-center items-end pr-8" style={{ zIndex: 3 }}>
+          <div className="relative h-full flex flex-col justify-end items-end pr-8 pb-16" style={{ zIndex: 3 }}>
             <div className="w-1/2 text-right">
               <h1 className="text-5xl tracking-tight text-white animate-fade-in font-thin md:text-6xl mb-6">
                 Find peace in the everyday.<br />Connect with God anytime, anywhere.
@@ -267,4 +272,5 @@ const Landing = () => {
       </style>
     </div>;
 };
+
 export default Landing;
