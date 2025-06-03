@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
@@ -64,38 +63,36 @@ const Landing = () => {
       <main className="w-full px-8 relative pt-0 bg-sacred-cream">
         {/* Hero Section with Video Background */}
         <section className="text-center relative pt-28 -mx-8 px-8 overflow-hidden">
-          {/* Video Container with AspectRatio */}
+          {/* Video Container without AspectRatio constraint */}
           <div className="relative w-full">
-            <AspectRatio ratio={16/9}>
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                playsInline 
-                preload="metadata" 
-                poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png"
-                className="absolute inset-0 w-full h-full object-cover bg-black"
-                style={{ zIndex: 1 }}
-              >
-                <source src="/lovable-uploads/0602.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              preload="metadata" 
+              poster="/lovable-uploads/b4353237-f6ca-4d94-9baa-4b0b1aba7708.png"
+              className="w-full h-auto object-cover bg-black"
+              style={{ zIndex: 1 }}
+            >
+              <source src="/lovable-uploads/0602.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
 
-              {/* Text Overlay */}
-              <div className="absolute bottom-8 right-8" style={{ zIndex: 3 }}>
-                <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 py-[10px] text-right mt-12 my-0 font-thin md:text-6xl">
-                  Find peace in the everyday.<br />Connect with God anytime, anywhere.
-                </h1>
-                <p 
-                  style={{ animationDelay: '0.2s' }} 
-                  className="w-1/3 ml-auto text-xl text-white mb-6 animate-fade-in px-[19px] text-right font-thin md:text-base"
-                >
-                  The sacred space for your spiritual journey.  
-                  All your prayers, reflections, and spiritual insights 
-                  in one beautiful, private sanctuary.
-                </p>
-              </div>
-            </AspectRatio>
+            {/* Text Overlay */}
+            <div className="absolute bottom-8 right-8" style={{ zIndex: 3 }}>
+              <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 py-[10px] text-right mt-12 my-0 font-thin md:text-6xl">
+                Find peace in the everyday.<br />Connect with God anytime, anywhere.
+              </h1>
+              <p 
+                style={{ animationDelay: '0.2s' }} 
+                className="w-1/3 ml-auto text-xl text-white mb-6 animate-fade-in px-[19px] text-right font-thin md:text-base"
+              >
+                The sacred space for your spiritual journey.  
+                All your prayers, reflections, and spiritual insights 
+                in one beautiful, private sanctuary.
+              </p>
+            </div>
           </div>
         </section>
 
