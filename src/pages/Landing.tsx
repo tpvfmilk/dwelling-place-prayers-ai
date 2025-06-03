@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Shield, Eye, Lock, Heart } from "lucide-react";
 import HeaderNavigation from "@/components/HeaderNavigation";
+
 const Landing = () => {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,8 +70,8 @@ const Landing = () => {
           <div className="relative" style={{
           zIndex: 3
         }}>
-            <h1 className="text-5xl tracking-tight mb-8 text-sacred-sage-green animate-fade-in text-center px-0 py-0 my-[166px] font-thin md:text-8xl">
-              Connect with God.<br />Find your peace.
+            <h1 className="text-5xl tracking-tight mb-8 text-white animate-fade-in text-center px-0 py-0 my-[166px] font-thin md:text-8xl">
+              Find peace in the everyday.<br />Connect with God anytime, anywhere.
             </h1>
             <p className="text-xl md:text-3xl font-light text-sacred-warm-gray mb-12 animate-fade-in" style={{
             animationDelay: '0.2s'
@@ -269,4 +270,5 @@ const Landing = () => {
       </style>
     </div>;
 };
+
 export default Landing;
