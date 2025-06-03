@@ -75,7 +75,7 @@ const Landing = () => {
             </h1>
             <p style={{
             animationDelay: '0.2s'
-          }} className="w-1/3 ml-auto text-xl md:text-3xl text-white mb-6 animate-fade-in px-[19px] text-right font-thin">The sacred space for your spiritual journey.  
+          }} className="w-1/3 ml-auto text-xl text-white mb-6 animate-fade-in px-[19px] text-right font-thin md:text-base">The sacred space for your spiritual journey.  
 All your prayers, reflections, and spiritual insights 
 in one beautiful, private sanctuary.</p>
             
