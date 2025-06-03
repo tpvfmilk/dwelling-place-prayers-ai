@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -64,8 +63,8 @@ const Landing = () => {
       <main className="w-full px-8 relative pt-0 bg-sacred-cream">
         {/* Hero Section with Video Background */}
         <section className="text-center relative pt-28 -mx-8 px-8 overflow-hidden">
-          {/* Video Container with fixed height */}
-          <div className="relative w-full h-[70vh] min-h-[500px]">
+          {/* Video Container with full viewport height */}
+          <div className="relative w-full h-screen">
             <video 
               autoPlay 
               muted 
