@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -69,16 +70,6 @@ const Landing = () => {
           <div className="relative mt-6" style={{
           zIndex: 3
         }}>
-            <p className="text-xl md:text-3xl font-light text-sacred-warm-gray mb-12 animate-fade-in" style={{
-            animationDelay: '0.2s'
-          }}>
-              The sacred space for your spiritual journey.
-            </p>
-            <p style={{
-            animationDelay: '0.4s'
-          }} className="text-lg text-sacred-warm-gray max-w-2xl mx-auto mb-12 animate-fade-in py-0">
-              All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
-            </p>
             <Button onClick={() => navigate('/welcome')} className="bg-sacred-sage-green hover:bg-sacred-sage-green/90 text-white px-10 py-4 rounded-full text-lg font-medium transition-all hover:shadow-lg hover:-translate-y-1 animate-fade-in mb-8" style={{
             animationDelay: '0.6s'
           }}>
@@ -87,6 +78,16 @@ const Landing = () => {
             <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right mt-12 my-[46px]">
               Find peace in the everyday.<br />Connect with God anytime, anywhere.
             </h1>
+            <p className="text-xl md:text-3xl font-light text-white mb-6 animate-fade-in" style={{
+            animationDelay: '0.2s'
+          }}>
+              The sacred space for your spiritual journey.
+            </p>
+            <p style={{
+            animationDelay: '0.4s'
+          }} className="text-lg text-white max-w-2xl mx-auto mb-12 animate-fade-in py-0">
+              All your prayers, reflections, and spiritual insights in one beautiful, private sanctuary.
+            </p>
           </div>
         </section>
 
