@@ -74,12 +74,12 @@ const Landing = () => {
           }}>
               Begin Your Journey
             </Button>
-            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 font-thin py-[10px] md:text-4xl text-right mt-12 my-0">
+            <h1 className="text-5xl tracking-tight text-white animate-fade-in px-0 py-[10px] text-right mt-12 my-0 font-thin md:text-6xl">
               Find peace in the everyday.<br />Connect with God anytime, anywhere.
             </h1>
             <p style={{
             animationDelay: '0.2s'
-          }} className="text-xl md:text-3xl font-light text-white mb-6 animate-fade-in px-[19px] text-right">The sacred space for your spiritual journey. 
+          }} className="text-xl md:text-3xl text-white mb-6 animate-fade-in px-[19px] text-right font-thin">The sacred space for your spiritual journey.  
 All your prayers, reflections, and spiritual insights 
 in one beautiful, private sanctuary.</p>
             
