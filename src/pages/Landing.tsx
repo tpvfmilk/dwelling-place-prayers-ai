@@ -75,12 +75,6 @@ const Landing = () => {
             Your browser does not support the video tag.
           </video>
 
-          {/* Sacred-Cream Fade-Out Gradient Overlay */}
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'linear-gradient(to bottom, rgba(248, 246, 243, 0) 0%, rgba(248, 246, 243, 0) 50%, rgba(248, 246, 243, 1) 80%, rgba(248, 246, 243, 1) 100%)',
-            zIndex: 2
-          }} />
-
           <div className="relative" style={{ zIndex: 3 }}>
             <h1 className="text-5xl tracking-tight mb-8 text-sacred-sage-green animate-fade-in font-semibold text-center px-0 md:text-7xl py-0 my-[166px]">
               Connect with God.<br />Find your peace.
